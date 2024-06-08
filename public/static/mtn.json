@@ -1,0 +1,20 @@
+{
+    "refresh_token_expires_in": "0",
+    "api_product_list": "[MTN SMS Interface, MTN SMS API V1, SMS v3 API]",
+    "api_product_list_json": [
+        "MTN SMS Interface",
+        "MTN SMS API V1",
+        "SMS v3 API"
+    ],
+    "organization_name": "mtn-prod",
+    "developer.email": "iam.jdada@gmail.com",
+    "token_type": "BearerToken",
+    "issued_at": "1717091679050",
+    "client_id": "9xGLYOGFk7HAU94vdaxdF5yFUdAITQJI",
+    "access_token": "LSRsNXRGftoBdDrPtpGwz3thVCAj",
+    "application_name": "564cf79f-ee4a-41b8-9c6d-aca0a6d125b5",
+    "scope": "",
+    "expires_in": "3599",
+    "refresh_count": "0",
+    "status": "approved"
+}
