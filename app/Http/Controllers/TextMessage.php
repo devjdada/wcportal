@@ -4,42 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\HomecellReport;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 
-class SMS extends Controller
+class TextMessage
 {
-    public function send_sms($mobiles)
-    {
-        $username = 'johnsondada2@gmail.com';
-        $password = 'Karis@0312';
-        $sender   = 'wcphc';
-        $message  = 'This is a test message.';
-        $api_url  = 'https://portal.nigeriabulksms.com/api/';
-        $api_token_bsm = 'lUOvW02u8sMXZJA4SpFt4U2JhR1hpZT2HmEAfgX4QX4qtUvdTmKlUvrYXm4R';
-        $api_url_bulkSmsNigeria = 'https://www.bulksmsnigeria.com/api/v1/sms/create';
-
-
-
-        $data_bsm = array('api_token' => $api_token_bsm, 'from' => $sender, 'to' => $mobiles, 'body' => $message, 'dnd' => 2);
-        // use key 'http' even if you send the request to https://...
-        $options = array(
-            'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data_bsm)
-            )
-        );
-        $context  = stream_context_create($options);
-        $result = file_get_contents($api_url_bulkSmsNigeria, false, $context);
-        if ($result === FALSE) { /* Handle error */
-        }
-
-        return  $result;
-    }
-
-
-
-    public function receive_sms(Request $request)
+    public function get_sms(Request $request)
     {
         $male = 0;
         $female = 0;
@@ -52,7 +20,6 @@ class SMS extends Controller
         $cn = explode('CN ', $text); // covenant nameng
         $cd = explode('CD ', $text); // chllren dedcaton
         $nh = explode('NH ', $text); // new home cell locaton
-        // return $hr[1];
 
         if ($hr[1]) {
             $text = explode(' ', $hr[1]);
@@ -115,12 +82,12 @@ class SMS extends Controller
         } elseif ($cd[1]) {
         } elseif ($nh[1]) {
         } else {
-            return 'ok';
+            echo 'OK';
         }
 
 
 
-        return 'ok';
+        echo 'OK';
 
 
 
