@@ -52,6 +52,7 @@ class CreateStationsTable extends Migration
     private function seedData(): void
     {
         $data = [
+            ['state' => 'Rivers', 'location' => 'D-line',  'zonal' => '', 'area' => '', 'district' => '', 'category' => 'Mainline'],
             ['state' => 'Rivers', 'location' => 'Ozuboko',  'zonal' => 'Okuru', 'area' => 'Azuabie', 'district' => 'Abuloma', 'category' => 'Intracity'],
             ['state' => 'Rivers', 'location' => 'Ogbunuabali',  'zonal' => 'Okuru', 'area' => 'Marine Base', 'district' => 'Abuloma', 'category' => 'Township'],
             ['state' => 'Rivers', 'location' => 'Golf Estate',  'zonal' => 'Okuru', 'area' => 'Azuabie', 'district' => 'Abuloma', 'category' => 'Intracity'],
@@ -1213,7 +1214,7 @@ class CreateStationsTable extends Migration
             ['state' => 'Rivers', 'location' => 'Trans-amadi',  'zonal' => 'Trans-amadi', 'area' => '', 'district' => 'Woji', 'category' => 'Mainline'],
             ['state' => 'Rivers', 'location' => 'Woji',  'zonal' => '', 'area' => '', 'district' => 'Woji', 'category' => 'Mainline'],
             ['state' => 'Rivers', 'location' => 'Promise Land',  'zonal' => NULL, 'area' => '', 'district' => '', 'category' => 'Countryside'],
-            ['state' => 'Rivers', 'location' => 'D-line',  'zonal' => '', 'area' => '', 'district' => '', 'category' => 'Mainline'],
+
         ];
 
         DB::table('stations')->insert($data);

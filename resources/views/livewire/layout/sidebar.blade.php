@@ -59,6 +59,9 @@
                         <x-side-link href="{{ route('manage-wsf') }}" image="{{ asset('static/icons/dashboard.svg') }}">
                             Manage WSF
                         </x-side-link>
+                        <x-side-link href="{{ route('homecells') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                            Homecells
+                        </x-side-link>
                         <x-side-link href="{{ route('homecell-report') }}"
                             image="{{ asset('static/icons/dashboard.svg') }}">
                             Homecell Report

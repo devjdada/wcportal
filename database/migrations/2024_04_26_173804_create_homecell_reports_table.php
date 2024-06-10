@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('homecell_reports', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('station_id')->unsigned();
-            $table->foreign('station_id')->references('id')->on('stations');
-            $table->bigInteger('homecell_id')->unsigned();
-            $table->foreign('homecell_id')->references('id')->on('homecells');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('station_id')->nullable();
+            $table->foreignId('homecell_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->integer('male');
             $table->integer('new_convert');
             $table->integer('first_timer');
@@ -26,7 +23,6 @@ return new class extends Migration
             $table->integer('children');
             $table->integer('total');
             $table->date('week');
-
             $table->timestamps();
         });
     }

@@ -28,6 +28,12 @@ class TextMessage
                 if (substr($msg, 0, 1) == "H") {
                     $homecell = substr($msg, 1);
                 }
+                if (substr($msg, 0, 1) == "L") {
+                    $user_id = substr($msg, 1);
+                }
+                if (substr($msg, 0, 1) == "S") {
+                    $station_id = substr($msg, 1);
+                }
                 if (substr($msg, 0, 1) == "M") {
                     $male = substr($msg, 1);
                 }
@@ -50,9 +56,10 @@ class TextMessage
             $request['male'] =  $male;
             $request['female'] = $female;
             $request['children'] = $children;
-            $request['first_time'] = $timer;
+            $request['first_timer'] = $timer;
             $request['new_convert'] = $convert;
-            $request['user_id'] = 1;
+            $request['user_id'] = $user_id;
+            $request['station_id'] = $station_id;
             $request['homecell_id'] = $homecell;
             // TODO verfy the time of submtting the report
             if (date("w") == 6) {

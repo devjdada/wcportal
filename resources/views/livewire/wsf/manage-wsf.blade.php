@@ -13,7 +13,7 @@
                 <div wire:click='viewHomecell({{ $province }})'
                     class="flex justify-between pt-1 p-1 hover:bg-gray-300 dark:hover:bg-gray-700">
 
-                    <div class="flex flex-col" wire:click="viewDistrict({{ $province}})">
+                    <div class="flex flex-col cursor-pointer hover:text-blue" wire:click="viewDistrict({{ $province}})">
                         <h1 class="text-base ">{{ $province->title }}</h1>
                         <span class="text-sm dark:text-gray-400">{{ $province->phone }}</span>
                     </div>
@@ -33,11 +33,11 @@
 
             <div class="w-full flex justify-between">
                 <div class="text-2xl font-bold">
-                    @if (count($districts) != 0)
+                    {{-- @if (count($districts) != 0)
                     {{ $districts->title }}
-                    @else
+                    @else --}}
                     District
-                    @endif
+                    {{-- @endif --}}
                 </div>
             </div>
 
@@ -46,8 +46,8 @@
                 @foreach ($districts as $district)
                 <div class="flex justify-between mt-2 hover:bg-gray-300 dark:hover:bg-gray-700">
 
-                    <div class="flex flex-col" wire:click="viewHomecell({{ $district }})">
-                        <h1 class="text-base ">{{ $district->title }}</h1>
+                    <div class="flex flex-col cursor-pointer" wire:click="viewHomecell({{ $district }})">
+                        <h1 class="text-base ">{{ $district->title }} </h1>
                         <span class="text-sm dark:text-gray-400">{{ $district->phone }}</span>
                     </div>
                     <div class="flex">
@@ -65,11 +65,9 @@
             class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700 sm:p-6 dark:bg-gray-800 dark:text-white">
             <div class="w-full flex justify-between">
                 <div class="text-xl font-bold">
-                    @if (count($homecells) != 0)
-                    {{ $currentDistrict->title }} has {{ count($homecells) }} Homecell
-                    @else
+
                     Homecell
-                    @endif
+
                 </div>
             </div>
             <div class="w-full">

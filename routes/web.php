@@ -7,6 +7,7 @@ use App\Livewire\Contacts\AddMyContact;
 use App\Livewire\Contacts\EditMyContact;
 use App\Livewire\Contacts\MyContact;
 use App\Livewire\Dashboard\Dashboard;
+use App\Livewire\Debug\Wsf;
 use App\Livewire\Sms\SmsIndex;
 use App\Livewire\Soul\Assigned;
 use App\Livewire\Soul\Assigning;
@@ -15,6 +16,7 @@ use App\Livewire\Soul\NewConvert;
 use App\Livewire\Soul\SoulStats;
 use App\Livewire\Unit\ManageUnit;
 use App\Livewire\Users\ManageUsers;
+use App\Livewire\Wsf\HomecellIndex;
 use App\Livewire\Wsf\HomecellReport;
 use App\Livewire\Wsf\HrStatistics;
 use App\Livewire\Wsf\ManageWsf;
@@ -30,6 +32,7 @@ Route::get('/', function () {
 
 Route::get('/login', Login::class)->name('login');
 Route::get('/register', Register::class)->name('register');
+Route::get('/debug-wsf', Wsf::class)->name('debug-wsf');
 
 Route::middleware([
     'auth:sanctum',
@@ -52,6 +55,7 @@ Route::middleware([
     Route::get('/assign-contact', Assigned::class)->name('assign-contact');
     Route::get('/assigning-contact', Assigning::class)->name('assigning-contact');
     Route::get('/manage-unit', ManageUnit::class)->name('manage-unit');
+    Route::get('/homecells', HomecellIndex::class)->name('homecells');
 });
 
 

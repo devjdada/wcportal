@@ -28,9 +28,7 @@ class ManageWsf extends Component
 
     public  $districts = [];
     public  $homecells = [];
-    public ?Province $currentProvince;
-    public ?District $currentDistrict;
-    public ?Homecell $currentHomecell;
+
     public $editMode = false;
     public function saveProvince()
     {
@@ -142,7 +140,6 @@ class ManageWsf extends Component
     }
     public function editHomecell(Homecell $homecell)
     {
-        // dd(auth()->user()->station_id);
         $this->editMode = true;
         $this->homecellForm->setContact($homecell);
         $this->homecellModal = true;
@@ -155,7 +152,6 @@ class ManageWsf extends Component
     {
         $this->province_id = $province->id;
         $this->districtForm->province_id = $province->id;
-        $this->currentProvince = $province;
         $this->districtModal = true;
         $this->viewDistrict($province);
     }
@@ -164,19 +160,15 @@ class ManageWsf extends Component
         $this->district_id = $district->id;
         $this->homecellForm->district_id = $district->id;
         $this->homecellForm->province_id = $district->province_id;
-        $this->currentDistrict = $district;
         $this->homecellModal = true;
+        $this->viewHomecell($district);
     }
     public function viewDistrict(Province $province)
     {
-        $this->currentProvince = $province;
         $this->districts = District::where('province_id', $province->id)->get();
-        $this->homecells = '';
     }
     public function viewHomecell(District $district)
     {
-
-        $this->currentDistrict = $district;
         $this->homecells = Homecell::where('district_id', $district->id)->get();
     }
     public function render()
