@@ -37,6 +37,8 @@ class UnitLeaderForm extends Form
     {
 
         // $this->cover_image_path->store(path: 'cover');
+        $this->start = now();
+        $this->end = now();
         $this->station_id = auth()->user()->station_id;
         $this->validate();
         UnitLeader::create($this->all());

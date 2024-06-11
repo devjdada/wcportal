@@ -21,7 +21,7 @@ return new class extends Migration
             $table->foreign('homecell_id')->references('id')->on('homecells');
             $table->string('position')->nullable();
             $table->boolean('status')->default(true);
-            $table->date('start')->nullable();
+            $table->date('start')->nullable()->default();
             $table->date('end')->nullable();
             $table->longText('about')->nullable();
             $table->timestamps();

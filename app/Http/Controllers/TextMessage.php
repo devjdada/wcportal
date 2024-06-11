@@ -2,37 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Homecell;
 use App\Models\HomecellReport;
+use App\Models\TextMessage as ModelsTextMessage;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TextMessage
 {
     public function get_sms(Request $request)
     {
-        $male = 0;
-        $female = 0;
-        $children = 0;
 
-        $text = strtoupper($request->input('text'));
+        $number = strtoupper($request->input('phone'));
+        $message = strtoupper($request->input('text'));
 
-        $hr = explode('HR ', $text); // home cell report
-        $sw = explode('SW ', $text); // soul wnng
-        $cn = explode('CN ', $text); // covenant nameng
-        $cd = explode('CD ', $text); // chllren dedcaton
-        $nh = explode('NH ', $text); // new home cell locaton
+        $hr = explode('WSF ', $message); // home cell report
+        $sw = explode('SW ', $message); // soul wnng
+        $cn = explode('CN ', $message); // covenant nameng
+        $cd = explode('CD ', $message); // chllren dedcaton
+        $nh = explode('NH ', $message); // new home cell locaton
+
+
 
         if ($hr[1]) {
+            $male = 0;
+            $female = 0;
+            $children = 0;
+            $timer = 0;
+            $convert = 0;
+
             $text = explode(' ', $hr[1]);
+            $sender = User::wherePhone($number)->first();
+            if ($sender) {
+                $user_id = $sender->id;
+            } else {
+                $user_id = '';
+            }
             // return $text;
             foreach ($text as $msg) {
+
                 if (substr($msg, 0, 1) == "H") {
                     $homecell = substr($msg, 1);
-                }
-                if (substr($msg, 0, 1) == "L") {
-                    $user_id = substr($msg, 1);
-                }
-                if (substr($msg, 0, 1) == "S") {
-                    $station_id = substr($msg, 1);
+                    $cell = Homecell::whereId($homecell)->first();
+                    $station_id = $cell->station_id;
                 }
                 if (substr($msg, 0, 1) == "M") {
                     $male = substr($msg, 1);
@@ -58,6 +70,7 @@ class TextMessage
             $request['children'] = $children;
             $request['first_timer'] = $timer;
             $request['new_convert'] = $convert;
+
             $request['user_id'] = $user_id;
             $request['station_id'] = $station_id;
             $request['homecell_id'] = $homecell;
@@ -69,10 +82,12 @@ class TextMessage
             }
             if ($verifyReport = HomecellReport::whereWeek($request['week'])->whereHomecell_id($homecell)->first()) {
                 $verifyReport->update($request->all());
+                $this->save_sms($message, $number, $station_id, true);
                 echo "OK";
                 exit();
             }
             if ($homecellReport = HomecellReport::create($request->all())) {
+                $this->save_sms($message, $number, $station_id, true);
                 echo "OK";
                 exit();
             }
@@ -89,6 +104,8 @@ class TextMessage
         } elseif ($cd[1]) {
         } elseif ($nh[1]) {
         } else {
+            $sender = User::wherePhone($number)->first();
+            $this->save_sms($message, $number, $sender->station_id, true);
             echo 'OK';
         }
 
@@ -101,5 +118,15 @@ class TextMessage
 
         //must return "OK" or APP will consider message as failed
 
+    }
+
+    public function save_sms($msg, $phone, $station, $status)
+    {
+        $textMsg = new ModelsTextMessage();
+        $textMsg->message = $msg;
+        $textMsg->phone = $phone;
+        $textMsg->station_id = $station;
+        $textMsg->status = $status;
+        $textMsg->save();
     }
 }

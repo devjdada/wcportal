@@ -17,8 +17,8 @@ return new class extends Migration
             $table->foreign('station_id')->references('id')->on('stations');
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->bigInteger('unit_id')->unsigned();
-            $table->foreign('unit_id')->references('id')->on('units');
+            $table->bigInteger('homecell_id')->unsigned();
+            $table->foreign('homecell_id')->references('id')->on('homecells');
             $table->string('position')->nullable();
             $table->boolean('status')->default(true);
             $table->date('start')->nullable();

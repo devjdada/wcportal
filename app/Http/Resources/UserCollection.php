@@ -14,13 +14,14 @@ class UserCollection extends JsonResource
      */
     public function toArray($request)
     {
-        // $request['unit'] = $this->unit;
-        // $request['leader'] = $this->leader;
+        $request['unit'] = $this->unit;
+        $request['unitLeader'] = $this->unitLeader;
         // $request['avatar'] = $this->avatar;
         $request['souls'] = $this->souls;
-        // $request['report'] = $this->report;
-        // $request['assigned'] = $this->assigned;
-        // $request['homecell'] = $this->homecell;
+        $request['report'] = $this->report;
+        $request['assigned'] = $this->assigned;
+        $request['homecell'] = $this->homecell;
+        $request['homecellLeader'] = $this->homecellLeaders;
         // $request['staff'] = $this->staff;
         $request['station'] = $this->station;
         return parent::toArray($request);

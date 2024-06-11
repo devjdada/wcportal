@@ -106,9 +106,17 @@ class User extends Authenticatable
     {
         return $this->hasMany(UnitLeader::class, 'user_id');
     }
+    public function unitMembers(): HasMany
+    {
+        return $this->hasMany(UnitMember::class, 'user_id');
+    }
     public function homecell(): HasOne
     {
         return $this->hasOne(WsfMember::class,  'user_id');
+    }
+    public function homecellLeaders(): HasOne
+    {
+        return $this->hasOne(HomecellLeader::class,  'user_id');
     }
     // public function staff()
     // {

@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WsfLeader extends Model
+class TextMessage extends Model
 {
     use HasFactory;
-    protected $table = 'wsf_leaders';
+    protected $table = 'text_messages';
     protected $fillable = [
         'station_id',
-        'user_id',
-        'homecell_id',
-        'position',
-        'status',
-        'start',
-        'end',
-        'about',
+        'message',
+        'phone',
+        'status'
     ];
 }

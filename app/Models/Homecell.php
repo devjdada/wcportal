@@ -31,7 +31,7 @@ class Homecell extends Model
     {
         return $this->belongsTo(Province::class,  'province_id');
     }
-    public function leader(): HasMany
+    public function leaders(): HasMany
     {
         return $this->hasMany(HomecellLeader::class, 'homecell_id');
     }

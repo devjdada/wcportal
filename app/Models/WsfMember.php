@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class WsfMember extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'homecell_id'];
+    protected $fillable = ['station_id', 'user_id', 'homecell_id'];
 
 
     public function user()

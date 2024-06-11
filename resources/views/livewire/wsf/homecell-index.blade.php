@@ -196,6 +196,8 @@
                                         <div class="text-base font-semibold text-gray-900 dark:text-white">
                                             {{ $hc->title }} </div>
                                         <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
+                                            {{ $hc->about }}</div>
+                                        <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
                                             {{ $hc->phone }}</div>
                                     </div>
                                 </td>
@@ -207,17 +209,31 @@
 
                                     <div class="text-sm font-normal text-gray-500 dark:text-white">
                                         <div class="text-base font-semibold text-gray-900 dark:text-white">
-                                            {{ $hc->province->about }} </div>
+                                            {{ $hc->province->title }} </div>
                                         <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
-                                            {{ $hc->district->about }}</div>
+                                            {{ $hc->district->title }}</div>
                                     </div>
                                 </td>
                                 <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
-                                    <div class="flex items-center">
-                                        {{-- {{ if eq .status "Active" }} <div
-                                            class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> {{ else }}
-                                        <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div> {{ end }} {{
-                                        .status }} --}}
+                                    <div class="grid items-center">
+                                        @if ($hc->leaders)
+                                        @foreach ($hc->leaders as $leader)
+                                        @if($leader->position == 'leader')
+                                        <div class="cursor-pointer px-3 rounded-full bg-green-600 mr-2">Leader</div>
+                                        @endif
+                                        @if($leader->position == 'Ass leader')
+                                        <div class="cursor-pointer px-3 rounded-full bg-red-700 mr-2">Ass</div>
+                                        @endif
+                                        @if($leader->position == 'secratory')
+                                        <div class="cursor-pointer px-3 rounded-full bg-blue-700 mr-2">Sec</div>
+                                        @endif
+
+
+
+                                        @endforeach
+
+                                        @endif
+
                                     </div>
                                 </td>
                                 <td class="p-4 space-x-2 whitespace-nowrap">
@@ -227,6 +243,8 @@
                                     </x-del>
                                     <x-edit type="button" wire:click="report({{ $hc }})">
                                     </x-edit>
+                                    <x-add type="button" wire:click="assignLeaderDialog({{ $hc }})">
+                                    </x-add>
                                 </td>
                             </tr>
                             @endforeach
@@ -314,6 +332,65 @@
                 </div>
             </form>
         </div>
+    </x-dialog>
+    <x-dialog wire:model="asDialog" :maxWidth="'md'">
+
+        <div class="flex items-start justify-between  border-b rounded-t dark:border-gray-700">
+            <h3 class="text-xl font-semibold dark:text-white">
+                Assign Leadership to Homecell
+            </h3>
+        </div>
+        <!-- Modal body -->
+
+        <div class="space-y-6">
+            @session('status')
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ $value }}
+            </div>
+            @endsession
+            <x-validation-errors class="mb-4" />
+            <form wire:submit="assignLeader">
+                <div class="grid grid-cols-6 gap-6">
+                    <div class="col-span-6">
+                        <label for="biography" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            User</label>
+                        <x-input wire:model.live='searchUser' />
+                        <x-select wire:model.live='wlform.user_id'>
+                            <option value="">select</option>
+                            @foreach ($users as $user)
+                            <option value="{{ $user->id }}">{{ $user->name }} {{ $user->phone }}</option>
+                            @endforeach
+                        </x-select>
+                    </div>
+                    <div class="col-span-6">
+                        <label for="biography" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Position</label>
+                        <x-select wire:model="wlform.position">
+                            <option value="">select</option>
+                            <option value="provider">provider</option>
+                            <option value="leader">leader</option>
+                            <option value="secratory">secratory</option>
+                            <option value="Ass leader">Ass leader</option>
+                        </x-select>
+                    </div>
+                    <div class="col-span-6">
+                        <label for="biography" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            About</label>
+                        <x-textarea id="prayer_point" wire:model="wlform.about" rows="4">
+                        </x-textarea>
+                    </div>
+
+
+                </div>
+                <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+                    <x-button type="submit">
+                        Assign
+                    </x-button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal footer -->
+
     </x-dialog>
     <x-dialog wire:model="reportDialog" :maxWidth="'md'">
 
