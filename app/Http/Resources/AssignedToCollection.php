@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SoulCollection extends JsonResource
+class AssignedToCollection extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,10 +14,7 @@ class SoulCollection extends JsonResource
      */
     public function toArray(Request $request): array
     {
-
-        $request['winner'] = $this->winner;
-        $request['report'] = $this->report;
-        $request['assigned'] = $this->assigned;
+        $request['assigned'] = $this->contact;
         return parent::toArray($request);
     }
 }

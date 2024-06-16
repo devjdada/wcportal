@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\MyContactReportCollection;
+use App\Http\Resources\SoulReportCollection;
 use App\Models\SoulReport;
 use Illuminate\Http\Request;
-use App\Http\Resources\SoulReport as SoulReportResources;
 
-class SoulReportController extends Controller
+class SoulReportController
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class SoulReportController extends Controller
     public function index()
     {
         $report = SoulReport::paginate(50);
-        return SoulReportResources::collection($report);
+        return SoulReportCollection::collection($report);
     }
 
 
@@ -47,7 +48,7 @@ class SoulReportController extends Controller
     {
         //
         $report = SoulReport::findOrfail($id);
-        return  new SoulReportResources($report);
+        return  new SoulReportCollection($report);
     }
 
 
@@ -77,7 +78,7 @@ class SoulReportController extends Controller
     {
         $report = SoulReport::findOrfail($id);
         if ($report->delete()) {
-            return new SoulReportResources($report);
+            return new SoulReportCollection($report);
         }
     }
 
@@ -85,13 +86,13 @@ class SoulReportController extends Controller
     {
         $report = SoulReport::where("user_id", $id);
         $report = $report->orderBy('id', 'desc')->get();
-        return SoulReportResources::collection($report);
+        return MyContactReportCollection::collection($report);
     }
 
     public function contact_report($id)
     {
         $report = SoulReport::where("soul_id", $id);
         $report = $report->orderBy('id', 'desc')->get();
-        return SoulReportResources::collection($report);
+        return SoulReportCollection::collection($report);
     }
 }

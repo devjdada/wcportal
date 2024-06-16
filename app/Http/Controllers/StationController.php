@@ -17,7 +17,7 @@ class StationController
      */
     public function basic()
     {
-        return Station::select('id', 'location', 'phone', 'email')->get();
+        return StationCollection::collection(Station::select('id', 'location', 'phone', 'email')->get());
     }
 
     /**

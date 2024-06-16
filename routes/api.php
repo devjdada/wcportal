@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('assignee/{id}', [App\Http\Controllers\AssignedController::class, 'assignee']);
 // Route::get('assign_to/{id}', [App\Http\Controllers\AssignedController::class, 'assign_to']);
 // Route::apiResource('soul_report', App\Http\Controllers\SoulReportController::class);
-// Route::get('my_soul_report/{id}', [App\Http\Controllers\SoulReportController::class, 'my_report']);
+
 // Route::get('contact_report/{id}', [App\Http\Controllers\SoulReportController::class, 'contact_report']);
 // Route::apiResource('new_convert', App\Http\Controllers\NewConvertController::class);
 // Route::apiResource('wsf_member', App\Http\Controllers\WsfMemberController::class);
@@ -69,7 +69,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post('logout', [App\Http\Controllers\AuthController::class, 'logout']);
     Route::get('my-contact/{winner}', [App\Http\Controllers\SoulController::class, 'my_contact']);
+    Route::get('my-assigned/{assign_to}', [App\Http\Controllers\AssignedController::class, 'my_assigned']);
     Route::apiResource('soul', App\Http\Controllers\SoulController::class);
+    Route::get('my-contact-report/{id}', [App\Http\Controllers\SoulReportController::class, 'my_report']);
     // Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);
 });
 Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);

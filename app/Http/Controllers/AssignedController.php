@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\AssignedCollection;
+use App\Http\Resources\AssignedToCollection;
 use App\Models\Assigned;
 use Illuminate\Http\Request;
 
@@ -58,11 +59,11 @@ class AssignedController
         }
     }
 
-    public function my_contact($id)
+    public function my_assigned($id)
     {
-        $Assigned = Assigned::where('Assigned_winner', $id);
-        $Assigned = $Assigned->orderBy('id', 'desc')->get();
-        return AssignedCollection::collection($Assigned);
+        $Assigned = Assigned::where('assigned_to', $id)
+            ->orderBy('id', 'desc')->get();
+        return AssignedToCollection::collection($Assigned);
     }
 
     public function station_contact($station_id)
