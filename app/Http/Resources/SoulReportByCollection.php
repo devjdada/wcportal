@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class HomecellCollection extends JsonResource
+class SoulReportByCollection extends JsonResource
 {
     /**
      * Transform the resource collection into an array.
@@ -14,10 +14,7 @@ class HomecellCollection extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $request['district'] = $this->district;
-        $request['province'] = $this->province;
-        $request['leaders'] = $this->leaders;
-
+        $request['reports'] = $this->report_by;
         return parent::toArray($request);
     }
 }

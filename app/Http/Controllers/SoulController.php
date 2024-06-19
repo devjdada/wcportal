@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\AssignedToCollection;
 use App\Http\Resources\SoulCollection;
+use App\Http\Resources\SoulWCollection;
+use App\Http\Resources\SoulReportByCollection;
+use App\Models\Assigned;
 use App\Models\Soul;
+use App\Models\SoulReport;
 use Illuminate\Http\Request;
 
 class SoulController
@@ -37,7 +42,13 @@ class SoulController
     public function show(string $id)
     {
         $soul = Soul::findOrfail($id);
-        return  new SoulCollection($soul);
+        $assigned = AssignedToCollection::collection(Assigned::where('contact_id', $id)->get());
+        $report = SoulReportByCollection::collection(SoulReport::where('soul_id', $id)->get());
+        return  [
+            'soul' => new SoulWCollection($soul),
+            'assigned' => $assigned,
+            'report' => $report
+        ];
     }
 
     /**
@@ -63,8 +74,7 @@ class SoulController
 
     public function my_contact($id)
     {
-        $soul = Soul::where('soul_winner', $id);
-        $soul = $soul->orderBy('id', 'desc')->get();
+        $soul = Soul::where('soul_winner', $id)->orderBy('id', 'desc')->get();
         return SoulCollection::collection($soul);
     }
 

@@ -73,12 +73,14 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('soul', App\Http\Controllers\SoulController::class);
     Route::get('my-contact-report/{id}', [App\Http\Controllers\SoulReportController::class, 'my_report']);
     // Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);
+    Route::get('station-homecell/{homecell}', [App\Http\Controllers\HomecellController::class, 'station_hc']);
+    Route::get('homecell-contact/{homecell}', [App\Http\Controllers\HomecellController::class, 'homecell_contact']);
+    Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);
+
 });
-Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);
 
 Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
 
-Route::get('homecell-contact/{homecell}', [App\Http\Controllers\HomecellController::class, 'homecell_contact']);
 
 
 Route::get('/import', [\App\Http\Controllers\ExcelController::class, 'import']);

@@ -28,7 +28,7 @@ class HomecellController
     public function station_hc(string $station_id)
     {
         $homecell = Homecell::where("station_id", $station_id)
-            ->paginate(30);
+            ->get();
         return HomecellCollection::collection($homecell);
     }
     public function province_hc(string $province_id)
