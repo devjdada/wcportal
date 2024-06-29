@@ -8,6 +8,7 @@ use App\Livewire\Contacts\EditMyContact;
 use App\Livewire\Contacts\MyContact;
 use App\Livewire\Dashboard\Dashboard;
 use App\Livewire\Debug\Wsf;
+use App\Livewire\Image\Post;
 use App\Livewire\Sms\SmsIndex;
 use App\Livewire\Soul\Assigned;
 use App\Livewire\Soul\Assigning;
@@ -56,6 +57,7 @@ Route::middleware([
     Route::get('/assigning-contact', Assigning::class)->name('assigning-contact');
     Route::get('/manage-unit', ManageUnit::class)->name('manage-unit');
     Route::get('/homecells', HomecellIndex::class)->name('homecells');
+    Route::get('/upload-image', Post::class)->name('upload-image');
 });
 
 

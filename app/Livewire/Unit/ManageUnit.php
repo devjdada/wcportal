@@ -84,11 +84,11 @@ class ManageUnit extends Component
     }
     public function render()
     {
-        $unitLeaders = UnitLeader::select('user_id')
+        $unitLeads = UnitLeader::select('user_id')
             ->where('station_id', Auth()->user()->station_id)
             ->where('status', true)
             ->get();
-        $unitLeaders = User::whereIn('id', $unitLeaders)->get();
+        $unitLeaders = User::whereIn('id', $unitLeads)->get();
         $users = User::select('id', 'name', 'phone')->where('station_id', Auth()->user()->station_id)->get();
         $units = Unit::where('station_id', Auth()->user()->station_id)->get();
         return view('livewire.unit.manage-unit', [

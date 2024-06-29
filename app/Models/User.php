@@ -102,7 +102,7 @@ class User extends Authenticatable
     // {
     //     return $this->hasMany(Avatar::class, 'user_id');
     // }
-    public function unitLeader(): HasMany
+    public function asUnitLeader(): HasMany
     {
         return $this->hasMany(UnitLeader::class, 'user_id');
     }

@@ -93,6 +93,10 @@
                             image="{{ asset('static/icons/dashboard.svg') }}">
                             Manage Unit
                         </x-side-link>
+                        <x-side-link href="{{ route('upload-image') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
+                            Upload Image
+                        </x-side-link>
 
 
 

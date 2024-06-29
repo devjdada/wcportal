@@ -15,7 +15,7 @@ class Unit extends Model
         "title", "email", "about",  "phone",  "cover_image_path", "station_id"
     ];
 
-    public function leaders(): HasMany
+    public function leadership(): HasMany
     {
         return $this->hasMany(UnitLeader::class, 'unit_id');
     }

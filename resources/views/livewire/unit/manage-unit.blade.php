@@ -121,7 +121,7 @@
             <p>{{ $unit->about }}</p>
 
             <div class="grid grid-cols-3 gap-4 items-center">
-                @foreach ($unit->leaders as $leader)
+                @foreach ($unit->leadership as $leader)
                 <div>
                     @foreach ($unitLeaders as $ul)
                     @if ($leader->user_id == $ul->user_id)

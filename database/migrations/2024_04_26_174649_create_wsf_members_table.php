@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->bigInteger('homecell_id')->unsigned();
             $table->foreign('homecell_id')->references('id')->on('homecells');
-
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

@@ -92,4 +92,10 @@ class AuthController
         $success['status'] =  true;
         return response()->json($success, 201);
     }
+
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+        return true;
+    }
 }
