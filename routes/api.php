@@ -23,7 +23,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get('station', [App\Http\Controllers\StationController::class, 'index']);
     Route::get('station/{station}', [App\Http\Controllers\StationController::class, 'show']);
-    Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);
+
     Route::get('soul-basic/{station}', [App\Http\Controllers\SoulController::class, 'basic']);
     Route::get('station-contact/{station}', [App\Http\Controllers\SoulController::class, 'station_contact']);
 
@@ -38,6 +38,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('homecell-contact/{homecell}', [App\Http\Controllers\HomecellController::class, 'homecell_contact']);
     Route::apiResource('homecell', App\Http\Controllers\HomecellController::class);
     Route::apiResource('wsf-member', App\Http\Controllers\WsfMemberController::class);
+    Route::apiResource('soul-report', App\Http\Controllers\SoulReportController::class);
+    Route::apiResource('wsf-report', App\Http\Controllers\HomecellReportController::class);
+    Route::apiResource('testimony', App\Http\Controllers\TestimonyController::class);
+    Route::apiResource('blog', App\Http\Controllers\BlogController::class);
+    Route::apiResource('gallery', App\Http\Controllers\GalleryController::class);
 });
 
 Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
+Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);

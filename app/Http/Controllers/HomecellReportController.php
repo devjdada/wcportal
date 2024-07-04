@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\HomecellReportCollection;
+use App\Models\HomecellReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomecellReportController
 {
@@ -11,7 +14,8 @@ class HomecellReportController
      */
     public function index()
     {
-        //
+        $report = HomecellReport::where('station_id', Auth::user()->station_id)->get();
+        return HomecellReportCollection::collection($report);
     }
 
     /**
@@ -19,7 +23,16 @@ class HomecellReportController
      */
     public function store(Request $request)
     {
-        //
+        if (date("w") == 6) {
+            $request['week'] = date('Y-m-d',  strtotime("today"));
+        } else {
+            $request['week'] = date('Y-m-d',  strtotime("last saturday"));
+        }
+        if ($report = HomecellReport::create($request->all())) {
+            $res['status'] = true;
+            $res['message'] = $report;
+            return response($res, 200);
+        }
     }
 
     /**
@@ -27,7 +40,8 @@ class HomecellReportController
      */
     public function show(string $id)
     {
-        //
+        $report = HomecellReport::findOrfail($id);
+        return  new HomecellReportCollection($report);
     }
 
     /**
@@ -35,7 +49,10 @@ class HomecellReportController
      */
     public function update(Request $request, string $id)
     {
-        //
+        $report = HomecellReport::find($id);
+        $report->update($request->all());
+
+        return response()->json($report);
     }
 
     /**
@@ -43,6 +60,9 @@ class HomecellReportController
      */
     public function destroy(string $id)
     {
-        //
+        $report = HomecellReport::findOrfail($id);
+        if ($report->delete()) {
+            return new HomecellReportCollection($report);
+        }
     }
 }

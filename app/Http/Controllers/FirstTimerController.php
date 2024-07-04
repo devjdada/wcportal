@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\FirstTimerCollection;
+use App\Models\FirstTimer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FirstTimerController
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $gallery = FirstTimer::where('station', Auth::user()->station_id)
+            // ->where('status', 'active')
+            ->get();
+        return FirstTimerCollection::collection($gallery);
     }
 
     /**
@@ -19,30 +22,37 @@ class FirstTimerController
      */
     public function store(Request $request)
     {
-        //
+        if ($gallery = FirstTimer::create($request->all())) {
+            return  new FirstTimerCollection($gallery);
+        }
     }
+
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(FirstTimer $id)
     {
-        //
+        $gallery = FirstTimer::findOrfail($id);
+        return  new FirstTimerCollection($gallery);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, FirstTimer $id)
     {
-        //
+        $gallery = FirstTimer::where('id', $id)->first();
+        $gallery->update($request->all());
+        return response()->json($gallery, 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(FirstTimer $id)
     {
-        //
+        FirstTimer::where('id', $id)->delete();
+        return response()->json(null, 204);
     }
 }

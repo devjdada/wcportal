@@ -6,6 +6,7 @@ use App\Http\Resources\MyContactReportCollection;
 use App\Http\Resources\SoulReportCollection;
 use App\Models\SoulReport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SoulReportController
 {
@@ -16,7 +17,7 @@ class SoulReportController
      */
     public function index()
     {
-        $report = SoulReport::paginate(50);
+        $report = SoulReport::where('station_id', Auth::user()->station_id)->get();
         return SoulReportCollection::collection($report);
     }
 

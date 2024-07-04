@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('password');
             $table->text('address')->nullable();
             $table->date('dob')->nullable();
+            $table->boolean('caller_squrd')->default(false);
             $table->enum('status', ['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder'])->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

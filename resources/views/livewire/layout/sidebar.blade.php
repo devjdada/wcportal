@@ -56,10 +56,12 @@
                             image="{{ asset('static/icons/dashboard.svg') }}">
                             Manage Users
                         </x-side-link>
-                        <x-side-link href="{{ route('manage-wsf') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                        <x-side-link href="{{ route('manage-wsf') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
                             Manage WSF
                         </x-side-link>
-                        <x-side-link href="{{ route('homecells') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                        <x-side-link href="{{ route('homecells') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
                             Homecells
                         </x-side-link>
                         <x-side-link href="{{ route('homecell-report') }}"
@@ -71,9 +73,8 @@
                             Yet to Submit
                         </x-side-link>
                         <li>
-                            <a href="{{ route('hr-sta') }}" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 @if (request()->routeIs('hr-sta'))
-                                    dark:bg-gray-700
-                                @endif">
+                            <a href="{{ route('hr-sta') }}"
+                                class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 @if (request()->routeIs('hr-sta')) dark:bg-gray-700 @endif">
                                 <img src="{{ asset('static/icons/dashboard.svg') }}" alt=""
                                     class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white">
                                 <span class="flex-1 ml-3 text-left whitespace-nowrap">
@@ -86,12 +87,25 @@
                         <x-side-link href="{{ route('hr-sta') }}" image="{{ asset('static/icons/dashboard.svg') }}">
                             Report Stats
                         </x-side-link>
-                        <x-side-link href="{{ route('manage-sms') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                        <x-side-link href="{{ route('manage-sms') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
                             SMS
                         </x-side-link>
                         <x-side-link href="{{ route('manage-unit') }}"
                             image="{{ asset('static/icons/dashboard.svg') }}">
                             Manage Unit
+                        </x-side-link>
+                        <x-side-link href="{{ route('manage-blog') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
+                            Blogs
+                        </x-side-link>
+                        <x-side-link href="{{ route('manage-testy') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
+                            Testimony
+                        </x-side-link>
+                        <x-side-link href="{{ route('galleries') }}"
+                            image="{{ asset('static/icons/dashboard.svg') }}">
+                            Gallaries
                         </x-side-link>
                         <x-side-link href="{{ route('upload-image') }}"
                             image="{{ asset('static/icons/dashboard.svg') }}">
@@ -236,14 +250,14 @@
                                         <path fill="#de2910" d="M0 0h512v512H0z" />
                                         <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)"
                                             xlink:href="#a" />
-                                        <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)"
-                                            xlink:href="#a" />
-                                        <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)"
-                                            xlink:href="#a" />
-                                        <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)"
-                                            xlink:href="#a" />
-                                        <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)"
-                                            xlink:href="#a" />
+                                        <use width="30" height="20"
+                                            transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a" />
+                                        <use width="30" height="20"
+                                            transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a" />
+                                        <use width="30" height="20"
+                                            transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a" />
+                                        <use width="30" height="20"
+                                            transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a" />
                                     </svg>
                                     中文 (繁體)
                                 </div>

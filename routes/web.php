@@ -3,11 +3,16 @@
 use App\Http\Controllers\SMS;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
+use App\Livewire\Blog\CreateBlog;
+use App\Livewire\Blog\ManageBlog;
 use App\Livewire\Contacts\AddMyContact;
 use App\Livewire\Contacts\EditMyContact;
 use App\Livewire\Contacts\MyContact;
 use App\Livewire\Dashboard\Dashboard;
 use App\Livewire\Debug\Wsf;
+use App\Livewire\Gallery\AddImage;
+use App\Livewire\Gallery\CreateGallery;
+use App\Livewire\Gallery\Galleries;
 use App\Livewire\Image\Post;
 use App\Livewire\Sms\SmsIndex;
 use App\Livewire\Soul\Assigned;
@@ -15,6 +20,8 @@ use App\Livewire\Soul\Assigning;
 use App\Livewire\Soul\FirstTimert;
 use App\Livewire\Soul\NewConvert;
 use App\Livewire\Soul\SoulStats;
+use App\Livewire\Testy\CreateTesty;
+use App\Livewire\Testy\ManageTesty;
 use App\Livewire\Unit\ManageUnit;
 use App\Livewire\Users\ManageUsers;
 use App\Livewire\Wsf\HomecellIndex;
@@ -58,6 +65,13 @@ Route::middleware([
     Route::get('/manage-unit', ManageUnit::class)->name('manage-unit');
     Route::get('/homecells', HomecellIndex::class)->name('homecells');
     Route::get('/upload-image', Post::class)->name('upload-image');
+    Route::get('/create-gallery', CreateGallery::class)->name('create-gallery');
+    Route::get('/add-image', AddImage::class)->name('add-image');
+    Route::get('/galleries', Galleries::class)->name('galleries');
+    Route::get('/create-testy', CreateTesty::class)->name('create-testy');
+    Route::get('/manage-testy', ManageTesty::class)->name('manage-testy');
+    Route::get('/manage-blog', ManageBlog::class)->name('manage-blog');
+    Route::get('/create-blog', CreateBlog::class)->name('create-blog');
 });
 
 
