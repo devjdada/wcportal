@@ -82,6 +82,13 @@ Route::get('/clear-cache', function () {
     dd($return);
 });
 
+Route::get('/storage-link', function () {
+    $targetFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage/app/public';
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/public/storage';
+    symlink($targetFolder, $linkFolder);
+    dd('Symlink process successfully completed');
+});
+
 Route::get('/artisan-migrate-refresh', function () {
     $return =  Artisan::call('migrate:refresh ');
     dd($return);
