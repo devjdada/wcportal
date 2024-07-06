@@ -4,6 +4,7 @@ namespace App\Livewire\Gallery;
 
 use App\Models\Gallery;
 use App\Models\Img;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -41,7 +42,7 @@ class Galleries extends Component
             'description' => 'required',
             'image' => 'required|image|max:2048',
         ]);
-        $image = $this->image->store(path: 'gallery');
+        $image = Storage::disk('goro')->put('gallery', $this->image);
         $gallery = Gallery::create([
             'title' => $this->title,
             'description' => $this->description,
@@ -67,10 +68,10 @@ class Galleries extends Component
 
 
         foreach ($this->photos as $photo) {
-            $image = $photo->store(path: 'gallery');
+            $image = Storage::disk('goro')->put('gallery', $photo);
             Img::create([
                 'galleries_id' => $this->galleryId,
-                'image' => url('storage/' . $image),
+                'image' => url('images/' . $image),
             ]);
         }
 

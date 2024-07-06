@@ -4,6 +4,7 @@ namespace App\Livewire\Testy;
 
 use App\Models\Testimony;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -41,6 +42,7 @@ class ManageTesty extends Component
             'testimony' => 'required',
             'image' => 'image|max:1024',
         ]);
+        $image = Storage::disk('goro')->put('testimony', $this->image);
         $testimony = new Testimony();
         $testimony->name = $this->name;
         $testimony->email = $this->email;
@@ -48,7 +50,7 @@ class ManageTesty extends Component
         $testimony->title = $this->title;
         $testimony->testimony = $this->testimony;
         $testimony->status = 'pending';
-        $testimony->image = url('storage/' . $this->image->store(path: 'testimony'));
+        $testimony->image = url('images/' . $image);
         $testimony->station_id = Auth::user()->station_id;
         $testimony->poster_id = Auth::user()->id;
         $testimony->user_id = Auth::user()->id;
