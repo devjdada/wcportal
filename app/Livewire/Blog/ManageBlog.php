@@ -4,6 +4,7 @@ namespace App\Livewire\Blog;
 
 use App\Models\Blog;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -34,10 +35,11 @@ class ManageBlog extends Component
             'content' => 'required',
             'image' => 'image|max:1024',
         ]);
+        $image = Storage::disk('goro')->put('blog', $this->image);
         $blog = new Blog();
         $blog->title = $this->title;
         $blog->content = $this->content;
-        $blog->image = url('storage/' . $this->image->store(path: 'blog'));
+        $blog->image = url('images/' . $image);
         $blog->dated = $this->dated;
         $blog->slug = Str::slug($this->title);
         $blog->station_id = Auth::user()->station_id;
