@@ -39,7 +39,7 @@ class ManageBlog extends Component
         $blog = new Blog();
         $blog->title = $this->title;
         $blog->content = $this->content;
-        $blog->image = url('images/' . $image);
+        $blog->image = url('static/' . $image);
         $blog->dated = $this->dated;
         $blog->slug = Str::slug($this->title);
         $blog->station_id = Auth::user()->station_id;

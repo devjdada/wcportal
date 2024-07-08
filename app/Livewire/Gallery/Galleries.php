@@ -46,7 +46,7 @@ class Galleries extends Component
         $gallery = Gallery::create([
             'title' => $this->title,
             'description' => $this->description,
-            'image' => url('storage/' . $image),
+            'image' => url('static/' . $image),
             'poster_id' => auth()->user()->id,
             'status' => 'active',
             'station_id' => auth()->user()->station_id,
@@ -71,7 +71,7 @@ class Galleries extends Component
             $image = Storage::disk('goro')->put('gallery', $photo);
             Img::create([
                 'galleries_id' => $this->galleryId,
-                'image' => url('images/' . $image),
+                'image' => url('static/' . $image),
             ]);
         }
 

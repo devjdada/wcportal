@@ -50,7 +50,7 @@ class ManageTesty extends Component
         $testimony->title = $this->title;
         $testimony->testimony = $this->testimony;
         $testimony->status = 'pending';
-        $testimony->image = url('images/' . $image);
+        $testimony->image = url('static/' . $image);
         $testimony->station_id = Auth::user()->station_id;
         $testimony->poster_id = Auth::user()->id;
         $testimony->user_id = Auth::user()->id;

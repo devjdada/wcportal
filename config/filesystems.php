@@ -32,8 +32,8 @@ return [
 
         'goro' => [
             'driver' => 'local',
-            'root'   => public_path() . '/images',
-            'url' => env('APP_URL') . '/images',
+            'root'   => public_path() . '/static',
+            'url' => env('APP_URL') . '/static',
             'visibility' => 'public',
             'throw' => false,
         ],
