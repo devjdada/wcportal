@@ -5,8 +5,8 @@
             class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
             <div class="flex items-center justify-between mb-4">
                 <div class="flex-shrink-0">
-                    <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">$45,385</span>
-                    <h3 class="text-base font-light text-gray-500 dark:text-gray-400">Sales this week</h3>
+                    <span class="text-xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">$83,385</span>
+                    <h3 class="text-base font-light text-gray-500 dark:text-gray-400">Sales this Today</h3>
                 </div>
                 <div
                     class="flex items-center justify-end flex-1 text-base font-medium text-green-500 dark:text-green-400">
@@ -549,7 +549,8 @@
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
                                     src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"alt="Michael Gough">Michael
-                                Gough</p>
+                                Gough
+                            </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                                     title="February 8th, 2022"> 01/03/2023 4:15 PM</time></p>
                         </div>
@@ -609,7 +610,8 @@
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
                                     src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                                    alt="Bonnie avatar">Bonnie Green</p>
+                                    alt="Bonnie avatar">Bonnie Green
+                            </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                                     title="February 8th, 2022"> 01/03/2023 4:15 PM</time></p>
                         </div>
@@ -748,7 +750,8 @@
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
                                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"alt="Jese avatar">Jese
-                                Leos</p>
+                                Leos
+                            </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                                     title="February 8th, 2022"> 01/03/2023 4:15 PM</time></p>
                         </div>
@@ -878,7 +881,8 @@
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
                                     src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"alt="Joseph avatar">Joseph
-                                McFallen</p>
+                                McFallen
+                            </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                                     title="February 8th, 2022"> 01/03/2023 4:15 PM</time></p>
                         </div>
@@ -926,7 +930,8 @@
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
                                     src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"alt="Jese avatar">Jese
-                                Leos</p>
+                                Leos
+                            </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
                                     title="February 8th, 2022"> 01/03/2023 4:15 PM</time></p>
                         </div>

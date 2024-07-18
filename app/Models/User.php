@@ -31,7 +31,16 @@ class User extends Authenticatable
         'phone',
         'email',
         'password',
-        'surname', 'station_id', 'firstname',  'marital', 'dob', 'status', 'gender',  'address'
+        'surname',
+        'station_id',
+        'firstname',
+        'marital',
+        'dob',
+        'status',
+        'gender',
+        'address',
+        'caller_squad',
+        'marriage_anniversary'
     ];
 
     /**

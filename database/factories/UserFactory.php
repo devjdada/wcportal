@@ -36,6 +36,16 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'profile_photo_path' => null,
             'current_team_id' => null,
+            'caller_squad' => $this->faker->boolean(),
+            'firstname' => $this->faker->firstName,
+            'surname' => $this->faker->lastName,
+            'dob' => $this->faker->date(),
+            'phone' => $this->faker->phoneNumber,
+            'marital' => $this->faker->randomElement(['single', 'married']),
+            'gender' => $this->faker->randomElement(['male', 'female']),
+            'status' => $this->faker->randomElement(['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder']),
+            'address' => $this->faker->address,
+            'station_id'  => $this->faker->numberBetween(1, 20),
         ];
     }
 
@@ -54,14 +64,14 @@ class UserFactory extends Factory
      */
     public function withPersonalTeam(callable $callback = null): static
     {
-        if (! Features::hasTeamFeatures()) {
+        if (!Features::hasTeamFeatures()) {
             return $this->state([]);
         }
 
         return $this->has(
             Team::factory()
                 ->state(fn (array $attributes, User $user) => [
-                    'name' => $user->name.'\'s Team',
+                    'name' => $user->name . '\'s Team',
                     'user_id' => $user->id,
                     'personal_team' => true,
                 ])

@@ -19,5 +19,12 @@ class Blog extends Model
         'user_id',
         'poster_id',
         'dated',
+        'edit_by',
+        'summary',
+        'views',
+        'category',
+        'tags',
+        'published_date',
+        'published',
     ];
 }

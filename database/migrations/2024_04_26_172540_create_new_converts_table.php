@@ -40,7 +40,7 @@ return new class extends Migration
     }
 
     /**
-     * 'export PATH="/Applications/MAMP/bin/php/php8.2.0/bin:$PATH"' >> ~/.zshrc 
+     * 'export PATH="/Applications/MAMP/bin/php/php8.2.0/bin:$PATH"' >> ~/.zshrc
      * Reverse the migrations.
      */
     public function down(): void

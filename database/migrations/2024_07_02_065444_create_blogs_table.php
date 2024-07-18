@@ -23,6 +23,22 @@ return new class extends Migration
             $table->bigInteger('poster_id')->unsigned();
             $table->foreign('poster_id')->references('id')->on('users');
             $table->date('dated')->nullable();
+
+
+
+            $table->bigInteger('edit_by')->unsigned()->nullable();
+            $table->foreign('edit_by')->references('id')->on('users');
+
+
+            $table->longText('summary');
+            $table->bigInteger('views');
+
+            $table->string('category')->nullable();
+            $table->string('tags')->nullable();
+            $table->date('published_date')->nullable();
+
+            $table->boolean('published')->default(false);
+
             $table->timestamps();
         });
     }

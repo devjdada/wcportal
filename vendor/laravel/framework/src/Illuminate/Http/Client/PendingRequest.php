@@ -764,6 +764,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array|string|null  $query
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function get(string $url, $query = null)
     {
@@ -778,6 +780,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array|string|null  $query
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function head(string $url, $query = null)
     {
@@ -792,6 +796,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array  $data
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function post(string $url, $data = [])
     {
@@ -806,6 +812,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array  $data
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function patch(string $url, $data = [])
     {
@@ -820,6 +828,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array  $data
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function put(string $url, $data = [])
     {
@@ -834,6 +844,8 @@ class PendingRequest
      * @param  string  $url
      * @param  array  $data
      * @return \Illuminate\Http\Client\Response
+     *
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function delete(string $url, $data = [])
     {
@@ -870,6 +882,7 @@ class PendingRequest
      * @return \Illuminate\Http\Client\Response
      *
      * @throws \Exception
+     * @throws \Illuminate\Http\Client\ConnectionException
      */
     public function send(string $method, string $url, array $options = [])
     {
@@ -911,11 +924,15 @@ class PendingRequest
                             $response->throw($this->throwCallback);
                         }
 
-                        if ($attempt < $this->tries && $shouldRetry) {
+                        $potentialTries = is_array($this->tries)
+                            ? count($this->tries) + 1
+                            : $this->tries;
+
+                        if ($attempt < $potentialTries && $shouldRetry) {
                             $response->throw();
                         }
 
-                        if ($this->tries > 1 && $this->retryThrow) {
+                        if ($potentialTries > 1 && $this->retryThrow) {
                             $response->throw();
                         }
                     }
@@ -1208,7 +1225,7 @@ class PendingRequest
      */
     protected function getReusableClient()
     {
-        return $this->client = $this->client ?: $this->createClient($this->buildHandlerStack());
+        return $this->client ??= $this->createClient($this->buildHandlerStack());
     }
 
     /**
