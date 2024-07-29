@@ -2,12 +2,28 @@
 
 namespace App\Livewire\Forms;
 
-use Livewire\Component;
+use App\Models\Province;
+use App\Models\User;
+use Livewire\Attributes\Validate;
+use Livewire\Form;
 
-class UserForm extends Component
+class UserForm extends Form
 {
-    public function render()
+    public ?User  $user;
+    public $marital = '';
+    #[Validate('required')]
+    public $status = '';
+    public $gender = '';
+    public $address = '';
+    public $dob = '';
+    public $callerSquad = '';
+
+
+
+
+    public function update()
     {
-        return view('livewire.forms.user-form');
+        $this->validate();
+        $this->user->update($this->all());
     }
 }

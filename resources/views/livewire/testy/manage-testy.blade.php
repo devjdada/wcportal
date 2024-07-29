@@ -129,13 +129,9 @@
 
 
 
-    <x-dialog wire:model="showCreateModal" :maxWidth="'md'">
+    <x-dialog wire:model="showCreateModal" :title="'New Testimony'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
-            <h3 class="text-xl font-semibold dark:text-white">
-                New Testimony
-            </h3>
-        </div>
+
         <!-- Modal body -->
 
         <div class="space-y-6">
@@ -190,13 +186,9 @@
         <!-- Modal footer -->
 
     </x-dialog>
-    <x-dialog wire:model="addMoreImageModal" :maxWidth="'md'">
+    <x-dialog wire:model="addMoreImageModal" :title="'Adding More Images to Gallery'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
-            <h3 class="text-xl font-semibold dark:text-white">
-                Adding More Images to Gallery
-            </h3>
-        </div>
+
         <!-- Modal body -->
 
         <div class="space-y-6">

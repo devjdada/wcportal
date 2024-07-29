@@ -1,3 +1,4 @@
 <div class="p-6">
-    <x-add wire:click='save'>Save</x-add>
+    <x-button wire:click='save'>Generate Homecells Save</x-button>
+    <x-button wire:click='genOw'>Generate OW</x-button>
 </div>

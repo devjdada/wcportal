@@ -18,7 +18,9 @@ class ManageBlog extends Component
     public $content;
     public $image;
     public $dated;
+    public $summary;
     public $slug;
+    public $views;
     public $newBlogModal = false;
     public $isModalDelete = false;
     use WithFileUploads;
@@ -38,9 +40,11 @@ class ManageBlog extends Component
         $image = Storage::disk('goro')->put('blog', $this->image);
         $blog = new Blog();
         $blog->title = $this->title;
+        $blog->views = 0;
         $blog->content = $this->content;
         $blog->image = url('static/' . $image);
         $blog->dated = $this->dated;
+        $blog->summary = $this->summary;
         $blog->slug = Str::slug($this->title);
         $blog->station_id = Auth::user()->station_id;
         $blog->user_id = Auth::user()->id;
@@ -50,6 +54,7 @@ class ManageBlog extends Component
         $this->reset([
             'title',
             'content',
+            'summary',
             'image',
             'dated',
             'slug',

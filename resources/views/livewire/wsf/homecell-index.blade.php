@@ -48,7 +48,7 @@
                 <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Lists of Homecells</h1>
             </div>
             <div class="sm:flex">
-                <div class="flex items-start w-30 space-x-2 sm:space-x-3">
+                <div class="flex items-start space-x-2 w-30 sm:space-x-3">
                     <x-label>Per Page</x-label>
                     <select wire:model.live="numPerPage"
                         class="dark:bg-gray-800 dark:text-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
@@ -141,8 +141,8 @@
             <div class="inline-block min-w-full align-middle">
                 <div class="overflow-hidden shadow">
                     <div class="text-sm font-medium text-gray-900 dark:text-gray-400">
-                        @foreach ( $hc_selectetd as $hcs)
-                        {{ $hcs}}
+                        @foreach ($hc_selectetd as $hcs)
+                            {{ $hcs }}
                         @endforeach
                     </div>
                     <table class="min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
@@ -181,79 +181,83 @@
                         <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
 
                             @foreach ($homecells as $hc)
-                            <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <td class="w-4 p-4">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-{{ $hc->id }}" wire:model.live='hc_selectetd[]'
-                                            aria-describedby="checkbox-1" type="checkbox"
-                                            class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
-                                        <label for="checkbox-{{ $hc->id }}" class="sr-only">checkbox</label>
-                                    </div>
-                                </td>
-                                <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
+                                <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input id="checkbox-{{ $hc->id }}" wire:model.live='hc_selectetd[]'
+                                                aria-describedby="checkbox-1" type="checkbox"
+                                                class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600">
+                                            <label for="checkbox-{{ $hc->id }}" class="sr-only">checkbox</label>
+                                        </div>
+                                    </td>
+                                    <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
 
-                                    <div class="text-sm font-normal text-gray-500 dark:text-white">
-                                        <div class="text-base font-semibold text-gray-900 dark:text-white">
-                                            {{ $hc->title }} </div>
-                                        <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
-                                            {{ $hc->about }}</div>
-                                        <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
-                                            {{ $hc->phone }}</div>
-                                    </div>
-                                </td>
-                                <td
-                                    class="max-w-sm p-4 text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
-                                    {{ $hc->address }}</td>
+                                        <div class="text-sm font-normal text-gray-500 dark:text-white">
+                                            <div class="text-base font-semibold text-gray-900 dark:text-white">
+                                                {{ $hc->title }} </div>
+                                            <div
+                                                class="overflow-hidden text-sm font-normal text-gray-500 dark:text-white">
+                                                {{ $hc->about }}</div>
+                                            <div
+                                                class="overflow-hidden text-sm font-normal text-gray-500 dark:text-white">
+                                                {{ $hc->phone }}</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="max-w-sm p-4 text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
+                                        {{ $hc->address }}</td>
 
-                                <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
+                                    <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
 
-                                    <div class="text-sm font-normal text-gray-500 dark:text-white">
-                                        <div class="text-base font-semibold text-gray-900 dark:text-white">
-                                            {{ $hc->province->title }} </div>
-                                        <div class="text-sm font-normal overflow-hidden  text-gray-500 dark:text-white">
-                                            {{ $hc->district->title }}</div>
-                                    </div>
-                                </td>
-                                <td class="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
-                                    <div class="grid items-center">
-                                        @if ($hc->leaders)
-                                        @foreach ($hc->leaders as $leader)
-                                        @if($leader->position == 'leader')
-                                        <div class="cursor-pointer px-3 rounded-full bg-green-600 mr-2">Leader</div>
-                                        @endif
-                                        @if($leader->position == 'Ass leader')
-                                        <div class="cursor-pointer px-3 rounded-full bg-red-700 mr-2">Ass</div>
-                                        @endif
-                                        @if($leader->position == 'secratory')
-                                        <div class="cursor-pointer px-3 rounded-full bg-blue-700 mr-2">Sec</div>
-                                        @endif
+                                        <div class="text-sm font-normal text-gray-500 dark:text-white">
+                                            <div class="text-base font-semibold text-gray-900 dark:text-white">
+                                                {{ $hc->province->title }} </div>
+                                            <div
+                                                class="overflow-hidden text-sm font-normal text-gray-500 dark:text-white">
+                                                {{ $hc->district->title }}</div>
+                                        </div>
+                                    </td>
+                                    <td
+                                        class="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                        <div class="grid items-center">
+                                            @if ($hc->leaders)
+                                                @foreach ($hc->leaders as $leader)
+                                                    @if ($leader->position == 'leader')
+                                                        <div
+                                                            class="px-3 mr-2 bg-green-600 rounded-full cursor-pointer">
+                                                            Leader</div>
+                                                    @endif
+                                                    @if ($leader->position == 'Ass leader')
+                                                        <div class="px-3 mr-2 bg-red-700 rounded-full cursor-pointer">
+                                                            Ass</div>
+                                                    @endif
+                                                    @if ($leader->position == 'secratory')
+                                                        <div class="px-3 mr-2 bg-blue-700 rounded-full cursor-pointer">
+                                                            Sec</div>
+                                                    @endif
+                                                @endforeach
+                                            @endif
 
-
-
-                                        @endforeach
-
-                                        @endif
-
-                                    </div>
-                                </td>
-                                <td class="p-4 space-x-2 whitespace-nowrap">
-                                    <x-edit type="button" wire:click="edit({{ $hc }})">
-                                    </x-edit>
-                                    <x-del type="button" wire:click="delete({{ $hc }})">
-                                    </x-del>
-                                    <x-edit type="button" wire:click="report({{ $hc }})">
-                                    </x-edit>
-                                    <x-add type="button" wire:click="assignLeaderDialog({{ $hc }})">
-                                    </x-add>
-                                </td>
-                            </tr>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 space-x-2 whitespace-nowrap">
+                                        <x-edit type="button" wire:click="edit({{ $hc }})">
+                                        </x-edit>
+                                        <x-del type="button" wire:click="delete({{ $hc }})">
+                                        </x-del>
+                                        <x-edit type="button" wire:click="report({{ $hc }})">
+                                        </x-edit>
+                                        <x-add type="button" wire:click="assignLeaderDialog({{ $hc }})">
+                                        </x-add>
+                                    </td>
+                                </tr>
                             @endforeach
 
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="py-4 px-3">
+            <div class="px-3 py-4">
 
                 <div class="">
                     {{ $homecells->links() }}
@@ -263,15 +267,15 @@
 
 
     </div>
-    <x-dialog wire:model="ncDialog" :maxWidth="'sm'">
+    <x-dialog wire:model="ncDialog" :title="' New Contact'" :maxWidth="'sm'">
 
         <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
             <h3 class="text-xl font-semibold dark:text-white">
 
                 @if ($editMode)
-                Edit Contact
+                    Edit Contact
                 @else
-                Add New Contact
+                    Add New Contact
                 @endif
             </h3>
             {{-- <button type="button"
@@ -286,9 +290,9 @@
         </div>
         <div class="space-y-6">
             @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+                <div class="mb-4 text-sm font-medium text-green-600">
+                    {{ $value }}
+                </div>
             @endsession
             <x-validation-errors class="mb-4" />
             <form wire:submit="save">
@@ -324,18 +328,18 @@
                 <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
                     <x-button type="submit">
                         @if ($editMode)
-                        Edit Contact
+                            Edit Contact
                         @else
-                        Add New Contact
+                            Add New Contact
                         @endif
                     </x-button>
                 </div>
             </form>
         </div>
     </x-dialog>
-    <x-dialog wire:model="asDialog" :maxWidth="'md'">
+    <x-dialog wire:model="asDialog" :title="'Assign Leadership to Homecell'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between  border-b rounded-t dark:border-gray-700">
+        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
             <h3 class="text-xl font-semibold dark:text-white">
                 Assign Leadership to Homecell
             </h3>
@@ -344,9 +348,9 @@
 
         <div class="space-y-6">
             @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+                <div class="mb-4 text-sm font-medium text-green-600">
+                    {{ $value }}
+                </div>
             @endsession
             <x-validation-errors class="mb-4" />
             <form wire:submit="assignLeader">
@@ -358,7 +362,7 @@
                         <x-select wire:model.live='wlform.user_id'>
                             <option value="">select</option>
                             @foreach ($users as $user)
-                            <option value="{{ $user->id }}">{{ $user->name }} {{ $user->phone }}</option>
+                                <option value="{{ $user->id }}">{{ $user->name }} {{ $user->phone }}</option>
                             @endforeach
                         </x-select>
                     </div>
@@ -392,9 +396,9 @@
         <!-- Modal footer -->
 
     </x-dialog>
-    <x-dialog wire:model="reportDialog" :maxWidth="'md'">
+    <x-dialog wire:model="reportDialog" :title="'Soul Report'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between  border-b rounded-t dark:border-gray-700">
+        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
             <h3 class="text-xl font-semibold dark:text-white">
                 Soul Report
             </h3>
@@ -403,9 +407,9 @@
 
         <div class="space-y-6">
             @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ $value }}
-            </div>
+                <div class="mb-4 text-sm font-medium text-green-600">
+                    {{ $value }}
+                </div>
             @endsession
             <x-validation-errors class="mb-4" />
             <form wire:submit="saveReport">
@@ -424,37 +428,39 @@
                     </div>
                     <div class="col-span-3">
                         <x-checkbox id="born" wire:model='srForm.born_again' />
-                        <label for="born" class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">Born
+                        <label for="born" class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">Born
                             Again</label>
                     </div>
 
                     <div class="col-span-3">
                         <x-checkbox id="found" wire:model='srForm.foundation_class' />
-                        <label for="found" class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">Attend
+                        <label for="found"
+                            class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">Attend
                             Foundation
                             class</label>
                     </div>
                     <div class="col-span-3">
                         <x-checkbox id="worship" wire:model='srForm.last_service' />
                         <label for="worship"
-                            class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">Worship With
+                            class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">Worship With
                             Us</label>
                     </div>
                     <div class="col-span-3">
                         <x-checkbox id="unit" wire:model='srForm.unit' />
-                        <label for="unit" class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">
+                        <label for="unit" class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">
                             Member of Unit
                         </label>
                     </div>
                     <div class="col-span-3">
                         <x-checkbox id="bapt" wire:model='srForm.baptised' />
-                        <label for="bapt" class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">
+                        <label for="bapt" class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">
                             Baptised
                         </label>
                     </div>
                     <div class="col-span-3">
                         <x-checkbox id="home" wire:model='srForm.homecell' />
-                        <label for="home" class="mb-2  mr-4 text-sm font-medium text-gray-900 dark:text-white">Member of
+                        <label for="home"
+                            class="mb-2 mr-4 text-sm font-medium text-gray-900 dark:text-white">Member of
                             Homecell</label>
                     </div>
 

@@ -9,7 +9,7 @@
                     class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
                     <ul class="pb-2 space-y-2">
                         <li>
-                            <form action="#" method="GET" class="lg:hidden">
+                            {{-- <form action="#" method="GET" class="lg:hidden">
                                 <label for="mobile-search" class="sr-only">Search</label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -24,93 +24,121 @@
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-200 dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                         placeholder="Search">
                                 </div>
-                            </form>
+                            </form> --}}
                         </li>
+                        @can('isUser')
+                            <x-side-link href="{{ route('dashboard') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                                Dashboard
+                            </x-side-link>
+                            <x-side-link href="{{ route('my_contact') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                                My Contact
+                            </x-side-link>
+                            <x-side-link href="{{ route('assign-contact') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Assigned Contact
+                            </x-side-link>
+                            <x-side-link href="{{ route('soul-stats') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                                Soul Stats
+                            </x-side-link>
+                        @endcan
+                        @can('isEditor')
+                            <x-side-link href="{{ route('new-convert') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                New Convert
+                            </x-side-link>
+                            <x-side-link href="{{ route('first-timer') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                First Timer
+                            </x-side-link>
+                            <x-side-link href="{{ route('homecells') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Homecells
+                            </x-side-link>
+                            <x-side-link href="{{ route('homecell-report') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Homecell Report
+                            </x-side-link>
+                            <x-side-link href="{{ route('yet-to-submit') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Yet to Submit
+                            </x-side-link>
+                            <li>
+                                <a href="{{ route('hr-sta') }}"
+                                    class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 @if (request()->routeIs('hr-sta')) dark:bg-gray-700 @endif">
+                                    <img src="{{ asset('static/icons/dashboard.svg') }}" alt=""
+                                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white">
+                                    <span class="flex-1 ml-3 text-left whitespace-nowrap">
+                                        Report Stats
+                                    </span>
 
-                        <x-side-link href="{{ route('dashboard') }}" image="{{ asset('static/icons/dashboard.svg') }}">
-                            Dashboard
-                        </x-side-link>
-                        <x-side-link href="{{ route('my_contact') }}" image="{{ asset('static/icons/dashboard.svg') }}">
-                            My Contact
-                        </x-side-link>
-                        <x-side-link href="{{ route('soul-stats') }}" image="{{ asset('static/icons/dashboard.svg') }}">
-                            Soul Stats
-                        </x-side-link>
-                        <x-side-link href="{{ route('assigning-contact') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Assigning Contact
-                        </x-side-link>
-                        <x-side-link href="{{ route('assign-contact') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Assigned Contact
-                        </x-side-link>
-                        <x-side-link href="{{ route('new-convert') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            New Convert
-                        </x-side-link>
-                        <x-side-link href="{{ route('first-timer') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            First Timer
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-users') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Manage Users
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-wsf') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Manage WSF
-                        </x-side-link>
-                        <x-side-link href="{{ route('homecells') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Homecells
-                        </x-side-link>
-                        <x-side-link href="{{ route('homecell-report') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Homecell Report
-                        </x-side-link>
-                        <x-side-link href="{{ route('yet-to-submit') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Yet to Submit
-                        </x-side-link>
-                        <li>
-                            <a href="{{ route('hr-sta') }}"
-                                class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 @if (request()->routeIs('hr-sta')) dark:bg-gray-700 @endif">
-                                <img src="{{ asset('static/icons/dashboard.svg') }}" alt=""
-                                    class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white">
-                                <span class="flex-1 ml-3 text-left whitespace-nowrap">
-                                    Report Stats
-                                </span>
+                                </a>
 
-                            </a>
+                            </li>
+                            <x-side-link href="{{ route('hr-sta') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                                Report Stats
+                            </x-side-link>
 
-                        </li>
-                        <x-side-link href="{{ route('hr-sta') }}" image="{{ asset('static/icons/dashboard.svg') }}">
-                            Report Stats
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-sms') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            SMS
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-unit') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Manage Unit
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-blog') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Blogs
-                        </x-side-link>
-                        <x-side-link href="{{ route('manage-testy') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Testimony
-                        </x-side-link>
-                        <x-side-link href="{{ route('galleries') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Gallaries
-                        </x-side-link>
-                        <x-side-link href="{{ route('upload-image') }}"
-                            image="{{ asset('static/icons/dashboard.svg') }}">
-                            Upload Image
-                        </x-side-link>
+                            <x-side-link href="{{ route('manage-unit') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Manage Unit
+                            </x-side-link>
+                            <x-side-link href="{{ route('ordained-worker') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Ordained Worker
+                            </x-side-link>
+                        @endcan
+                        @can('isAdmin')
+                            <x-side-link href="{{ route('ordained-worker') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Ordained Worker
+                            </x-side-link>
+                            <x-side-link href="{{ route('all-contacts') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                All Contact
+                            </x-side-link>
+
+                            <x-side-link href="{{ route('assigning-contact') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Assigning Contact
+                            </x-side-link>
+                            <x-side-link href="{{ route('manage-users') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Manage Users
+                            </x-side-link>
+                            <x-side-link href="{{ route('manage-wsf') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Manage WSF
+                            </x-side-link>
+                            <x-side-link href="{{ route('manage-blog') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Blogs
+                            </x-side-link>
+                            <x-side-link href="{{ route('manage-testy') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Testimony
+                            </x-side-link>
+                            <x-side-link href="{{ route('galleries') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Gallaries
+                            </x-side-link>
+                            <x-side-link href="{{ route('upload-image') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Upload Image
+                            </x-side-link>
+                            <x-side-link href="{{ route('manage-sms') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                SMS
+                            </x-side-link>
+                        @endcan
+
+
+
+
+
+
+
+
+
 
 
 
@@ -175,7 +203,7 @@
                     </svg>
                 </button>
                 <!-- Dropdown -->
-                <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700"
+                {{-- <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700"
                     id="language-dropdown">
                     <ul class="py-1" role="none">
                         <li>
@@ -264,7 +292,7 @@
                             </a>
                         </li>
                     </ul </div>
-                </div>
+                </div> --}}
             </div>
     </aside>
 

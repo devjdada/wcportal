@@ -22,7 +22,8 @@ class UserCollection extends JsonResource
         $request['assigned'] = $this->assigned;
         $request['homecell'] = $this->homecell;
         $request['homecellLeader'] = $this->homecellLeaders;
-        // $request['staff'] = $this->staff;
+        $request['units'] = $this->units;
+        $request['wsf_member'] = $this->wsf_member;
         $request['station'] = $this->station;
         return parent::toArray($request);
     }

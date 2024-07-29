@@ -127,14 +127,9 @@
 
 
 
-    <x-dialog wire:model="newBlogModal" :maxWidth="'md'">
+    <x-dialog wire:model="newBlogModal" :title="'New Blog'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
-            <h3 class="text-xl font-semibold dark:text-white">
-                New Blog
-            </h3>
-        </div>
-        <!-- Modal body -->
+
 
         <div class="space-y-6">
             @session('status')
@@ -145,6 +140,12 @@
             <x-validation-errors class="mb-4" />
             <form wire:submit="save">
                 <div class="grid grid-cols-6 gap-6">
+                    <div class="col-span-6">
+                        <label for="summary" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Summary</label>
+                        <x-textarea id="summary" wire:model="summary" rows="3">
+                        </x-textarea>
+                    </div>
                     <div class="col-span-6">
                         <label for="content" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Content</label>
@@ -178,14 +179,9 @@
         <!-- Modal footer -->
 
     </x-dialog>
-    <x-dialog wire:model="addMoreImageModal" :maxWidth="'md'">
+    <x-dialog wire:model="addMoreImageModal" :title="'Adding More Images to Gallery'" :maxWidth="'md'">
 
-        <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
-            <h3 class="text-xl font-semibold dark:text-white">
-                Adding More Images to Gallery
-            </h3>
-        </div>
-        <!-- Modal body -->
+
 
         <div class="space-y-6">
             @session('status')

@@ -548,7 +548,8 @@
                             <p
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"alt="Michael Gough">Michael
+                                    src="https://flowbite.com/docs/images/people/profile-picture-2.jpg"
+                                    alt="Michael Gough">Michael
                                 Gough
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
@@ -749,7 +750,8 @@
                             <p
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"alt="Jese avatar">Jese
+                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    alt="Jese avatar">Jese
                                 Leos
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
@@ -880,7 +882,8 @@
                             <p
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"alt="Joseph avatar">Joseph
+                                    src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
+                                    alt="Joseph avatar">Joseph
                                 McFallen
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
@@ -929,7 +932,8 @@
                             <p
                                 class="inline-flex items-center mr-3 text-sm font-semibold text-gray-900 dark:text-white">
                                 <img class="w-6 h-6 mr-2 rounded-full"
-                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"alt="Jese avatar">Jese
+                                    src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                    alt="Jese avatar">Jese
                                 Leos
                             </p>
                             <p class="text-sm text-gray-600 dark:text-gray-400"><time pubdate datetime="2022-02-08"
@@ -1169,7 +1173,8 @@
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7"></path>
+                                    d="M9 5l7 7-7 7">
+                                </path>
                             </svg>
                         </a>
                     </div>
@@ -1591,7 +1596,8 @@
                         <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 9l-7 7-7-7"></path>
+                                d="M19 9l-7 7-7-7">
+                            </path>
                         </svg>
                     </button>
                     <!-- Dropdown menu -->
@@ -1778,7 +1784,7 @@
                                     </td>
                                     <td
                                         class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                        <svg class="w-6 h-6" aria-hidden="true"xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 256 83">
                                             <defs>
                                                 <linearGradient id="logosVisa0" x1="45.974%" x2="54.877%"
@@ -1817,7 +1823,7 @@
                                     </td>
                                     <td
                                         class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                        <svg class="w-6 h-6" aria-hidden="true"xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 256 83">
                                             <defs>
                                                 <linearGradient id="logosVisa0" x1="45.974%" x2="54.877%"
@@ -1856,7 +1862,7 @@
                                     </td>
                                     <td
                                         class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                        <svg class="w-6 h-6" aria-hidden="true"xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 256 83">
                                             <defs>
                                                 <linearGradient id="logosVisa0" x1="45.974%" x2="54.877%"
@@ -2037,7 +2043,7 @@
                                     </td>
                                     <td
                                         class="inline-flex items-center p-4 space-x-2 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
-                                        <svg class="w-6 h-6" aria-hidden="true"xmlns="http://www.w3.org/2000/svg"
+                                        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 256 83">
                                             <defs>
                                                 <linearGradient id="logosVisa0" x1="45.974%" x2="54.877%"
@@ -2222,4 +2228,915 @@
             </div>
         </div>
     </div>
+
+    <x-dialog :close="false" wire:model="registerOwDialog" :maxWidth="'md'" :title="'Register As Ordained Worker'">
+
+
+        <!-- Modal body -->
+
+        <div class="space-y-6">
+            @session('status')
+                <div class="mb-4 text-sm font-medium text-green-600">
+
+                </div>
+            @endsession
+            <x-validation-errors class="mb-4" />
+            <form wire:submit="joinOw">
+                <div class="grid grid-cols-6 gap-6">
+
+                    <div class="col-span-3">
+                        <label for="ordain_date"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            When Where You Ordained
+                        </label>
+                        <x-input id="ordain_date" type='date' wire:model="ordain_date" />
+                    </div>
+                    <div class="col-span-3">
+                        <label for="ordain_where"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Where were You Ordained
+                        </label>
+                        <x-input id="ordain_where" wire:model="ordain_where" />
+                    </div>
+
+                    <div class="col-span-3">
+                        <label for="wing" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Location of Last Posting
+                        </label>
+                        <x-select id="wing" wire:model="wing">
+                            <option>Select Wing</option>
+                            @foreach ($posings as $post)
+                                <option value="{{ $post->wing }}">{{ $post->wing }} {{ $post->tag }}</option>
+                            @endforeach
+                        </x-select>
+                    </div>
+                </div>
+                <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+                    <x-button type="submit">
+                        Register
+                    </x-button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal footer -->
+
+    </x-dialog>
+
+    <x-dialog :close="false" wire:model="updateDialog" :maxWidth="'md'" :title="'Update Profile Data'">
+
+
+        <!-- Modal body -->
+
+        <div class="space-y-6">
+            @session('status')
+                <div class="mb-4 text-sm font-medium text-green-600">
+
+                </div>
+            @endsession
+            <x-validation-errors class="mb-4" />
+            <form wire:submit="update">
+                <div class="grid grid-cols-6 gap-6">
+
+                    <div class="col-span-3">
+                        <label for="dob" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Date of Birth
+                        </label>
+                        <x-input id="dob" type='date' wire:model="dob" />
+                    </div>
+                    <div class="col-span-3">
+                        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Gender
+                        </label>
+                        <x-select id="gender" wire:model.live="gender">
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                        </x-select>
+
+                    </div>
+                    <div class="col-span-6">
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Address
+                        </label>
+                        <x-textarea id="address" wire:model="address" rows="4">
+                        </x-textarea>
+                    </div>
+
+                    <div class="col-span-3">
+                        <label for="marital" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Marital Status
+                        </label>
+                        <x-select id="marital" wire:model.live="marital">
+
+                            <option>select gender</option>
+                            <option value="single">single</option>
+                            <option value="married">married</option>
+                            <option value="divorced">divorced</option>
+                            <option value="separated">separated</option>
+                            <option value="widowed">widowed</option>
+                        </x-select>
+                    </div>
+
+                    <div class="col-span-3">
+                        <label for="status" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Status
+                        </label>
+                        <x-select id="status" wire:model.live="status">
+
+                            <option>select status</option>
+                            <option value="brother">brother</option>
+                            <option value="pastor">pastor</option>
+                            <option value="elder">elder</option>
+                            <option value="deacon">deacon</option>
+
+                            <option value="sister">sister</option>
+                            <option value="elder">elder</option>
+                            <option value="deaconess">deaconess</option>
+
+
+
+
+                        </x-select>
+                    </div>
+
+                    @if ($marital == 'married')
+                        <div class="col-span-3">
+                            <label for="marriage_anniversary"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Marriage Annivesary
+                            </label>
+                            <x-input id="marriage_anniversary" type="date" wire:model="marriage_anniversary" />
+                        </div>
+                    @endif
+
+
+                    <div class="col-span-3">
+                        <x-checkbox id="caller_squad" wire:model='caller_squad' name="caller_squad" />
+                        <label for="caller_squad" class="mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Join Caller Squard
+                        </label>
+                    </div>
+
+                    {{-- @if ($status == 'deacon' || $status == 'deaconess')
+                    <div class="col-span-3">
+                        <x-checkbox id="marriage_anniversary" wire:model='marriage_anniversary'
+                            name="marriage_anniversary" />
+                        <label for="marriage_anniversary"
+                            class="mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Join Ordained Worker
+                        </label>
+                    </div>
+                    @endif --}}
+
+
+
+                </div>
+                <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+                    <x-button type="submit">
+                        Update Data
+                    </x-button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal footer -->
+
+    </x-dialog>
 </div>
+
+@assets
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+@endassets
+
+
+@script
+    <script>
+        const getMainChartOptions = () => {
+            let mainChartColors = {};
+
+            if (document.documentElement.classList.contains("dark")) {
+                mainChartColors = {
+                    borderColor: "#374151",
+                    labelColor: "#9CA3AF",
+                    opacityFrom: 0,
+                    opacityTo: 0.15,
+                };
+            } else {
+                mainChartColors = {
+                    borderColor: "#F3F4F6",
+                    labelColor: "#6B7280",
+                    opacityFrom: 0.45,
+                    opacityTo: 0,
+                };
+            }
+
+            return {
+                chart: {
+                    height: 420,
+                    type: "area",
+                    fontFamily: "Inter, sans-serif",
+                    foreColor: mainChartColors.labelColor,
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        enabled: true,
+                        opacityFrom: mainChartColors.opacityFrom,
+                        opacityTo: mainChartColors.opacityTo,
+                    },
+                },
+                dataLabels: {
+                    enabled: true,
+                },
+                tooltip: {
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+                grid: {
+                    show: true,
+                    borderColor: mainChartColors.borderColor,
+                    strokeDashArray: 1,
+                    padding: {
+                        left: 35,
+                        bottom: 15,
+                    },
+                },
+                series: [{
+                        name: "Revenue",
+                        data: [6356, 6218, 6156, 6526, 6356, 6256, 6056],
+                        color: "#1A56DB",
+                    },
+                    {
+                        name: "Revenue (previous period)",
+                        data: [6556, 6725, 6424, 6356, 6586, 6756, 6616],
+                        color: "#FDBA8C",
+                    },
+                ],
+                markers: {
+                    size: 5,
+                    strokeColors: "#ffffff",
+                    hover: {
+                        size: undefined,
+                        sizeOffset: 3,
+                    },
+                },
+                xaxis: {
+                    categories: [
+                        "01 Feb",
+                        "02 Feb",
+                        "03 Feb",
+                        "04 Feb",
+                        "05 Feb",
+                        "06 Feb",
+                        "07 Feb",
+                    ],
+                    labels: {
+                        style: {
+                            colors: [mainChartColors.labelColor],
+                            fontSize: "14px",
+                            fontWeight: 500,
+                        },
+                    },
+                    axisBorder: {
+                        color: mainChartColors.borderColor,
+                    },
+                    axisTicks: {
+                        color: mainChartColors.borderColor,
+                    },
+                    crosshairs: {
+                        show: true,
+                        position: "back",
+                        stroke: {
+                            color: mainChartColors.borderColor,
+                            width: 1,
+                            dashArray: 10,
+                        },
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        style: {
+                            colors: [mainChartColors.labelColor],
+                            fontSize: "14px",
+                            fontWeight: 500,
+                        },
+                        formatter: function(value) {
+                            return "$" + value;
+                        },
+                    },
+                },
+                legend: {
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    fontFamily: "Inter, sans-serif",
+                    labels: {
+                        colors: [mainChartColors.labelColor],
+                    },
+                    itemMargin: {
+                        horizontal: 10,
+                    },
+                },
+                responsive: [{
+                    breakpoint: 1024,
+                    options: {
+                        xaxis: {
+                            labels: {
+                                show: false,
+                            },
+                        },
+                    },
+                }, ],
+            };
+        };
+
+        if (document.getElementById("main-chart")) {
+            const chart = new ApexCharts(
+                document.getElementById("main-chart"),
+                getMainChartOptions()
+            );
+            chart.render();
+
+            // init again when toggling dark mode
+            document.addEventListener("dark-mode", function() {
+                chart.updateOptions(getMainChartOptions());
+            });
+        }
+
+        if (document.getElementById("new-products-chart")) {
+            const options = {
+                colors: ["#1A56DB", "#FDBA8C"],
+                series: [{
+                    name: "Quantity",
+                    color: "#1A56DB",
+                    data: [{
+                            x: "01 Feb",
+                            y: 170
+                        },
+                        {
+                            x: "02 Feb",
+                            y: 180
+                        },
+                        {
+                            x: "03 Feb",
+                            y: 164
+                        },
+                        {
+                            x: "04 Feb",
+                            y: 145
+                        },
+                        {
+                            x: "05 Feb",
+                            y: 194
+                        },
+                        {
+                            x: "06 Feb",
+                            y: 170
+                        },
+                        {
+                            x: "07 Feb",
+                            y: 155
+                        },
+                    ],
+                }, ],
+                chart: {
+                    type: "bar",
+                    height: "140px",
+                    fontFamily: "Inter, sans-serif",
+                    foreColor: "#4B5563",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                plotOptions: {
+                    bar: {
+                        columnWidth: "90%",
+                        borderRadius: 3,
+                    },
+                },
+                tooltip: {
+                    shared: false,
+                    intersect: false,
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+                states: {
+                    hover: {
+                        filter: {
+                            type: "darken",
+                            value: 1,
+                        },
+                    },
+                },
+                stroke: {
+                    show: true,
+                    width: 5,
+                    colors: ["transparent"],
+                },
+                grid: {
+                    show: false,
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                legend: {
+                    show: false,
+                },
+                xaxis: {
+                    floating: false,
+                    labels: {
+                        show: false,
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false,
+                    },
+                },
+                yaxis: {
+                    show: false,
+                },
+                fill: {
+                    opacity: 1,
+                },
+            };
+
+            const chart = new ApexCharts(
+                document.getElementById("new-products-chart"),
+                options
+            );
+            chart.render();
+        }
+
+        if (document.getElementById("sales-by-category")) {
+            const options = {
+                colors: ["#1A56DB", "#FDBA8C"],
+                series: [{
+                        name: "Desktop PC",
+                        color: "#1A56DB",
+                        data: [{
+                                x: "01 Feb",
+                                y: 170
+                            },
+                            {
+                                x: "02 Feb",
+                                y: 180
+                            },
+                            {
+                                x: "03 Feb",
+                                y: 164
+                            },
+                            {
+                                x: "04 Feb",
+                                y: 145
+                            },
+                            {
+                                x: "05 Feb",
+                                y: 194
+                            },
+                            {
+                                x: "06 Feb",
+                                y: 170
+                            },
+                            {
+                                x: "07 Feb",
+                                y: 155
+                            },
+                        ],
+                    },
+                    {
+                        name: "Phones",
+                        color: "#FDBA8C",
+                        data: [{
+                                x: "01 Feb",
+                                y: 120
+                            },
+                            {
+                                x: "02 Feb",
+                                y: 294
+                            },
+                            {
+                                x: "03 Feb",
+                                y: 167
+                            },
+                            {
+                                x: "04 Feb",
+                                y: 179
+                            },
+                            {
+                                x: "05 Feb",
+                                y: 245
+                            },
+                            {
+                                x: "06 Feb",
+                                y: 182
+                            },
+                            {
+                                x: "07 Feb",
+                                y: 143
+                            },
+                        ],
+                    },
+                    {
+                        name: "Gaming/Console",
+                        color: "#17B0BD",
+                        data: [{
+                                x: "01 Feb",
+                                y: 220
+                            },
+                            {
+                                x: "02 Feb",
+                                y: 194
+                            },
+                            {
+                                x: "03 Feb",
+                                y: 217
+                            },
+                            {
+                                x: "04 Feb",
+                                y: 279
+                            },
+                            {
+                                x: "05 Feb",
+                                y: 215
+                            },
+                            {
+                                x: "06 Feb",
+                                y: 263
+                            },
+                            {
+                                x: "07 Feb",
+                                y: 183
+                            },
+                        ],
+                    },
+                ],
+                chart: {
+                    type: "bar",
+                    height: "420px",
+                    fontFamily: "Inter, sans-serif",
+                    foreColor: "#4B5563",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                plotOptions: {
+                    bar: {
+                        columnWidth: "90%",
+                        borderRadius: 3,
+                    },
+                },
+                tooltip: {
+                    shared: true,
+                    intersect: false,
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+                states: {
+                    hover: {
+                        filter: {
+                            type: "darken",
+                            value: 1,
+                        },
+                    },
+                },
+                stroke: {
+                    show: true,
+                    width: 5,
+                    colors: ["transparent"],
+                },
+                grid: {
+                    show: false,
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                legend: {
+                    show: false,
+                },
+                xaxis: {
+                    floating: false,
+                    labels: {
+                        show: false,
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false,
+                    },
+                },
+                yaxis: {
+                    show: false,
+                },
+                fill: {
+                    opacity: 1,
+                },
+            };
+
+            const chart = new ApexCharts(
+                document.getElementById("sales-by-category"),
+                options
+            );
+            chart.render();
+        }
+
+        const getVisitorsChartOptions = () => {
+            let visitorsChartColors = {};
+
+            if (document.documentElement.classList.contains("dark")) {
+                visitorsChartColors = {
+                    fillGradientShade: "dark",
+                    fillGradientShadeIntensity: 0.45,
+                };
+            } else {
+                visitorsChartColors = {
+                    fillGradientShade: "light",
+                    fillGradientShadeIntensity: 1,
+                };
+            }
+
+            return {
+                series: [{
+                    name: "Visitors",
+                    data: [500, 590, 600, 520, 610, 550, 600],
+                }, ],
+                labels: [
+                    "01 Feb",
+                    "02 Feb",
+                    "03 Feb",
+                    "04 Feb",
+                    "05 Feb",
+                    "06 Feb",
+                    "07 Feb",
+                ],
+                chart: {
+                    type: "area",
+                    height: "305px",
+                    fontFamily: "Inter, sans-serif",
+                    sparkline: {
+                        enabled: true,
+                    },
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        shade: visitorsChartColors.fillGradientShade,
+                        shadeIntensity: visitorsChartColors.fillGradientShadeIntensity,
+                    },
+                },
+                plotOptions: {
+                    area: {
+                        fillTo: "end",
+                    },
+                },
+                theme: {
+                    monochrome: {
+                        enabled: true,
+                        color: "#1A56DB",
+                    },
+                },
+                tooltip: {
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+            };
+        };
+
+        const getSignupsChartOptions = () => {
+            let signupsChartColors = {};
+
+            if (document.documentElement.classList.contains("dark")) {
+                signupsChartColors = {
+                    backgroundBarColors: [
+                        "#374151",
+                        "#374151",
+                        "#374151",
+                        "#374151",
+                        "#374151",
+                        "#374151",
+                        "#374151",
+                    ],
+                };
+            } else {
+                signupsChartColors = {
+                    backgroundBarColors: [
+                        "#E5E7EB",
+                        "#E5E7EB",
+                        "#E5E7EB",
+                        "#E5E7EB",
+                        "#E5E7EB",
+                        "#E5E7EB",
+                        "#E5E7EB",
+                    ],
+                };
+            }
+
+            return {
+                series: [{
+                    name: "Users",
+                    data: [1334, 2435, 1753, 1328, 1155, 1632, 1336],
+                }, ],
+                labels: [
+                    "01 Feb",
+                    "02 Feb",
+                    "03 Feb",
+                    "04 Feb",
+                    "05 Feb",
+                    "06 Feb",
+                    "07 Feb",
+                ],
+                chart: {
+                    type: "bar",
+                    height: "140px",
+                    foreColor: "#4B5563",
+                    fontFamily: "Inter, sans-serif",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                theme: {
+                    monochrome: {
+                        enabled: true,
+                        color: "#1A56DB",
+                    },
+                },
+                plotOptions: {
+                    bar: {
+                        columnWidth: "25%",
+                        borderRadius: 3,
+                        colors: {
+                            backgroundBarColors: signupsChartColors.backgroundBarColors,
+                            backgroundBarRadius: 3,
+                        },
+                    },
+                    dataLabels: {
+                        hideOverflowingLabels: false,
+                    },
+                },
+                xaxis: {
+                    floating: false,
+                    labels: {
+                        show: false,
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false,
+                    },
+                },
+                tooltip: {
+                    shared: true,
+                    intersect: false,
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+                states: {
+                    hover: {
+                        filter: {
+                            type: "darken",
+                            value: 0.8,
+                        },
+                    },
+                },
+                fill: {
+                    opacity: 1,
+                },
+                yaxis: {
+                    show: false,
+                },
+                grid: {
+                    show: false,
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                legend: {
+                    show: false,
+                },
+            };
+        };
+
+        if (document.getElementById("week-signups-chart")) {
+            const chart = new ApexCharts(
+                document.getElementById("week-signups-chart"),
+                getSignupsChartOptions()
+            );
+            chart.render();
+
+            // init again when toggling dark mode
+            document.addEventListener("dark-mode", function() {
+                chart.updateOptions(getSignupsChartOptions());
+            });
+        }
+
+        const getTrafficChannelsChartOptions = () => {
+            let trafficChannelsChartColors = {};
+
+            if (document.documentElement.classList.contains("dark")) {
+                trafficChannelsChartColors = {
+                    strokeColor: "#1f2937",
+                };
+            } else {
+                trafficChannelsChartColors = {
+                    strokeColor: "#ffffff",
+                };
+            }
+
+            return {
+                series: [70, 5, 25],
+                labels: ["Desktop", "Tablet", "Phone"],
+                colors: ["#16BDCA", "#FDBA8C", "#1A56DB"],
+                chart: {
+                    type: "donut",
+                    height: 400,
+                    fontFamily: "Inter, sans-serif",
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                responsive: [{
+                    breakpoint: 430,
+                    options: {
+                        chart: {
+                            height: 300,
+                        },
+                    },
+                }, ],
+                stroke: {
+                    colors: [trafficChannelsChartColors.strokeColor],
+                },
+                states: {
+                    hover: {
+                        filter: {
+                            type: "darken",
+                            value: 0.9,
+                        },
+                    },
+                },
+                tooltip: {
+                    shared: true,
+                    followCursor: false,
+                    fillSeriesColor: false,
+                    inverseOrder: true,
+                    style: {
+                        fontSize: "14px",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                    x: {
+                        show: true,
+                        formatter: function(_, {
+                            seriesIndex,
+                            w
+                        }) {
+                            const label = w.config.labels[seriesIndex];
+                            return label;
+                        },
+                    },
+                    y: {
+                        formatter: function(value) {
+                            return value + "%";
+                        },
+                    },
+                },
+                grid: {
+                    show: false,
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                legend: {
+                    show: false,
+                },
+            };
+        };
+
+        if (document.getElementById("traffic-by-device")) {
+            const chart = new ApexCharts(
+                document.getElementById("traffic-by-device"),
+                getTrafficChannelsChartOptions()
+            );
+            chart.render();
+
+            // init again when toggling dark mode
+            document.addEventListener("dark-mode", function() {
+                chart.updateOptions(getTrafficChannelsChartOptions());
+            });
+        }
+    </script>
+@endscript

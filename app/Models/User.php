@@ -6,7 +6,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -127,11 +129,15 @@ class User extends Authenticatable
     {
         return $this->hasOne(HomecellLeader::class,  'user_id');
     }
-    // public function staff()
-    // {
-    //     return $this->hasOne(Staff::class,  'user_id');
-    // }
 
+    public function units(): HasManyThrough
+    {
+        return $this->hasManyThrough(Unit::class, UnitMember::class, 'user_id', 'id', 'id', 'unit_id');
+    }
+    public function wsf_member(): HasOneThrough
+    {
+        return $this->hasOneThrough(Homecell::class, WsfMember::class, 'user_id', 'id', 'id', 'homecell_id');
+    }
 
     public function station(): BelongsTo
     {

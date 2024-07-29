@@ -3,6 +3,10 @@
 namespace App\Livewire\Debug;
 
 use App\Models\Homecell;
+use App\Models\OrdainedWorker;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
@@ -10,6 +14,87 @@ use Livewire\Component;
 #[Layout('layouts.admin')]
 class Wsf extends Component
 {
+
+    function generateRandomDate($startYear = 2000, $endYear = 2023)
+    {
+        $year = rand($startYear, $endYear);
+        $month = rand(1, 12);
+        $day = rand(1, Carbon::create($year, $month, 1)->daysInMonth);
+        $hour = rand(0, 23);
+        $minute = rand(0, 59);
+        $second = rand(0, 59);
+
+        return Carbon::create($year, $month, $day, $hour, $minute, $second);
+    }
+
+    function getRandomWord()
+    {
+        $words = ['Wing A', 'Wing B', 'Wing C', 'Wing D'];
+        $randomKey = array_rand($words);
+        return $words[$randomKey];
+    }
+
+    public function genOw()
+    {
+        $users = User::select('id')
+            ->where('station_id', Auth::user()->station_id)
+            ->where(function ($query) {
+                $query->where('status', 'deacon')
+                    ->orWhere('status', 'deaconess');
+            })
+            ->get();
+
+        foreach ($users as $user) {
+            OrdainedWorker::create([
+                'user_id' => $user->id,
+                'station_id' => 1,
+                'type' => 'ow',
+                'wing' => $this->getRandomWord(),
+                'status' => true,
+                'register' => 'accept',
+                'ordain_date' => $this->generateRandomDate(),
+                'ordain_where' => 'dline'
+            ]);
+        }
+    }
+
+    public Carbon $begin;  // Use Carbon for date objects
+    public Carbon $end;
+
+    public function mount()
+    {
+        $this->begin = Carbon::now()->startOfMonth();  // Set begin to first day of current month
+        $this->end = Carbon::now()->endOfMonth();    // Set end to last day of current month
+    }
+
+
+
+    public function autoPost()
+    {
+        $dates = [];
+
+        $currentDate = $this->begin->clone();  // Clone to avoid modifying original date
+
+        while ($currentDate <= $this->end) {
+            if ($currentDate->isSunday()) {
+                $dates[] = [
+                    'day' => 'Sunday',
+                    'date' => $currentDate->format('Y-m-d')
+                ];
+            }
+
+            if ($currentDate->isWednesday()) {
+                $dates[] = [
+                    'day' => 'Wednesday',
+                    'date' => $currentDate->format('Y-m-d')
+                ];
+            }
+
+            $currentDate->addDay(); // Use Carbon's addDay method
+        }
+
+        dd($dates);
+    }
 
     public function save()
     {

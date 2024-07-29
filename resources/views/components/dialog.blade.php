@@ -1,4 +1,4 @@
-@props(['maxWidth'])
+@props(['maxWidth', 'title', 'close' => true])
 
 @php
     // $id = $id ?? md5($attributes->wire('model'));
@@ -12,25 +12,31 @@
     ][$maxWidth ?? '2xl'];
 @endphp
 
-<div x-data="{ show: @entangle($attributes->wire('model')) }" x-show="show" class="fixed z-50 inset-0 overflow-y-auto px-8 py-12 sm:px-0"
+<div x-data="{ show: @entangle($attributes->wire('model')) }" x-show="show" class="fixed inset-0 z-50 px-8 py-12 overflow-y-auto sm:px-0"
     style="display: none">
     <div class="fixed inset-0 bg-slate-500 opacity-40" x-on:click="show = false">
         <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
     </div>
     <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div class="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
             <div
                 class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full {{ $maxWidth }} dark:bg-gray-800 dark:text-white">
-                <div class="dark:bg-gray-800 dark:text-white px-4 pt-5 flex justify-between">
+                <div class="flex justify-between px-4 pt-5 pb-8 dark:bg-gray-800 dark:text-white">
 
-                    <div>
-                        <img x-on:click="show = false" src="{{ asset('static/icons/close.svg') }}" class="h-6 w-6"
+                    <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
+                        <h3 class="text-xl font-semibold dark:text-white">
+                            {{ $title }}
+                        </h3>
+                    </div>
+
+                    <div x-show="close">
+                        <img x-on:click="show = false" src="{{ asset('static/icons/close.svg') }}" class="w-6 h-6"
                             alt="">
                     </div>
 
 
                 </div>
-                <div class="px-4 pb-4 pt-3">
+                <div class="px-4 pt-3 pb-4">
                     {{ $slot }}
                 </div>
 

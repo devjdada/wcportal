@@ -24,6 +24,9 @@ class UserMeCollection extends JsonResource
         $request['homecellLeader'] = $this->homecellLeaders;
 
         $request['station'] = $this->station;
+
+        $request['units'] = $this->units;
+        $request['wsf_member'] = $this->wsf_member;
         return parent::toArray($request);
     }
 }

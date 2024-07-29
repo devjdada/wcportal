@@ -6,6 +6,7 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Blog\CreateBlog;
 use App\Livewire\Blog\ManageBlog;
 use App\Livewire\Contacts\AddMyContact;
+use App\Livewire\Contacts\AllContacts;
 use App\Livewire\Contacts\EditMyContact;
 use App\Livewire\Contacts\MyContact;
 use App\Livewire\Dashboard\Dashboard;
@@ -24,6 +25,9 @@ use App\Livewire\Testy\CreateTesty;
 use App\Livewire\Testy\ManageTesty;
 use App\Livewire\Unit\ManageUnit;
 use App\Livewire\Users\ManageUsers;
+use App\Livewire\Workers\OrdainedWorkers;
+use App\Livewire\Workers\OwPosting;
+use App\Livewire\Workers\PostingLocation;
 use App\Livewire\Wsf\HomecellIndex;
 use App\Livewire\Wsf\HomecellReport;
 use App\Livewire\Wsf\HrStatistics;
@@ -72,6 +76,10 @@ Route::middleware([
     Route::get('/manage-testy', ManageTesty::class)->name('manage-testy');
     Route::get('/manage-blog', ManageBlog::class)->name('manage-blog');
     Route::get('/create-blog', CreateBlog::class)->name('create-blog');
+    Route::get('/ordained-worker', OrdainedWorkers::class)->name('ordained-worker');
+    Route::get('/posting-location', PostingLocation::class)->name('posting-location');
+    Route::get('/ow-posting', OwPosting::class)->name('ow-posting');
+    Route::get('/all-contacts', AllContacts::class)->name('all-contacts');
 });
 
 
