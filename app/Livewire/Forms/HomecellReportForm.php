@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Forms;
 
+use App\Models\Homecell;
 use App\Models\HomecellReport;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
@@ -23,6 +24,7 @@ class HomecellReportForm extends Form
     public $week;
     public $station_id = '';
     public $homecell_id = '';
+    public $province_id = '';
     public $user_id = '';
 
     public function setContact(HomecellReport $hr)
@@ -46,7 +48,8 @@ class HomecellReportForm extends Form
         $this->validate();
         $this->total =
             $this->male + $this->female + $this->children + $this->first_timer + $this->new_convert;
-
+        $hm = Homecell::findOrfail($this->homecell_id);
+        $this->province_id = $hm->province_id;
         HomecellReport::create($this->all());
     }
 

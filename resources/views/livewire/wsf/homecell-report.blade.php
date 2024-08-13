@@ -1,4 +1,5 @@
 <div>
+    <livewire:wsf.navigation />
     <div class="grid w-full grid-cols-1 gap-4 mt-4 xl:grid-cols-6 2xl:grid-cols-8">
         <div
             class="items-center justify-between p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:flex dark:border-gray-700 sm:p-6 dark:bg-gray-800">
@@ -340,7 +341,7 @@
         <x-validation-errors class="mb-4" />
 
         @session('status')
-            <div class="mb-4 font-medium text-sm text-green-600">
+            <div class="mb-4 text-sm font-medium text-green-600">
                 {{ $value }}
             </div>
         @endsession
@@ -348,27 +349,27 @@
             <div class="grid grid-cols-2 gap-4 mb-8">
                 <div class="mt-4">
                     <x-label for="title" value="{{ __('Male') }}" />
-                    <x-input wire:model="hrForm.male" class="block mt-1 w-full" type="text" />
+                    <x-input wire:model="hrForm.male" class="block w-full mt-1" type="text" />
                 </div>
                 <div class="mt-4">
                     <x-label for="phone" value="{{ __('Female') }}" />
-                    <x-input wire:model="hrForm.female" class="block mt-1 w-full" type="tel" />
+                    <x-input wire:model="hrForm.female" class="block w-full mt-1" type="tel" />
                 </div>
                 <div class="mt-4">
                     <x-label for="phone" value="{{ __('Children') }}" />
-                    <x-input wire:model="hrForm.children" class="block mt-1 w-full" type="tel" />
+                    <x-input wire:model="hrForm.children" class="block w-full mt-1" type="tel" />
                 </div>
                 <div class="mt-4">
                     <x-label for="phone" value="{{ __('New Convert') }}" />
-                    <x-input wire:model="hrForm.new_convert" class="block mt-1 w-full" type="tel" />
+                    <x-input wire:model="hrForm.new_convert" class="block w-full mt-1" type="tel" />
                 </div>
                 <div class="mt-4">
                     <x-label for="phone" value="{{ __('First Timer') }}" />
-                    <x-input wire:model="hrForm.first_timer" class="block mt-1 w-full" type="tel" />
+                    <x-input wire:model="hrForm.first_timer" class="block w-full mt-1" type="tel" />
                 </div>
                 <div class="mt-4">
                     <x-label for="phone" value="{{ __('Homecell ID') }}" />
-                    <x-input wire:model="hrForm.homecell_id" class="block mt-1 w-full" type="tel" />
+                    <x-input wire:model="hrForm.homecell_id" class="block w-full mt-1" type="tel" />
                 </div>
                 <didv class="mt-4">
                     <x-button type="submit">

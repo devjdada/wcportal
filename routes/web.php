@@ -19,6 +19,7 @@ use App\Livewire\Sms\SmsIndex;
 use App\Livewire\Soul\Assigned;
 use App\Livewire\Soul\Assigning;
 use App\Livewire\Soul\FirstTimert;
+use App\Livewire\Soul\MyAssigned;
 use App\Livewire\Soul\NewConvert;
 use App\Livewire\Soul\SoulStats;
 use App\Livewire\Testy\CreateTesty;
@@ -53,6 +54,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/my_contact', MyContact::class)->name('my_contact');
+    Route::get('/my-assigned', MyAssigned::class)->name('my-assigned');
     Route::get('/add_my_contact', AddMyContact::class)->name('add_my_contact');
     Route::get('/edit-contact/{contactId}', EditMyContact::class)->name('edit-contact');
     Route::get('/manage-users', ManageUsers::class)->name('manage-users');

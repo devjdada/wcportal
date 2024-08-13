@@ -11,7 +11,7 @@ class SoulStats extends Component
 {
     public $monthStats = [];
     public $dayStats = [];
-    public $chartType = 'bar';
+    public $chartType = 'line';
     public $chartList = ['bar', 'line', 'pie', 'area', 'donut'];
     public function render()
     {
@@ -26,11 +26,11 @@ class SoulStats extends Component
             ->orderBy('day')
             ->get();
         $this->monthStats = DB::table('souls')
-            ->selectRaw("WEEK(created_at) AS week, COUNT(*) AS souls")
-            ->whereMonth('created_at', '=', date('m', strtotime($month)))
+            ->selectRaw("Month(created_at) AS month, COUNT(*) AS souls")
+            // ->whereMonth('created_at', '=', date('m', strtotime($month)))
             ->whereYear('created_at', '=', date('Y', strtotime($month)))
-            ->groupBy('week')
-            ->orderBy('week')
+            ->groupBy('month')
+            ->orderBy('month')
             ->get();
 
 

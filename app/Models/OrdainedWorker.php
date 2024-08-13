@@ -22,7 +22,9 @@ class OrdainedWorker extends Model
         'user_id',
         'station_id',
         'ordain_date',
-        'ordain_where'
+        'ordain_where',
+        'name',
+        'phone'
     ];
 
     public function user(): HasOne

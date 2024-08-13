@@ -3,9 +3,11 @@
 namespace App\Livewire\Debug;
 
 use App\Models\Homecell;
+use App\Models\HomecellReport;
 use App\Models\OrdainedWorker;
 use App\Models\User;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -14,8 +16,12 @@ use Livewire\Component;
 #[Layout('layouts.admin')]
 class Wsf extends Component
 {
+    public $wsfDate;
+    public $wsfNum;
 
-    function generateRandomDate($startYear = 2000, $endYear = 2023)
+
+
+    public function generateRandomDate($startYear = 2000, $endYear = 2023)
     {
         $year = rand($startYear, $endYear);
         $month = rand(1, 12);
@@ -36,17 +42,19 @@ class Wsf extends Component
 
     public function genOw()
     {
-        $users = User::select('id')
+        $users = User::select('id', 'name', 'phone')
             ->where('station_id', Auth::user()->station_id)
             ->where(function ($query) {
-                $query->where('status', 'deacon')
-                    ->orWhere('status', 'deaconess');
+                $query->where('userStatus', 'deacon')
+                    ->orWhere('userStatus', 'deaconess');
             })
             ->get();
 
         foreach ($users as $user) {
             OrdainedWorker::create([
                 'user_id' => $user->id,
+                'name' => $user->name,
+                'phone' => $user->phone,
                 'station_id' => 1,
                 'type' => 'ow',
                 'wing' => $this->getRandomWord(),
@@ -63,6 +71,8 @@ class Wsf extends Component
 
     public function mount()
     {
+
+
         $this->begin = Carbon::now()->startOfMonth();  // Set begin to first day of current month
         $this->end = Carbon::now()->endOfMonth();    // Set end to last day of current month
     }
@@ -6341,9 +6351,94 @@ class Wsf extends Component
         }
     }
 
+    public function genWsfReport()
+    {
+        $a = 0;
+        $station_id = Auth::user()->station_id;
+        $user_id = Auth::user()->id;
+        $hc = Homecell::where('station_id', $station_id)->get();
+        $owsArray = $hc->toArray();  // Convert the collection to an array
+        shuffle($owsArray);
+        $owIndex = 0;
+
+        while ($a <= $this->wsfNum) {
+            $province_id = $owsArray[$owIndex]['province_id'];
+            $homecell_id = $owsArray[$owIndex]['id'];
+
+            $female = rand(0, 11);
+            $male = rand(0, 8);
+            $children = rand(0, 15);
+            $first_timer = rand(0, 5);
+            $new_convert = rand(0, 3);
+            $total = $female + $male + $children;
+            HomecellReport::create([
+                "homecell_id" => $homecell_id,
+                "station_id" => $station_id,
+                "province_id" => $province_id,
+                "user_id" => $user_id,
+                "male" => $male,
+                "female" => $female,
+                "children" => $children,
+                "new_convert" => $new_convert,
+                "first_timer" => $first_timer,
+                "total" => $total,
+                "week" => $this->wsfDate
+            ]);
+
+
+
+            $a++;
+            $owIndex++;
+        }
+        $this->wsfNum = '';
+        $this->wsfDate = '';
+    }
+
+    public function genContact()
+    {
+        $a = 0;
+        $station_id = Auth::user()->station_id;
+        $user_id = Auth::user()->id;
+        $hc = Homecell::where('station_id', $station_id)->get();
+        $owsArray = $hc->toArray();  // Convert the collection to an array
+        shuffle($owsArray);
+        $owIndex = 0;
+
+        while ($a <= $this->wsfNum) {
+            $province_id = $owsArray[$owIndex]['province_id'];
+            $homecell_id = $owsArray[$owIndex]['id'];
+
+            $female = rand(0, 11);
+            $male = rand(0, 8);
+            $children = rand(0, 15);
+            $first_timer = rand(0, 5);
+            $new_convert = rand(0, 3);
+            $total = $female + $male + $children;
+            HomecellReport::create([
+                "homecell_id" => $homecell_id,
+                "station_id" => $station_id,
+                "province_id" => $province_id,
+                "user_id" => $user_id,
+                "male" => $male,
+                "female" => $female,
+                "children" => $children,
+                "new_convert" => $new_convert,
+                "first_timer" => $first_timer,
+                "total" => $total,
+                "week" => $this->wsfDate
+            ]);
+
+
+
+            $a++;
+            $owIndex++;
+        }
+        $this->wsfNum = '';
+        $this->wsfDate = '';
+    }
+
     public function render()
     {
-
         return view('livewire.debug.wsf');
     }
 }

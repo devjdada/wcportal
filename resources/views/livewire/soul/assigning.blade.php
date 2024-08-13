@@ -1,4 +1,5 @@
 <div>
+    <livewire:soul.navigation />
     <div>
         <div
             class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
@@ -62,22 +63,28 @@
                     </div>
                     <x-button :disabled="$busy" wire:click='assign'>
                         @if ($busy)
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-                            <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30" x="25" y="85">
-                                <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
-                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
-                            </rect>
-                            <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30" x="85" y="85">
-                                <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
-                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate>
-                            </rect>
-                            <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30" x="145" y="85">
-                                <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
-                                    keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate>
-                            </rect>
-                        </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30"
+                                    x="25" y="85">
+                                    <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
+                                        keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4">
+                                    </animate>
+                                </rect>
+                                <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30"
+                                    x="85" y="85">
+                                    <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
+                                        keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2">
+                                    </animate>
+                                </rect>
+                                <rect fill="#fff" stroke="#fff" stroke-width="15" width="30" height="30"
+                                    x="145" y="85">
+                                    <animate attributeName="opacity" calcMode="spline" dur="2" values="1;0;1;"
+                                        keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0">
+                                    </animate>
+                                </rect>
+                            </svg>
                         @else
-                        Assign To
+                            Assign To
                         @endif
 
                     </x-button>
@@ -86,97 +93,97 @@
         </div>
     </div>
 
-    <div class="grid grid-flow-row-dense grid-cols-4 grid-rows-4 gap-1 mt-6 px-5">
+    <div class="grid grid-flow-row-dense grid-cols-4 grid-rows-4 gap-1 px-5 mt-6">
         <div class="col-span-3">
-            <div class="flex items-center p-3 mb-1 border border-gray-200  rounded-lg">
+            <div class="flex items-center p-3 mb-1 border border-gray-200 rounded-lg">
                 <x-select wire:model.live='limitContactAssigned' class="w-20">
-                    @for ($i = 0; $i < 20; $i++) <option value='{{ $i }}'>{{ $i }}</option>
-                        @endfor
+                    @for ($i = 0; $i < 20; $i++)
+                        <option value='{{ $i }}'>{{ $i }}</option>
+                    @endfor
                 </x-select>
             </div>
             <div class="grid grid-cols-4 gap-1 ">
 
                 @foreach ($souls as $soul)
-                @if ($soul->assigned->count() <= $limitContactAssigned) <a wire:click='selectContact({{ $soul->id }})'>
-                    <div class="
-                    @if (in_array($soul->id, $select_contact))
-                        dark:border-green-700
+                    @if ($soul->assigned->count() <= $limitContactAssigned)
+                        <a wire:click='selectContact({{ $soul->id }})'>
+                            <div
+                                class="
+                    @if (in_array($soul->id, $select_contact)) dark:border-green-700
                     @else
-                        dark:border-gray-700
-                    @endif
+                        dark:border-gray-700 @endif
                     flex items-center p-3 mb-1 border border-gray-200  rounded-lg">
 
-                        <div class="mr-4">
-                            <p class="text-sm font-semibold text-gray-900 dark:text-white">
-                                {{ $soul->surname }} {{ $soul->firstname }}
-                            </p>
+                                <div class="mr-4">
+                                    <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                                        {{ $soul->surname }} {{ $soul->firstname }}
+                                    </p>
 
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $soul->phone }}</p>
-                        </div>
-                        <div class="flex items-center ml-auto">
-                            <button type="button"
-                                class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                                {{ $soul->assigned->count() }}
-                            </button>
-                            <button type="button"
-                                class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                                {{ $soul->report->count() }}
-                            </button>
-                        </div>
-                    </div>
-                    </a>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $soul->phone }}</p>
+                                </div>
+                                <div class="flex items-center ml-auto">
+                                    <button type="button"
+                                        class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
+                                        {{ $soul->assigned->count() }}
+                                    </button>
+                                    <button type="button"
+                                        class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
+                                        {{ $soul->report->count() }}
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
                     @endif
-
-                    @endforeach
+                @endforeach
 
             </div>
         </div>
         <div class="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-            <div class="flex items-center p-3 mb-1 border border-gray-200  rounded-lg">
+            <div class="flex items-center p-3 mb-1 border border-gray-200 rounded-lg">
                 <x-select wire:model.live='limitUserAssigned' class="w-20">
-                    @for ($i = 0; $i < 100; $i++) <option value='{{ $i }}'>{{ $i }}</option>
-                        @endfor
+                    @for ($i = 0; $i < 100; $i++)
+                        <option value='{{ $i }}'>{{ $i }}</option>
+                    @endfor
                 </x-select>
             </div>
             <div class="grid grid-rows-6 gap-1">
 
                 @foreach ($users as $user)
-                @if ($user->assigned->count() <= $limitUserAssigned) <a wire:click='selectUser({{ $user->id }})'>
-                    <div class="flex items-center p-3 mb-1 border border-gray-200 rounded-lg
-                        @if (in_array($user->id, $select_user))
-                                dark:border-red-700
+                    @if ($user->assigned->count() <= $limitUserAssigned)
+                        <a wire:click='selectUser({{ $user->id }})'>
+                            <div
+                                class="flex items-center p-3 mb-1 border border-gray-200 rounded-lg
+                        @if (in_array($user->id, $select_user)) dark:border-red-700
                                 @else
-                                dark:border-gray-700
-                            @endif
+                                dark:border-gray-700 @endif
                         ">
-                        <div
-                            class="flex items-center justify-center w-10 h-10 mr-3 bg-teal-100 rounded-lg dark:bg-teal-900">
+                                <div
+                                    class="flex items-center justify-center w-10 h-10 mr-3 bg-teal-100 rounded-lg dark:bg-teal-900">
 
-                            <img class="h-8 w-8 rounded-full object-cover" src="{{ $user->profile_photo_url }}"
-                                alt="{{ $user->name }}" />
-                        </div>
-                        <div class="mr-4">
-                            <p class="text-sm font-semibold text-gray-900 dark:text-white">
-                                {{ $user->name }}
-                            </p>
+                                    <img class="object-cover w-8 h-8 rounded-full"
+                                        src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}" />
+                                </div>
+                                <div class="mr-4">
+                                    <p class="text-sm font-semibold text-gray-900 dark:text-white">
+                                        {{ $user->name }}
+                                    </p>
 
-                            <p class="text-sm text-gray-500 dark:text-gray-400">{{ $user->phone }}</p>
-                        </div>
-                        <div class="flex items-center ml-auto">
-                            <button type="button"
-                                class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                                {{ $user->assigned->count() }} Assigned
-                            </button>
-                            <button type="button"
-                                class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
-                                {{ $user->report->count() }} Reports
-                            </button>
-                        </div>
-                    </div>
-                    </a>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ $user->phone }}</p>
+                                </div>
+                                <div class="flex items-center ml-auto">
+                                    <button type="button"
+                                        class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
+                                        {{ $user->assigned->count() }} Assigned
+                                    </button>
+                                    <button type="button"
+                                        class="p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">
+                                        {{ $user->report->count() }} Reports
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
                     @endif
-
-                    @endforeach
+                @endforeach
 
             </div>
         </div>

@@ -3,13 +3,11 @@
 namespace App\Livewire\Dashboard;
 
 use App\Models\OrdainedWorker;
-use App\Models\OwPosting; // Assuming this model exists for ordained worker postings
 use App\Models\PostingLocation;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
-use Livewire\Attributes\Validate;
+
 
 #[Layout('layouts.admin')]
 class Dashboard extends Component
@@ -25,6 +23,7 @@ class Dashboard extends Component
     public int $station_id; // Assuming station_id is an integer
     public bool $status = true;
     public string $gender;
+    public string $userStatus;
     public string $address;  // Assuming address is a string
     public string $dob;       // Assuming dob is a string
 
@@ -39,10 +38,14 @@ class Dashboard extends Component
     public string $register = 'accept';
 
 
+
+
     public function mount()
     {
         $this->checkUserData(); // Load user data on component initialization
     }
+
+
 
     public function update()
     {
@@ -51,7 +54,7 @@ class Dashboard extends Component
             'marital' => 'required', // Minimum length requirement
             'gender' => 'required',  // Minimum length requirement
         ]);
-
+        $this->station_id = Auth::user()->station_id;
         $this->user->update($this->all()); // Update only user data
         $this->updateDialog = false;
     }
@@ -63,8 +66,8 @@ class Dashboard extends Component
             'ordain_where' => 'required|min:3'
         ]);
 
-        $this->user_id = $this->user->id;
-        $this->station_id = $this->user->station_id;
+        $this->user_id = Auth::user()->id;
+        $this->station_id = Auth::user()->station_id;
 
         $ordainedWorkerData = [
             'user_id' => $this->user_id,

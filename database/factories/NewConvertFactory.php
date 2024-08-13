@@ -32,7 +32,7 @@ class NewConvertFactory extends Factory
             'prayer_point' => $this->faker->sentence(12),
             'email' => $this->faker->unique()->safeEmail,
             'born_again_on' => now(),
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
         ];
     }
 }

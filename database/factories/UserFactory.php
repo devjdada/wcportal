@@ -43,9 +43,9 @@ class UserFactory extends Factory
             'phone' => $this->faker->phoneNumber,
             'marital' => $this->faker->randomElement(['single', 'married']),
             'gender' => $this->faker->randomElement(['male', 'female']),
-            'status' => $this->faker->randomElement(['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder']),
+            'userStatus' => $this->faker->randomElement(['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder']),
             'address' => $this->faker->address,
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
         ];
     }
 

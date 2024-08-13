@@ -33,36 +33,36 @@
                             <x-side-link href="{{ route('my_contact') }}" image="{{ asset('static/icons/dashboard.svg') }}">
                                 My Contact
                             </x-side-link>
-                            <x-side-link href="{{ route('assign-contact') }}"
-                                image="{{ asset('static/icons/dashboard.svg') }}">
-                                Assigned Contact
-                            </x-side-link>
-                            <x-side-link href="{{ route('soul-stats') }}" image="{{ asset('static/icons/dashboard.svg') }}">
-                                Soul Stats
-                            </x-side-link>
+                            @if (auth()->user()->caller_squad)
+                                <x-side-link href="{{ route('my-assigned') }}"
+                                    image="{{ asset('static/icons/dashboard.svg') }}">
+                                    Caller Squad
+                                </x-side-link>
+                            @endif
+
                         @endcan
                         @can('isEditor')
-                            <x-side-link href="{{ route('new-convert') }}"
+                            {{-- <x-side-link href="{{ route('new-convert') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 New Convert
                             </x-side-link>
                             <x-side-link href="{{ route('first-timer') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 First Timer
-                            </x-side-link>
-                            <x-side-link href="{{ route('homecells') }}"
+                            </x-side-link> --}}
+                            {{-- <x-side-link href="{{ route('homecells') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Homecells
-                            </x-side-link>
-                            <x-side-link href="{{ route('homecell-report') }}"
+                            </x-side-link> --}}
+                            {{-- <x-side-link href="{{ route('homecell-report') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Homecell Report
-                            </x-side-link>
-                            <x-side-link href="{{ route('yet-to-submit') }}"
+                            </x-side-link> --}}
+                            {{-- <x-side-link href="{{ route('yet-to-submit') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Yet to Submit
-                            </x-side-link>
-                            <li>
+                            </x-side-link> --}}
+                            {{-- <li>
                                 <a href="{{ route('hr-sta') }}"
                                     class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700 @if (request()->routeIs('hr-sta')) dark:bg-gray-700 @endif">
                                     <img src="{{ asset('static/icons/dashboard.svg') }}" alt=""
@@ -73,34 +73,34 @@
 
                                 </a>
 
-                            </li>
-                            <x-side-link href="{{ route('hr-sta') }}" image="{{ asset('static/icons/dashboard.svg') }}">
+                            </li> --}}
+                            {{-- <x-side-link href="{{ route('hr-sta') }}" image="{{ asset('static/icons/dashboard.svg') }}">
                                 Report Stats
-                            </x-side-link>
+                            </x-side-link> --}}
 
                             <x-side-link href="{{ route('manage-unit') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Manage Unit
                             </x-side-link>
-                            <x-side-link href="{{ route('ordained-worker') }}"
-                                image="{{ asset('static/icons/dashboard.svg') }}">
-                                Ordained Worker
-                            </x-side-link>
                         @endcan
                         @can('isAdmin')
+                            {{-- <x-side-link href="{{ route('assign-contact') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Assigned Contact
+                            </x-side-link> --}}
                             <x-side-link href="{{ route('ordained-worker') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Ordained Worker
                             </x-side-link>
-                            <x-side-link href="{{ route('all-contacts') }}"
+                            {{-- <x-side-link href="{{ route('all-contacts') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 All Contact
-                            </x-side-link>
+                            </x-side-link> --}}
 
-                            <x-side-link href="{{ route('assigning-contact') }}"
+                            {{-- <x-side-link href="{{ route('assigning-contact') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Assigning Contact
-                            </x-side-link>
+                            </x-side-link> --}}
                             <x-side-link href="{{ route('manage-users') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 Manage Users
@@ -128,6 +128,13 @@
                             <x-side-link href="{{ route('manage-sms') }}"
                                 image="{{ asset('static/icons/dashboard.svg') }}">
                                 SMS
+                            </x-side-link>
+                        @endcan
+
+                        @can('isWebMaster')
+                            <x-side-link href="{{ route('debug-wsf') }}"
+                                image="{{ asset('static/icons/dashboard.svg') }}">
+                                Debug
                             </x-side-link>
                         @endcan
 

@@ -11,6 +11,7 @@ class HomecellReport extends Model
     protected $fillable = [
         "homecell_id",
         "station_id",
+        "province_id",
         "user_id",
         "male",
         "female",

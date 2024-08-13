@@ -166,7 +166,14 @@
                         <label for="wing" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Wings
                         </label>
-                        <x-input id="wing" type='text' wire:model="poForm.wing" />
+                        <x-select id="wing" wire:model="poForm.wing">
+                            <option value="">Select Wing</option>
+                            <option value="Wing A">Wing A</option>
+                            <option value="Wing B">Wing B</option>
+                            <option value="Wing C">Wing C</option>
+                            <option value="Wing D">Wing D</option>
+                        </x-select>
+
                     </div>
                     <div class="col-span-6">
                         <label for="tag" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

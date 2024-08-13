@@ -14,6 +14,8 @@ class OwPosting extends Model
         'tag',
         'wing',
         'location',
+        'name',
+        'phone',
         'service',
         'for',
         'available',
@@ -27,11 +29,12 @@ class OwPosting extends Model
         $query->
             // where('phone', 'like', "%{$value}%")
             //     ->orWhere('name', 'like', "%{$value}%")
-            //     ->orWhere('email', 'like', "%{$value}%")
+            //     ->orWhere('phone', 'like', "%{$value}%")
             Where('location', 'like', "%{$value}%")
             ->orWhere('wing', 'like', "%{$value}%")
             ->orWhere('for', 'like', "%{$value}%")
-            ->orWhere('tag', 'like', "%{$value}%");
+            ->orWhere('tag', 'like', "%{$value}%")
+            ->orWhere('service', 'like', "%{$value}%");
     }
 
     public function user()

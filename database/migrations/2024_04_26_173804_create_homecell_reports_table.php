@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('station_id')->nullable();
             $table->foreignId('homecell_id')->nullable();
             $table->foreignId('user_id')->nullable();
+            $table->foreignId('province_id')->nullable();
             $table->integer('male');
             $table->integer('new_convert');
             $table->integer('first_timer');

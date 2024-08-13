@@ -51,27 +51,20 @@ class HomecellReport extends Component
     {
         if ($this->editMode) {
             $this->hrForm->update();
-            $this->hrForm->male = "";
-            $this->hrForm->female = "";
-            $this->hrForm->children = "";
-            $this->hrForm->new_convert = "";
-            $this->hrForm->first_timer = "";
-            $this->hrForm->total = 0;
-            $this->hrForm->homecell_id = '';
+            $this->hrForm->reset([
+                'male', 'female', 'children', 'new_convert', 'first_timer', 'total', 'homecell_id'
+            ]);
+
             $this->resetPage();
             $this->editMode = false;
             $this->newReportModal = false;
         } else {
             // $this->validate();
             $this->hrForm->store();
+            $this->hrForm->reset([
+                'male', 'female', 'children', 'new_convert', 'first_timer', 'total', 'homecell_id'
+            ]);
 
-            $this->hrForm->male = "";
-            $this->hrForm->female = "";
-            $this->hrForm->children = "";
-            $this->hrForm->new_convert = "";
-            $this->hrForm->first_timer = "";
-            $this->hrForm->total = 0;
-            $this->hrForm->homecell_id = '';
 
             session()->flash('status', 'Post successfully updated.');
             $this->resetPage();

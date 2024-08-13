@@ -70,21 +70,15 @@
 
         </div>
     </div>
-    <div>
-        <x-button wire:click='autoPost'>
-            Generate
-        </x-button>
-
-        <div>
-            {{ $positionChecked }}
-        </div>
-    </div>
 
     <div class="grid gap-4 px-4 xl:grid-cols-2 2xl:grid-cols-3">
         <div class="col-span-2 overflow-x-auto shadow-md sm:rounded-lg">
             <div
                 class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0 dark:bg-gray-900">
-                <div class="flex">
+                <div class="flex gap-2z">
+                    <x-btn wire:click='openAutoGen'>
+                        Gen
+                    </x-btn>
                     <x-select wire:model.live='numPerPosition'>
                         <option value="10">10</option>
                         <option value="15">15</option>
@@ -100,6 +94,13 @@
                         @foreach ($datesArray as $d)
                             <option value="{{ $d['date'] }}">{{ $d['day'] }} {{ $d['date'] }}</option>
                         @endforeach
+                    </x-select>
+                    <x-select id="filterWing" wire:model.live="filterWing">
+                        <option value="">Select Wing</option>
+                        <option value="Wing A">Wing A</option>
+                        <option value="Wing B">Wing B</option>
+                        <option value="Wing C">Wing C</option>
+                        <option value="Wing D">Wing D</option>
                     </x-select>
                 </div>
                 <label for="table-search" class="sr-only">Search</label>
@@ -150,11 +151,7 @@
                 <tbody>
                     @foreach ($postings as $posting)
                         <tr
-                            class="
-                            @if (in_array($posting->id, $select_position)) dark:bg-green-700 bg-gray-200 hover:bg-gray-200 dark:hover:bg-green-800
-                    @else
-                        dark:bg-gray-800 bg-white hover:bg-gray-50 dark:hover:bg-gray-600 @endif
-                             border-b  dark:border-gray-700  ">
+                            class="bg-white border-b dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 dark:border-gray-700">
                             <td class="w-4 p-4">
                                 <div class="flex items-center">
                                     <input id="checkbox-{{ $posting->id }}" wire:model.live='positionChecked[]'
@@ -213,82 +210,76 @@
                     @endforeach
                 </tbody>
             </table>
-
-        </div>
-        <div class="col-span-1">
-            <div class="col-span-2 overflow-x-auto shadow-md sm:rounded-lg">
-                <div
-                    class="flex flex-wrap items-center justify-between py-4 space-y-4 bg-white flex-column md:flex-row md:space-y-0 dark:bg-gray-900">
-                    <div>
-                        <x-select wire:model.live='numPerUser'>
-                            <option value="10">10</option>
-                            <option value="15">15</option>
-                            <option value="30">30</option>
-                            <option value="40">40</option>
-                            <option value="60">60</option>
-                            <option value="80">80</option>
-                            <option value="100">100</option>
-                        </x-select>
-                    </div>
-                    <label for="table-search" class="sr-only">Search</label>
-                    <div class="relative">
-                        <div
-                            class="absolute inset-y-0 flex items-center pointer-events-none rtl:inset-r-0 start-0 ps-3">
-                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                        </div>
-                        <x-input type="text" wire:model.live='searchUser'
-                            placeholder="Search for users"></x-input>
-                    </div>
-                </div>
-                <table class="w-full text-sm text-left text-gray-500 rtl:text-right dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-
-                            <th scope="col" class="px-6 py-3">
-                                Name
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Wing
-                            </th>
-
-                            <th scope="col" class="px-6 py-3">
-                                Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($ows as $ow)
-                            <tr
-                                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                                <th scope="row"
-                                    class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                                    @if ($ow->user)
-                                        <img class="w-10 h-10 rounded-full" src="{{ $ow->user->profile_photo_url }}"
-                                            alt="Jese image">
-                                        <div class="ps-3">
-                                            <div class="text-base font-semibold">{{ $ow->user->name }}</div>
-                                            <div class="font-normal text-gray-500">{{ $ow->user->email }}</div>
-                                        </div>
-                                    @else
-                                        Not Posted Yet
-                                    @endif
-                                </th>
-                                <td class="px-6 py-4">
-                                    {{ $ow->wing }}
-                                </td>
-                                <td class="px-6 py-4">
-                                    <x-add wire:click='assign'>assign</x-add>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
+            <div class="mx-6 my-4">
+                {{ $postings->links() }}
             </div>
         </div>
+
     </div>
+
+
+    <x-dialog :close="false" wire:model="autoPostOwDialog" :maxWidth="'sm'" :title="'Aauto Post Ordained Worker'">
+
+
+        <!-- Modal body -->
+
+        <div class="space-y-6">
+            @session('status')
+                <div class="mb-4 text-sm font-medium text-green-600">
+
+                </div>
+            @endsession
+            <x-validation-errors class="mb-4" />
+            <form wire:submit="autoPost">
+                <div class="grid grid-cols-6 gap-6">
+
+                    <div class="col-span-6">
+                        <label for="autoPostWing"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Wings
+                        </label>
+                        <x-select id="autoPostWing" wire:model="autoPostWing">
+                            <option value="">Select Wing</option>
+                            <option value="Wing A">Wing A</option>
+                            <option value="Wing B">Wing B</option>
+                            <option value="Wing C">Wing C</option>
+                            <option value="Wing D">Wing D</option>
+                        </x-select>
+
+                    </div>
+                    <div class="col-span-6">
+                        <label for="autoPostMonth"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Month
+                        </label>
+                        <x-input id="autoPostMonth" wire:change='testFn' type='month'
+                            wire:model.live="autoPostMonth" />
+                    </div>
+                    <div class="col-span-6">
+                        <label for="autoPostDate"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Date {{ $autoPostMonth }}
+                        </label>
+                        <x-select wire:model='autoPostDate'>
+                            <option value=""></option>
+
+                            @foreach ($autoPostDateArray as $d)
+                                <option value="{{ $d['date'] }}">{{ $d['day'] }} {{ $d['date'] }}</option>
+                            @endforeach
+                        </x-select>
+                    </div>
+
+
+
+                </div>
+                <div class="items-center p-6 border-t border-gray-200 rounded-b dark:border-gray-700">
+                    <x-button type="submit">
+                        Save New Position
+                    </x-button>
+                </div>
+            </form>
+        </div>
+        <!-- Modal footer -->
+
+    </x-dialog>
 </div>

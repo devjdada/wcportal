@@ -27,7 +27,7 @@ return new class extends Migration
             $table->date('dob')->nullable();
             $table->date('marriage_anniversary')->nullable();
             $table->boolean('caller_squad')->default(false);
-            $table->enum('status', ['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder'])->nullable();
+            $table->enum('userStatus', ['brother', 'sister', 'deacon', 'deaconess', 'pastor', 'elder'])->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->foreignId('station_id')->nullable();

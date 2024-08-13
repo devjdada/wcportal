@@ -1,3 +1,4 @@
-<button {{ $attributes->merge(['class' => '']) }}>
-    <img src="{{ asset('static/icons/add.svg') }}" class="h-5 w-5 text-white">
+<button {{ $attributes->merge(['class' => 'flex text-xs align-middle']) }}>
+    <img src="{{ asset('static/icons/add.svg') }}" class="w-5 h-5 text-white ">
+    add
 </button>

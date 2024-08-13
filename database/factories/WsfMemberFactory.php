@@ -14,7 +14,7 @@ class WsfMemberFactory extends Factory
     public function definition()
     {
         return [
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
             'user_id' => $this->faker->numberBetween(1, 200),
             'homecell_id' => $this->faker->numberBetween(1, 200),
 

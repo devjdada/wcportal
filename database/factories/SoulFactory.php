@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -33,7 +34,10 @@ class SoulFactory extends Factory
             'prayer_point' => $this->faker->sentence(12),
             'email' => $this->faker->unique()->safeEmail,
             'born_again_on' => now(),
-            'created_at' => '2024-07-11 16:06:06',
+            'created_at' => $this->faker->dateTimeBetween(
+                Carbon::now()->subMonth(7)->startOfMonth(), // Start of last month
+                Carbon::now()
+            ),
         ];
     }
 }

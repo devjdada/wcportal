@@ -43,6 +43,8 @@ return new class extends Migration
             $table->string('wing');
             $table->string('location');
             $table->string('service');
+            $table->string('name')->nullable();
+            $table->string('phone')->nullable();
             $table->date('for');
             $table->boolean('available')->default(false);
             $table->foreignId('user_id')->nullable();

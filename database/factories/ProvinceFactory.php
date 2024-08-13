@@ -14,7 +14,7 @@ class ProvinceFactory extends Factory
     public function definition()
     {
         return [
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
             'title' => $this->faker->jobTitle,
             'about' => $this->faker->paragraph,
             'address' => $this->faker->unique()->safeEmail,

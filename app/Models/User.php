@@ -38,7 +38,7 @@ class User extends Authenticatable
         'firstname',
         'marital',
         'dob',
-        'status',
+        'userStatus',
         'gender',
         'address',
         'caller_squad',

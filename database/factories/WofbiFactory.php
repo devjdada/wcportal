@@ -14,7 +14,7 @@ class WofbiFactory extends Factory
     public function definition()
     {
         return [
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
             'start' => $this->faker->randomElement(['2022-01-08', '2022-01-15', '2022-01-22', '2022-02-05', '2022-02-12', '2022-02-19', '2022-02-26']),
             'end' => $this->faker->randomElement(['2022-01-08', '2022-01-15', '2022-01-22', '2022-02-05', '2022-02-12', '2022-02-19', '2022-02-26']),
             'session' => 'October 2022',
