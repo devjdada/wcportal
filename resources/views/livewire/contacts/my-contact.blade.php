@@ -21,7 +21,7 @@
                     <form class="lg:pr-3" action="#" method="GET">
                         <label for="users-search" class="sr-only">Search</label>
                         <div class="relative mt-1 lg:w-64 xl:w-96">
-                            <input type="text" wire:model.live.debounce.300ms="search"
+                            <input type="text" wire:model.live.debounce.300ms="search" name="search"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Search for users">
                         </div>
@@ -117,14 +117,8 @@
                                     class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                                     Location
                                 </th>
-                                <th scope="col"
-                                    class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                                    Prayer Point
-                                </th>
-                                <th scope="col"
-                                    class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                                    Status
-                                </th>
+
+
                                 <th scope="col"
                                     class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                                     Actions
@@ -157,25 +151,24 @@
                                         class="max-w-sm p-4 text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
                                         {{ $contact->location }}</td>
 
-                                    <td
-                                        class="p-4 overflow-hidden text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $contact->prayer_point }}</td>
-                                    <td
-                                        class="p-4 text-base font-normal text-gray-900 whitespace-nowrap dark:text-white">
-                                        <div class="flex items-center">
-                                            {{-- {{ if eq .status "Active" }} <div
-                                            class="h-2.5 w-2.5 rounded-full bg-green-400 mr-2"></div> {{ else }}
-                                        <div class="h-2.5 w-2.5 rounded-full bg-red-500 mr-2"></div> {{ end }} {{
-                                        .status }} --}}
-                                        </div>
-                                    </td>
-                                    <td class="p-4 space-x-2 whitespace-nowrap">
+
+
+                                    <td class="flex p-4 space-x-2 whitespace-nowrap">
                                         <x-edit type="button" wire:click="edit({{ $contact }})">
+                                            edit
                                         </x-edit>
-                                        <x-del type="button" wire:click="delete({{ $contact }})">
-                                        </x-del>
-                                        <x-edit type="button" wire:click="report({{ $contact }})">
-                                        </x-edit>
+
+                                        <x-add type="button" wire:click="report({{ $contact }})">
+                                            report
+                                        </x-add>
+
+                                        @can('isAdmin')
+                                            <x-del type="button"
+                                                wire:confirm.prompt="Are you sure?\n\nType DELETE to confirm|DELETE"
+                                                wire:click="delete({{ $contact }})">
+                                                del
+                                            </x-del>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

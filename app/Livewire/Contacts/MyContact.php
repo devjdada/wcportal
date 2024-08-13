@@ -84,8 +84,10 @@ class MyContact extends Component
     public function edit(Soul $soul)
     {
         // dd(auth()->user()->station_id);
+
         $this->editMode = true;
         $this->contactForm->setContact($soul);
+        $this->ncDialog = true;
     }
     public function report(Soul $soul)
     {
