@@ -76,11 +76,11 @@ class Dashboard extends Component
             'wing' => $this->wing,
             'status' => true,
             'register' => 'accept',
-            // Add other ordained worker specific fields (wing, caller_squad, etc.)
-            ...$validatedData
+            // Add other ordained worker specific fields (wing, caller_squapphp artisan
         ];
         OrdainedWorker::create($ordainedWorkerData);
         $this->registerOwDialog = false;
+        return $this->redirect('/dashboard');
     }
 
     public function checkUserData()

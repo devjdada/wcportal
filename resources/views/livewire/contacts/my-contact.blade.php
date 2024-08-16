@@ -118,6 +118,11 @@
                                     Location
                                 </th>
 
+                                <th scope="col"
+                                    class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                                    info
+                                </th>
+
 
                                 <th scope="col"
                                     class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
@@ -149,7 +154,13 @@
                                     </td>
                                     <td
                                         class="max-w-sm p-4 text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
-                                        {{ $contact->location }}</td>
+                                        {{ $contact->location }}
+                                    </td>
+                                    <td
+                                        class="max-w-sm p-4 text-base font-normal text-gray-500 truncate xl:max-w-xs dark:text-gray-400">
+                                        Assigned to {{ count($contact->assigned) }} | Report
+                                        {{ count($contact->report) }} |
+                                    </td>
 
 
 
@@ -241,7 +252,8 @@
                         <label for="biography"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Ptrayer
                             Request</label>
-                        <x-textarea id="prayer_point" wire:model="contactForm.prayer_point" rows="4">
+                        <x-textarea id="prayer_point" name='prayer' wire:model="contactForm.prayer_point"
+                            rows="4">
                         </x-textarea>
                     </div>
                 </div>
