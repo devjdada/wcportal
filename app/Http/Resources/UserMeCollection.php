@@ -25,7 +25,7 @@ class UserMeCollection extends JsonResource
 
         $request['station'] = $this->station;
 
-        $request['units'] = $this->units;
+        // $request['units'] = $this->units;
         $request['wsf_member'] = $this->wsf_member;
         return parent::toArray($request);
     }

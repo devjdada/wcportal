@@ -25,6 +25,7 @@ class MyContact extends Component
     public $reportMode = false;
     public $reportDialog = false;
     public $ncDialog = false;
+    public $viewDialog = false;
 
     // #[Url()]
     public $search = '';
@@ -88,6 +89,11 @@ class MyContact extends Component
         $this->editMode = true;
         $this->contactForm->setContact($soul);
         $this->ncDialog = true;
+    }
+    public function view(Soul $soul)
+    {
+        $this->soul = $soul;
+        $this->viewDialog = true;
     }
     public function report(Soul $soul)
     {

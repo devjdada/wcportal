@@ -165,6 +165,9 @@
 
 
                                     <td class="flex p-4 space-x-2 whitespace-nowrap">
+                                        <x-view type="button" wire:click="view({{ $contact }})">
+                                            view
+                                        </x-view>
                                         <x-edit type="button" wire:click="edit({{ $contact }})">
                                             edit
                                         </x-edit>
@@ -198,6 +201,12 @@
 
 
     </div>
+    <x-dialog wire:model="viewDialog" :title="'View Contact'" :maxWidth="'sm'">
+        <div class="space-y-6">
+            {{ $soul }}
+
+        </div>
+    </x-dialog>
     <x-dialog wire:model="ncDialog" :title="'Contact'" :maxWidth="'sm'">
 
         <div class="flex items-start justify-between border-b rounded-t dark:border-gray-700">
