@@ -43,9 +43,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('testimony', App\Http\Controllers\TestimonyController::class);
     Route::apiResource('blog', App\Http\Controllers\BlogController::class);
     Route::apiResource('gallery', App\Http\Controllers\GalleryController::class);
+    Route::apiResource('ow', App\Http\Controllers\OrdainedWorkerController::class);
+    Route::get('my_db_posting/{user}', [App\Http\Controllers\OwPostingController::class, 'my_posting']);
 });
 
 Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
 Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);
-
-Route::get('my_db_posting/{user}', [App\Http\Controllers\OwPostingController::class, 'my_posting']);
