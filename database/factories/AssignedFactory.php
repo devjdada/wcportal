@@ -15,9 +15,9 @@ class AssignedFactory extends Factory
     {
         return [
             'type' => $this->faker->randomElement(['unit', 'wsf', 'user']),
-            'assigned_to' => $this->faker->numberBetween(1, 200),
-            'contact_id' => $this->faker->numberBetween(1, 1200),
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'assigned_to' => $this->faker->numberBetween(1, 50),
+            'contact_id' => $this->faker->numberBetween(1, 200),
+            'station_id'  => 1,
         ];
     }
 }

@@ -2,1118 +2,188 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Premium Tailwind CSS Multipurpose Landing Page Template" />
+    <meta name="author" content="SRBThemes" />
 
-    <title>Laravel</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <title>Winners Chapel</title>
 
-    <!-- Styles -->
-    <style>
-        /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
-        *,
-        ::after,
-        ::before {
-            box-sizing: border-box;
-            border-width: 0;
-            border-style: solid;
-            border-color: #e5e7eb
-        }
-
-        ::after,
-        ::before {
-            --tw-content: ''
-        }
-
-        :host,
-        html {
-            line-height: 1.5;
-            -webkit-text-size-adjust: 100%;
-            -moz-tab-size: 4;
-            tab-size: 4;
-            font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            -webkit-tap-highlight-color: transparent
-        }
-
-        body {
-            margin: 0;
-            line-height: inherit
-        }
-
-        hr {
-            height: 0;
-            color: inherit;
-            border-top-width: 1px
-        }
-
-        abbr:where([title]) {
-            -webkit-text-decoration: underline dotted;
-            text-decoration: underline dotted
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: inherit;
-            font-weight: inherit
-        }
-
-        a {
-            color: inherit;
-            text-decoration: inherit
-        }
-
-        b,
-        strong {
-            font-weight: bolder
-        }
-
-        code,
-        kbd,
-        pre,
-        samp {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            font-feature-settings: normal;
-            font-variation-settings: normal;
-            font-size: 1em
-        }
-
-        small {
-            font-size: 80%
-        }
-
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-            position: relative;
-            vertical-align: baseline
-        }
-
-        sub {
-            bottom: -.25em
-        }
-
-        sup {
-            top: -.5em
-        }
-
-        table {
-            text-indent: 0;
-            border-color: inherit;
-            border-collapse: collapse
-        }
-
-        button,
-        input,
-        optgroup,
-        select,
-        textarea {
-            font-family: inherit;
-            font-feature-settings: inherit;
-            font-variation-settings: inherit;
-            font-size: 100%;
-            font-weight: inherit;
-            line-height: inherit;
-            color: inherit;
-            margin: 0;
-            padding: 0
-        }
-
-        button,
-        select {
-            text-transform: none
-        }
-
-        [type=button],
-        [type=reset],
-        [type=submit],
-        button {
-            -webkit-appearance: button;
-            background-color: transparent;
-            background-image: none
-        }
-
-        :-moz-focusring {
-            outline: auto
-        }
-
-        :-moz-ui-invalid {
-            box-shadow: none
-        }
-
-        progress {
-            vertical-align: baseline
-        }
-
-        ::-webkit-inner-spin-button,
-        ::-webkit-outer-spin-button {
-            height: auto
-        }
-
-        [type=search] {
-            -webkit-appearance: textfield;
-            outline-offset: -2px
-        }
-
-        ::-webkit-search-decoration {
-            -webkit-appearance: none
-        }
-
-        ::-webkit-file-upload-button {
-            -webkit-appearance: button;
-            font: inherit
-        }
-
-        summary {
-            display: list-item
-        }
-
-        blockquote,
-        dd,
-        dl,
-        figure,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        hr,
-        p,
-        pre {
-            margin: 0
-        }
-
-        fieldset {
-            margin: 0;
-            padding: 0
-        }
-
-        legend {
-            padding: 0
-        }
-
-        menu,
-        ol,
-        ul {
-            list-style: none;
-            margin: 0;
-            padding: 0
-        }
-
-        dialog {
-            padding: 0
-        }
-
-        textarea {
-            resize: vertical
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            opacity: 1;
-            color: #9ca3af
-        }
-
-        [role=button],
-        button {
-            cursor: pointer
-        }
-
-        :disabled {
-            cursor: default
-        }
-
-        audio,
-        canvas,
-        embed,
-        iframe,
-        img,
-        object,
-        svg,
-        video {
-            display: block;
-            vertical-align: middle
-        }
-
-        img,
-        video {
-            max-width: 100%;
-            height: auto
-        }
-
-        [hidden] {
-            display: none
-        }
-
-        *,
-        ::before,
-        ::after {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia:
-        }
-
-        ::backdrop {
-            --tw-border-spacing-x: 0;
-            --tw-border-spacing-y: 0;
-            --tw-translate-x: 0;
-            --tw-translate-y: 0;
-            --tw-rotate: 0;
-            --tw-skew-x: 0;
-            --tw-skew-y: 0;
-            --tw-scale-x: 1;
-            --tw-scale-y: 1;
-            --tw-pan-x: ;
-            --tw-pan-y: ;
-            --tw-pinch-zoom: ;
-            --tw-scroll-snap-strictness: proximity;
-            --tw-gradient-from-position: ;
-            --tw-gradient-via-position: ;
-            --tw-gradient-to-position: ;
-            --tw-ordinal: ;
-            --tw-slashed-zero: ;
-            --tw-numeric-figure: ;
-            --tw-numeric-spacing: ;
-            --tw-numeric-fraction: ;
-            --tw-ring-inset: ;
-            --tw-ring-offset-width: 0px;
-            --tw-ring-offset-color: #fff;
-            --tw-ring-color: rgb(59 130 246 / 0.5);
-            --tw-ring-offset-shadow: 0 0 #0000;
-            --tw-ring-shadow: 0 0 #0000;
-            --tw-shadow: 0 0 #0000;
-            --tw-shadow-colored: 0 0 #0000;
-            --tw-blur: ;
-            --tw-brightness: ;
-            --tw-contrast: ;
-            --tw-grayscale: ;
-            --tw-hue-rotate: ;
-            --tw-invert: ;
-            --tw-saturate: ;
-            --tw-sepia: ;
-            --tw-drop-shadow: ;
-            --tw-backdrop-blur: ;
-            --tw-backdrop-brightness: ;
-            --tw-backdrop-contrast: ;
-            --tw-backdrop-grayscale: ;
-            --tw-backdrop-hue-rotate: ;
-            --tw-backdrop-invert: ;
-            --tw-backdrop-opacity: ;
-            --tw-backdrop-saturate: ;
-            --tw-backdrop-sepia:
-        }
-
-        .absolute {
-            position: absolute
-        }
-
-        .relative {
-            position: relative
-        }
-
-        .-left-20 {
-            left: -5rem
-        }
-
-        .top-0 {
-            top: 0px
-        }
-
-        .-bottom-16 {
-            bottom: -4rem
-        }
-
-        .-left-16 {
-            left: -4rem
-        }
-
-        .-mx-3 {
-            margin-left: -0.75rem;
-            margin-right: -0.75rem
-        }
-
-        .mt-4 {
-            margin-top: 1rem
-        }
-
-        .mt-6 {
-            margin-top: 1.5rem
-        }
-
-        .flex {
-            display: flex
-        }
-
-        .grid {
-            display: grid
-        }
-
-        .hidden {
-            display: none
-        }
-
-        .aspect-video {
-            aspect-ratio: 16 / 9
-        }
-
-        .size-12 {
-            width: 3rem;
-            height: 3rem
-        }
-
-        .size-5 {
-            width: 1.25rem;
-            height: 1.25rem
-        }
-
-        .size-6 {
-            width: 1.5rem;
-            height: 1.5rem
-        }
-
-        .h-12 {
-            height: 3rem
-        }
-
-        .h-40 {
-            height: 10rem
-        }
-
-        .h-full {
-            height: 100%
-        }
-
-        .min-h-screen {
-            min-height: 100vh
-        }
-
-        .w-full {
-            width: 100%
-        }
-
-        .w-\[calc\(100\%\+8rem\)\] {
-            width: calc(100% + 8rem)
-        }
-
-        .w-auto {
-            width: auto
-        }
-
-        .max-w-\[877px\] {
-            max-width: 877px
-        }
-
-        .max-w-2xl {
-            max-width: 42rem
-        }
-
-        .flex-1 {
-            flex: 1 1 0%
-        }
-
-        .shrink-0 {
-            flex-shrink: 0
-        }
-
-        .grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr))
-        }
-
-        .flex-col {
-            flex-direction: column
-        }
-
-        .items-start {
-            align-items: flex-start
-        }
-
-        .items-center {
-            align-items: center
-        }
-
-        .items-stretch {
-            align-items: stretch
-        }
-
-        .justify-end {
-            justify-content: flex-end
-        }
-
-        .justify-center {
-            justify-content: center
-        }
-
-        .gap-2 {
-            gap: 0.5rem
-        }
-
-        .gap-4 {
-            gap: 1rem
-        }
-
-        .gap-6 {
-            gap: 1.5rem
-        }
-
-        .self-center {
-            align-self: center
-        }
-
-        .overflow-hidden {
-            overflow: hidden
-        }
-
-        .rounded-\[10px\] {
-            border-radius: 10px
-        }
-
-        .rounded-full {
-            border-radius: 9999px
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem
-        }
-
-        .rounded-md {
-            border-radius: 0.375rem
-        }
-
-        .rounded-sm {
-            border-radius: 0.125rem
-        }
-
-        .bg-\[\#FF2D20\]\/10 {
-            background-color: rgb(255 45 32 / 0.1)
-        }
-
-        .bg-white {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 255 255 / var(--tw-bg-opacity))
-        }
-
-        .bg-gradient-to-b {
-            background-image: linear-gradient(to bottom, var(--tw-gradient-stops))
-        }
-
-        .from-transparent {
-            --tw-gradient-from: transparent var(--tw-gradient-from-position);
-            --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
-        }
-
-        .via-white {
-            --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
-            --tw-gradient-stops: var(--tw-gradient-from), #fff var(--tw-gradient-via-position), var(--tw-gradient-to)
-        }
-
-        .to-white {
-            --tw-gradient-to: #fff var(--tw-gradient-to-position)
-        }
-
-        .stroke-\[\#FF2D20\] {
-            stroke: #FF2D20
-        }
-
-        .object-cover {
-            object-fit: cover
-        }
-
-        .object-top {
-            object-position: top
-        }
-
-        .p-6 {
-            padding: 1.5rem
-        }
-
-        .px-6 {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem
-        }
-
-        .py-10 {
-            padding-top: 2.5rem;
-            padding-bottom: 2.5rem
-        }
-
-        .px-3 {
-            padding-left: 0.75rem;
-            padding-right: 0.75rem
-        }
-
-        .py-16 {
-            padding-top: 4rem;
-            padding-bottom: 4rem
-        }
-
-        .py-2 {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem
-        }
-
-        .pt-3 {
-            padding-top: 0.75rem
-        }
-
-        .text-center {
-            text-align: center
-        }
-
-        .font-sans {
-            font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25rem
-        }
-
-        .text-sm\/relaxed {
-            font-size: 0.875rem;
-            line-height: 1.625
-        }
-
-        .text-xl {
-            font-size: 1.25rem;
-            line-height: 1.75rem
-        }
-
-        .font-semibold {
-            font-weight: 600
-        }
-
-        .text-black {
-            --tw-text-opacity: 1;
-            color: rgb(0 0 0 / var(--tw-text-opacity))
-        }
-
-        .text-white {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity))
-        }
-
-        .underline {
-            -webkit-text-decoration-line: underline;
-            text-decoration-line: underline
-        }
-
-        .antialiased {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale
-        }
-
-        .shadow-\[0px_14px_34px_0px_rgba\(0\2c 0\2c 0\2c 0\.08\)\] {
-            --tw-shadow: 0px 14px 34px 0px rgba(0, 0, 0, 0.08);
-            --tw-shadow-colored: 0px 14px 34px 0px var(--tw-shadow-color);
-            box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
-        }
-
-        .ring-1 {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
-        }
-
-        .ring-transparent {
-            --tw-ring-color: transparent
-        }
-
-        .ring-white\/\[0\.05\] {
-            --tw-ring-color: rgb(255 255 255 / 0.05)
-        }
-
-        .drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.06\)\] {
-            --tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.06));
-            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-        }
-
-        .drop-shadow-\[0px_4px_34px_rgba\(0\2c 0\2c 0\2c 0\.25\)\] {
-            --tw-drop-shadow: drop-shadow(0px 4px 34px rgba(0, 0, 0, 0.25));
-            filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)
-        }
-
-        .transition {
-            transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
-            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            transition-duration: 150ms
-        }
-
-        .duration-300 {
-            transition-duration: 300ms
-        }
-
-        .selection\:bg-\[\#FF2D20\] *::selection {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 45 32 / var(--tw-bg-opacity))
-        }
-
-        .selection\:text-white *::selection {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity))
-        }
-
-        .selection\:bg-\[\#FF2D20\]::selection {
-            --tw-bg-opacity: 1;
-            background-color: rgb(255 45 32 / var(--tw-bg-opacity))
-        }
-
-        .selection\:text-white::selection {
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity))
-        }
-
-        .hover\:text-black:hover {
-            --tw-text-opacity: 1;
-            color: rgb(0 0 0 / var(--tw-text-opacity))
-        }
-
-        .hover\:text-black\/70:hover {
-            color: rgb(0 0 0 / 0.7)
-        }
-
-        .hover\:ring-black\/20:hover {
-            --tw-ring-color: rgb(0 0 0 / 0.2)
-        }
-
-        .focus\:outline-none:focus {
-            outline: 2px solid transparent;
-            outline-offset: 2px
-        }
-
-        .focus-visible\:ring-1:focus-visible {
-            --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-            --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-            box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)
-        }
-
-        .focus-visible\:ring-\[\#FF2D20\]:focus-visible {
-            --tw-ring-opacity: 1;
-            --tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity))
-        }
-
-        @media (min-width: 640px) {
-            .sm\:size-16 {
-                width: 4rem;
-                height: 4rem
-            }
-
-            .sm\:size-6 {
-                width: 1.5rem;
-                height: 1.5rem
-            }
-
-            .sm\:pt-5 {
-                padding-top: 1.25rem
-            }
-        }
-
-        @media (min-width: 768px) {
-            .md\:row-span-3 {
-                grid-row: span 3 / span 3
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .lg\:col-start-2 {
-                grid-column-start: 2
-            }
-
-            .lg\:h-16 {
-                height: 4rem
-            }
-
-            .lg\:max-w-7xl {
-                max-width: 80rem
-            }
-
-            .lg\:grid-cols-3 {
-                grid-template-columns: repeat(3, minmax(0, 1fr))
-            }
-
-            .lg\:grid-cols-2 {
-                grid-template-columns: repeat(2, minmax(0, 1fr))
-            }
-
-            .lg\:flex-col {
-                flex-direction: column
-            }
-
-            .lg\:items-end {
-                align-items: flex-end
-            }
-
-            .lg\:justify-center {
-                justify-content: center
-            }
-
-            .lg\:gap-8 {
-                gap: 2rem
-            }
-
-            .lg\:p-10 {
-                padding: 2.5rem
-            }
-
-            .lg\:pb-10 {
-                padding-bottom: 2.5rem
-            }
-
-            .lg\:pt-0 {
-                padding-top: 0px
-            }
-
-            .lg\:text-\[\#FF2D20\] {
-                --tw-text-opacity: 1;
-                color: rgb(255 45 32 / var(--tw-text-opacity))
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .dark\:block {
-                display: block
-            }
-
-            .dark\:hidden {
-                display: none
-            }
-
-            .dark\:bg-black {
-                --tw-bg-opacity: 1;
-                background-color: rgb(0 0 0 / var(--tw-bg-opacity))
-            }
-
-            .dark\:bg-zinc-900 {
-                --tw-bg-opacity: 1;
-                background-color: rgb(24 24 27 / var(--tw-bg-opacity))
-            }
-
-            .dark\:via-zinc-900 {
-                --tw-gradient-to: rgb(24 24 27 / 0) var(--tw-gradient-to-position);
-                --tw-gradient-stops: var(--tw-gradient-from), #18181b var(--tw-gradient-via-position), var(--tw-gradient-to)
-            }
-
-            .dark\:to-zinc-900 {
-                --tw-gradient-to: #18181b var(--tw-gradient-to-position)
-            }
-
-            .dark\:text-white\/50 {
-                color: rgb(255 255 255 / 0.5)
-            }
-
-            .dark\:text-white {
-                --tw-text-opacity: 1;
-                color: rgb(255 255 255 / var(--tw-text-opacity))
-            }
-
-            .dark\:text-white\/70 {
-                color: rgb(255 255 255 / 0.7)
-            }
-
-            .dark\:ring-zinc-800 {
-                --tw-ring-opacity: 1;
-                --tw-ring-color: rgb(39 39 42 / var(--tw-ring-opacity))
-            }
-
-            .dark\:hover\:text-white:hover {
-                --tw-text-opacity: 1;
-                color: rgb(255 255 255 / var(--tw-text-opacity))
-            }
-
-            .dark\:hover\:text-white\/70:hover {
-                color: rgb(255 255 255 / 0.7)
-            }
-
-            .dark\:hover\:text-white\/80:hover {
-                color: rgb(255 255 255 / 0.8)
-            }
-
-            .dark\:hover\:ring-zinc-700:hover {
-                --tw-ring-opacity: 1;
-                --tw-ring-color: rgb(63 63 70 / var(--tw-ring-opacity))
-            }
-
-            .dark\:focus-visible\:ring-\[\#FF2D20\]:focus-visible {
-                --tw-ring-opacity: 1;
-                --tw-ring-color: rgb(255 45 32 / var(--tw-ring-opacity))
-            }
-
-            .dark\:focus-visible\:ring-white:focus-visible {
-                --tw-ring-opacity: 1;
-                --tw-ring-color: rgb(255 255 255 / var(--tw-ring-opacity))
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 </head>
 
-<body class="font-sans antialiased dark:bg-black dark:text-white/50">
-    <div class="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-        <img id="background" class="absolute -left-20 top-0 max-w-[877px]"
-            src="https://laravel.com/assets/img/welcome/background.svg" />
-        <div
-            class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
-            <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                <header class="grid items-center grid-cols-2 gap-2 py-10 lg:grid-cols-3">
-                    {{-- <div class="flex lg:justify-center lg:col-start-2">
-                        <svg class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" viewBox="0 0 62 65" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z"
-                                fill="currentColor" />
-                        </svg> --}}
-            </div>
-            @if (Route::has('login'))
-                <nav class="flex justify-end flex-1 -mx-3">
-                    @auth
-                        <a href="{{ url('/dashboard') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Dashboard
-                        </a>
-                    @else
-                        <a href="{{ route('login') }}"
-                            class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                            Log in
-                        </a>
+<body class="text-base antialiased font-normal font-primary">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                Register
+    <header class="main-menu">
+        <nav class="fixed top-0 z-50 w-full mobile-menu-bg">
+            <div class="container">
+                <div class="items-center justify-between gap-6 lg:flex">
+                    <div class="flex items-center justify-between">
+                        <a href='/'>
+                            <img src="{{ asset('static/logo.svg') }}" class="w-34" style="width: 104px"
+                                alt="logo" />
+                        </a>
+                        <button class="text-end mobile-menu-button lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="navbarNav" class="hidden mobile-menu lg:block">
+                        <ul
+                            class="lg:space-x-8 space-y-4 lg:space-y-0 lg:flex items-center mt-6 lg:mt-0 max-[976px]:max-h-80 max-[976px]:overflow-scroll">
+                            {{-- <li class="relative group nav-active nav-menu">
+                                <a href="javaScript:void();"
+                                    class="text-lg inline-block font-bold lg:py-[34px] tracking-[0.86px] text-dark-semilight relative hover:text-dark duration-300">
+                                    Home
+                                </a>
+                            </li> --}}
+
+                            <a href="{{ route('login') }}" class="btn  flex items-center max-w-[160px] gap-2 ">
+                                <svg class="inline-block" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                        d="M21 5.25V7.5H3V5.25C3 5.05109 3.07902 4.86032 3.21967 4.71967C3.36032 4.57902 3.55109 4.5 3.75 4.5H20.25C20.4489 4.5 20.6397 4.57902 20.7803 4.71967C20.921 4.86032 21 5.05109 21 5.25Z"
+                                        fill="white" />
+                                    <path
+                                        d="M20.25 3.75H3.75C3.35218 3.75 2.97064 3.90804 2.68934 4.18934C2.40804 4.47064 2.25 4.85218 2.25 5.25V18.75C2.25 19.1478 2.40804 19.5294 2.68934 19.8107C2.97064 20.092 3.35218 20.25 3.75 20.25H20.25C20.6478 20.25 21.0294 20.092 21.3107 19.8107C21.592 19.5294 21.75 19.1478 21.75 18.75V5.25C21.75 4.85218 21.592 4.47064 21.3107 4.18934C21.0294 3.90804 20.6478 3.75 20.25 3.75ZM20.25 5.25V6.75H3.75V5.25H20.25ZM20.25 18.75H3.75V8.25H20.25V18.75ZM16.5 10.5C16.5 11.6935 16.0259 12.8381 15.182 13.682C14.3381 14.5259 13.1935 15 12 15C10.8065 15 9.66193 14.5259 8.81802 13.682C7.97411 12.8381 7.5 11.6935 7.5 10.5C7.5 10.3011 7.57902 10.1103 7.71967 9.96967C7.86032 9.82902 8.05109 9.75 8.25 9.75C8.44891 9.75 8.63968 9.82902 8.78033 9.96967C8.92098 10.1103 9 10.3011 9 10.5C9 11.2956 9.31607 12.0587 9.87868 12.6213C10.4413 13.1839 11.2044 13.5 12 13.5C12.7956 13.5 13.5587 13.1839 14.1213 12.6213C14.6839 12.0587 15 11.2956 15 10.5C15 10.3011 15.079 10.1103 15.2197 9.96967C15.3603 9.82902 15.5511 9.75 15.75 9.75C15.9489 9.75 16.1397 9.82902 16.2803 9.96967C16.421 10.1103 16.5 10.3011 16.5 10.5Z"
+                                        fill="white" />
+                                </svg>
+                                <span class="shrink-0">Login</span>
                             </a>
-                        @endif
-                    @endauth
-                </nav>
-            @endif
-            </header>
-
-            {{-- <main class="mt-6">
-                    <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
-                        <a href="https://laravel.com/docs" id="docs-card"
-                            class="flex flex-col items-start gap-6 overflow-hidden rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] md:row-span-3 lg:p-10 lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                            <div id="screenshot-container" class="relative flex items-stretch flex-1 w-full">
-                                <img src="https://laravel.com/assets/img/welcome/docs-light.svg"
-                                    alt="Laravel documentation screenshot"
-                                    class="aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                                    onerror="
-                                            document.getElementById('screenshot-container').classList.add('!hidden');
-                                            document.getElementById('docs-card').classList.add('!row-span-1');
-                                            document.getElementById('docs-card-content').classList.add('!flex-row');
-                                            document.getElementById('background').classList.add('!hidden');
-                                        " />
-                                <img src="https://laravel.com/assets/img/welcome/docs-dark.svg"
-                                    alt="Laravel documentation screenshot"
-                                    class="hidden aspect-video h-full w-full flex-1 rounded-[10px] object-top object-cover drop-shadow-[0px_4px_34px_rgba(0,0,0,0.25)] dark:block" />
-                                <div
-                                    class="absolute -bottom-16 -left-16 h-40 w-[calc(100%+8rem)] bg-gradient-to-b from-transparent via-white to-white dark:via-zinc-900 dark:to-zinc-900">
-                                </div>
-                            </div>
-
-                            <div class="relative flex items-center gap-6 lg:items-end">
-                                <div id="docs-card-content" class="flex items-start gap-6 lg:flex-col">
-                                    <div
-                                        class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                        <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                            viewBox="0 0 24 24">
-                                            <path fill="#FF2D20"
-                                                d="M23 4a1 1 0 0 0-1.447-.894L12.224 7.77a.5.5 0 0 1-.448 0L2.447 3.106A1 1 0 0 0 1 4v13.382a1.99 1.99 0 0 0 1.105 1.79l9.448 4.728c.14.065.293.1.447.1.154-.005.306-.04.447-.105l9.453-4.724a1.99 1.99 0 0 0 1.1-1.789V4ZM3 6.023a.25.25 0 0 1 .362-.223l7.5 3.75a.251.251 0 0 1 .138.223v11.2a.25.25 0 0 1-.362.224l-7.5-3.75a.25.25 0 0 1-.138-.22V6.023Zm18 11.2a.25.25 0 0 1-.138.224l-7.5 3.75a.249.249 0 0 1-.329-.099.249.249 0 0 1-.033-.12V9.772a.251.251 0 0 1 .138-.224l7.5-3.75a.25.25 0 0 1 .362.224v11.2Z" />
-                                            <path fill="#FF2D20"
-                                                d="m3.55 1.893 8 4.048a1.008 1.008 0 0 0 .9 0l8-4.048a1 1 0 0 0-.9-1.785l-7.322 3.706a.506.506 0 0 1-.452 0L4.454.108a1 1 0 0 0-.9 1.785H3.55Z" />
-                                        </svg>
-                                    </div>
-
-                                    <div class="pt-3 sm:pt-5 lg:pt-0">
-                                        <h2 class="text-xl font-semibold text-black dark:text-white">Documentation</h2>
-
-                                        <p class="mt-4 text-sm/relaxed">
-                                            Laravel has wonderful documentation covering every aspect of the framework.
-                                            Whether you are a newcomer or have prior experience with Laravel, we
-                                            recommend reading our documentation from beginning to end.
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <svg class="size-6 shrink-0 stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg"
-                                    fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                            <a href="{{ route('register') }}" class="btn  flex items-center max-w-[160px] gap-1">
+                                <svg class="inline-block" width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                        d="M21 5.25V7.5H3V5.25C3 5.05109 3.07902 4.86032 3.21967 4.71967C3.36032 4.57902 3.55109 4.5 3.75 4.5H20.25C20.4489 4.5 20.6397 4.57902 20.7803 4.71967C20.921 4.86032 21 5.05109 21 5.25Z"
+                                        fill="white" />
+                                    <path
+                                        d="M20.25 3.75H3.75C3.35218 3.75 2.97064 3.90804 2.68934 4.18934C2.40804 4.47064 2.25 4.85218 2.25 5.25V18.75C2.25 19.1478 2.40804 19.5294 2.68934 19.8107C2.97064 20.092 3.35218 20.25 3.75 20.25H20.25C20.6478 20.25 21.0294 20.092 21.3107 19.8107C21.592 19.5294 21.75 19.1478 21.75 18.75V5.25C21.75 4.85218 21.592 4.47064 21.3107 4.18934C21.0294 3.90804 20.6478 3.75 20.25 3.75ZM20.25 5.25V6.75H3.75V5.25H20.25ZM20.25 18.75H3.75V8.25H20.25V18.75ZM16.5 10.5C16.5 11.6935 16.0259 12.8381 15.182 13.682C14.3381 14.5259 13.1935 15 12 15C10.8065 15 9.66193 14.5259 8.81802 13.682C7.97411 12.8381 7.5 11.6935 7.5 10.5C7.5 10.3011 7.57902 10.1103 7.71967 9.96967C7.86032 9.82902 8.05109 9.75 8.25 9.75C8.44891 9.75 8.63968 9.82902 8.78033 9.96967C8.92098 10.1103 9 10.3011 9 10.5C9 11.2956 9.31607 12.0587 9.87868 12.6213C10.4413 13.1839 11.2044 13.5 12 13.5C12.7956 13.5 13.5587 13.1839 14.1213 12.6213C14.6839 12.0587 15 11.2956 15 10.5C15 10.3011 15.079 10.1103 15.2197 9.96967C15.3603 9.82902 15.5511 9.75 15.75 9.75C15.9489 9.75 16.1397 9.82902 16.2803 9.96967C16.421 10.1103 16.5 10.3011 16.5 10.5Z"
+                                        fill="white" />
                                 </svg>
-                            </div>
-                        </a>
+                                <span class="shrink-0">Register</span>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-                        <a href="https://laracasts.com"
-                            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                            <div
-                                class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <g fill="#FF2D20">
-                                        <path
-                                            d="M24 8.25a.5.5 0 0 0-.5-.5H.5a.5.5 0 0 0-.5.5v12a2.5 2.5 0 0 0 2.5 2.5h19a2.5 2.5 0 0 0 2.5-2.5v-12Zm-7.765 5.868a1.221 1.221 0 0 1 0 2.264l-6.626 2.776A1.153 1.153 0 0 1 8 18.123v-5.746a1.151 1.151 0 0 1 1.609-1.035l6.626 2.776ZM19.564 1.677a.25.25 0 0 0-.177-.427H15.6a.106.106 0 0 0-.072.03l-4.54 4.543a.25.25 0 0 0 .177.427h3.783c.027 0 .054-.01.073-.03l4.543-4.543ZM22.071 1.318a.047.047 0 0 0-.045.013l-4.492 4.492a.249.249 0 0 0 .038.385.25.25 0 0 0 .14.042h5.784a.5.5 0 0 0 .5-.5v-2a2.5 2.5 0 0 0-1.925-2.432ZM13.014 1.677a.25.25 0 0 0-.178-.427H9.101a.106.106 0 0 0-.073.03l-4.54 4.543a.25.25 0 0 0 .177.427H8.4a.106.106 0 0 0 .073-.03l4.54-4.543ZM6.513 1.677a.25.25 0 0 0-.177-.427H2.5A2.5 2.5 0 0 0 0 3.75v2a.5.5 0 0 0 .5.5h1.4a.106.106 0 0 0 .073-.03l4.54-4.543Z" />
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <div class="pt-3 sm:pt-5">
-                                <h2 class="text-xl font-semibold text-black dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-sm/relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
-                                    development. Check them out, see for yourself, and massively level up your
-                                    development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+    <section class="pb-20 pt-32 md:pt-[180px]">
+        <div class="container">
+            <div class="grid items-center grid-cols-1 gap-6 lg:grid-cols-2">
+                <div>
+                    <h1 class="font-extrabold text-4xl/tight md:text-[20px]/tight">Master Your Money with Our Innovative
+                        Finance App!</h1>
+                    <p class="mt-5 text-lg max-w-[577px] text-gray">Manage Your Budget, Track Expenses, and Grow Your
+                        Wealth with Confidence Using Our Feature-Rich Finance App</p>
+                    <div class="mt-7">
+                        <a href="{{ route('register') }}" class="btn btn-custom">Get on Board</a>
+                    </div>
+                    {{-- <div class="flex flex-wrap items-start gap-6 mt-12 md:gap-10">
+                        <div>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.2"
+                                    d="M25.3125 6.5625V13.4496C25.3125 23.3145 16.9559 26.5828 15.2883 27.1371C15.1015 27.2016 14.8985 27.2016 14.7117 27.1371C13.0441 26.5852 4.6875 23.3203 4.6875 13.452V6.5625C4.6875 6.31386 4.78627 6.0754 4.96209 5.89959C5.1379 5.72377 5.37636 5.625 5.625 5.625H24.375C24.6236 5.625 24.8621 5.72377 25.0379 5.89959C25.2137 6.0754 25.3125 6.31386 25.3125 6.5625Z"
+                                    fill="#04B420" />
+                                <path
+                                    d="M24.375 4.6875H5.625C5.12772 4.6875 4.65081 4.88504 4.29917 5.23667C3.94754 5.58831 3.75 6.06522 3.75 6.5625V13.4508C3.75 23.952 12.6352 27.4359 14.4141 28.0277C14.794 28.1569 15.206 28.1569 15.5859 28.0277C17.3672 27.4359 26.25 23.952 26.25 13.4508V6.5625C26.25 6.06522 26.0525 5.58831 25.7008 5.23667C25.3492 4.88504 24.8723 4.6875 24.375 4.6875ZM24.375 13.452C24.375 22.6418 16.5996 25.7121 15 26.2465C13.4145 25.718 5.625 22.65 5.625 13.452V6.5625H24.375V13.452ZM9.64922 16.6008C9.47331 16.4249 9.37448 16.1863 9.37448 15.9375C9.37448 15.6887 9.47331 15.4501 9.64922 15.2742C9.82513 15.0983 10.0637 14.9995 10.3125 14.9995C10.5613 14.9995 10.7999 15.0983 10.9758 15.2742L13.125 17.4234L19.0242 11.5242C19.1113 11.4371 19.2147 11.368 19.3285 11.3209C19.4423 11.2737 19.5643 11.2495 19.6875 11.2495C19.8107 11.2495 19.9327 11.2737 20.0465 11.3209C20.1603 11.368 20.2637 11.4371 20.3508 11.5242C20.4379 11.6113 20.507 11.7147 20.5541 11.8285C20.6013 11.9423 20.6255 12.0643 20.6255 12.1875C20.6255 12.3107 20.6013 12.4327 20.5541 12.5465C20.507 12.6603 20.4379 12.7637 20.3508 12.8508L13.7883 19.4133C13.7012 19.5004 13.5978 19.5696 13.484 19.6168C13.3702 19.664 13.2482 19.6882 13.125 19.6882C13.0018 19.6882 12.8798 19.664 12.766 19.6168C12.6522 19.5696 12.5488 19.5004 12.4617 19.4133L9.64922 16.6008Z"
+                                    fill="#04B420" />
                             </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com"
-                            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                            <div
-                                class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <g fill="#FF2D20">
-                                        <path
-                                            d="M8.75 4.5H5.5c-.69 0-1.25.56-1.25 1.25v4.75c0 .69.56 1.25 1.25 1.25h3.25c.69 0 1.25-.56 1.25-1.25V5.75c0-.69-.56-1.25-1.25-1.25Z" />
-                                        <path
-                                            d="M24 10a3 3 0 0 0-3-3h-2V2.5a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2V20a3.5 3.5 0 0 0 3.5 3.5h17A3.5 3.5 0 0 0 24 20V10ZM3.5 21.5A1.5 1.5 0 0 1 2 20V3a.5.5 0 0 1 .5-.5h14a.5.5 0 0 1 .5.5v17c0 .295.037.588.11.874a.5.5 0 0 1-.484.625L3.5 21.5ZM22 20a1.5 1.5 0 1 1-3 0V9.5a.5.5 0 0 1 .5-.5H21a1 1 0 0 1 1 1v10Z" />
-                                        <path
-                                            d="M12.751 6.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 7.3v-.5a.75.75 0 0 1 .751-.753ZM12.751 10.047h2a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-2A.75.75 0 0 1 12 11.3v-.5a.75.75 0 0 1 .751-.753ZM4.751 14.047h10a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-10A.75.75 0 0 1 4 15.3v-.5a.75.75 0 0 1 .751-.753ZM4.75 18.047h7.5a.75.75 0 0 1 .75.75v.5a.75.75 0 0 1-.75.75h-7.5A.75.75 0 0 1 4 19.3v-.5a.75.75 0 0 1 .75-.753Z" />
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <div class="pt-3 sm:pt-5">
-                                <h2 class="text-xl font-semibold text-black dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-sm/relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the
-                                    latest and most important news in the Laravel ecosystem, including new package
-                                    releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg class="size-6 shrink-0 self-center stroke-[#FF2D20]" xmlns="http://www.w3.org/2000/svg"
-                                fill="none" viewBox="0 0 24 24" stroke-width="1.5">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div
-                            class="flex items-start gap-4 rounded-lg bg-white p-6 shadow-[0px_14px_34px_0px_rgba(0,0,0,0.08)] ring-1 ring-white/[0.05] transition duration-300 hover:text-black/70 hover:ring-black/20 focus:outline-none focus-visible:ring-[#FF2D20] lg:pb-10 dark:bg-zinc-900 dark:ring-zinc-800 dark:hover:text-white/70 dark:hover:ring-zinc-700 dark:focus-visible:ring-[#FF2D20]">
-                            <div
-                                class="flex size-12 shrink-0 items-center justify-center rounded-full bg-[#FF2D20]/10 sm:size-16">
-                                <svg class="size-5 sm:size-6" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <g fill="#FF2D20">
-                                        <path
-                                            d="M16.597 12.635a.247.247 0 0 0-.08-.237 2.234 2.234 0 0 1-.769-1.68c.001-.195.03-.39.084-.578a.25.25 0 0 0-.09-.267 8.8 8.8 0 0 0-4.826-1.66.25.25 0 0 0-.268.181 2.5 2.5 0 0 1-2.4 1.824.045.045 0 0 0-.045.037 12.255 12.255 0 0 0-.093 3.86.251.251 0 0 0 .208.214c2.22.366 4.367 1.08 6.362 2.118a.252.252 0 0 0 .32-.079 10.09 10.09 0 0 0 1.597-3.733ZM13.616 17.968a.25.25 0 0 0-.063-.407A19.697 19.697 0 0 0 8.91 15.98a.25.25 0 0 0-.287.325c.151.455.334.898.548 1.328.437.827.981 1.594 1.619 2.28a.249.249 0 0 0 .32.044 29.13 29.13 0 0 0 2.506-1.99ZM6.303 14.105a.25.25 0 0 0 .265-.274 13.048 13.048 0 0 1 .205-4.045.062.062 0 0 0-.022-.07 2.5 2.5 0 0 1-.777-.982.25.25 0 0 0-.271-.149 11 11 0 0 0-5.6 2.815.255.255 0 0 0-.075.163c-.008.135-.02.27-.02.406.002.8.084 1.598.246 2.381a.25.25 0 0 0 .303.193 19.924 19.924 0 0 1 5.746-.438ZM9.228 20.914a.25.25 0 0 0 .1-.393 11.53 11.53 0 0 1-1.5-2.22 12.238 12.238 0 0 1-.91-2.465.248.248 0 0 0-.22-.187 18.876 18.876 0 0 0-5.69.33.249.249 0 0 0-.179.336c.838 2.142 2.272 4 4.132 5.353a.254.254 0 0 0 .15.048c1.41-.01 2.807-.282 4.117-.802ZM18.93 12.957l-.005-.008a.25.25 0 0 0-.268-.082 2.21 2.21 0 0 1-.41.081.25.25 0 0 0-.217.2c-.582 2.66-2.127 5.35-5.75 7.843a.248.248 0 0 0-.09.299.25.25 0 0 0 .065.091 28.703 28.703 0 0 0 2.662 2.12.246.246 0 0 0 .209.037c2.579-.701 4.85-2.242 6.456-4.378a.25.25 0 0 0 .048-.189 13.51 13.51 0 0 0-2.7-6.014ZM5.702 7.058a.254.254 0 0 0 .2-.165A2.488 2.488 0 0 1 7.98 5.245a.093.093 0 0 0 .078-.062 19.734 19.734 0 0 1 3.055-4.74.25.25 0 0 0-.21-.41 12.009 12.009 0 0 0-10.4 8.558.25.25 0 0 0 .373.281 12.912 12.912 0 0 1 4.826-1.814ZM10.773 22.052a.25.25 0 0 0-.28-.046c-.758.356-1.55.635-2.365.833a.25.25 0 0 0-.022.48c1.252.43 2.568.65 3.893.65.1 0 .2 0 .3-.008a.25.25 0 0 0 .147-.444c-.526-.424-1.1-.917-1.673-1.465ZM18.744 8.436a.249.249 0 0 0 .15.228 2.246 2.246 0 0 1 1.352 2.054c0 .337-.08.67-.23.972a.25.25 0 0 0 .042.28l.007.009a15.016 15.016 0 0 1 2.52 4.6.25.25 0 0 0 .37.132.25.25 0 0 0 .096-.114c.623-1.464.944-3.039.945-4.63a12.005 12.005 0 0 0-5.78-10.258.25.25 0 0 0-.373.274c.547 2.109.85 4.274.901 6.453ZM9.61 5.38a.25.25 0 0 0 .08.31c.34.24.616.561.8.935a.25.25 0 0 0 .3.127.631.631 0 0 1 .206-.034c2.054.078 4.036.772 5.69 1.991a.251.251 0 0 0 .267.024c.046-.024.093-.047.141-.067a.25.25 0 0 0 .151-.23A29.98 29.98 0 0 0 15.957.764a.25.25 0 0 0-.16-.164 11.924 11.924 0 0 0-2.21-.518.252.252 0 0 0-.215.076A22.456 22.456 0 0 0 9.61 5.38Z" />
-                                    </g>
-                                </svg>
-                            </div>
-
-                            <div class="pt-3 sm:pt-5">
-                                <h2 class="text-xl font-semibold text-black dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-sm/relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a
-                                        href="https://forge.laravel.com"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white dark:focus-visible:ring-[#FF2D20]">Forge</a>,
-                                    <a href="https://vapor.laravel.com"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Vapor</a>,
-                                    <a href="https://nova.laravel.com"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Nova</a>,
-                                    <a href="https://envoyer.io"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Envoyer</a>,
-                                    and <a href="https://herd.laravel.com"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Herd</a>
-                                    help you take your projects to the next level. Pair them with powerful open source
-                                    libraries like <a href="https://laravel.com/docs/billing"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Cashier</a>,
-                                    <a href="https://laravel.com/docs/dusk"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Dusk</a>,
-                                    <a href="https://laravel.com/docs/broadcasting"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Echo</a>,
-                                    <a href="https://laravel.com/docs/horizon"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Horizon</a>,
-                                    <a href="https://laravel.com/docs/sanctum"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Sanctum</a>,
-                                    <a href="https://laravel.com/docs/telescope"
-                                        class="rounded-sm underline hover:text-black focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF2D20] dark:hover:text-white">Telescope</a>,
-                                    and more.
-                                </p>
+                            <div class="mt-4">
+                                <p class="text-lg font-bold">100% Safe</p>
+                                <p class="text-gray text-sm mt-1.5">Your money is safe</p>
                             </div>
                         </div>
+                        <div>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.2"
+                                    d="M18.75 15C18.75 15.7417 18.5301 16.4667 18.118 17.0834C17.706 17.7001 17.1203 18.1807 16.4351 18.4645C15.7498 18.7484 14.9958 18.8226 14.2684 18.6779C13.541 18.5333 12.8728 18.1761 12.3483 17.6516C11.8239 17.1272 11.4667 16.459 11.3221 15.7316C11.1774 15.0042 11.2516 14.2502 11.5355 13.5649C11.8193 12.8797 12.2999 12.294 12.9166 11.882C13.5333 11.4699 14.2583 11.25 15 11.25C15.9946 11.25 16.9484 11.6451 17.6516 12.3483C18.3549 13.0516 18.75 14.0054 18.75 15ZM23.4375 7.5C23.636 8.67107 24.1938 9.75141 25.0337 10.5913C25.8736 11.4312 26.9539 11.989 28.125 12.1875V7.5H23.4375ZM23.4375 22.5H28.125V17.8125C26.9539 18.011 25.8736 18.5688 25.0337 19.4087C24.1938 20.2486 23.636 21.3289 23.4375 22.5ZM1.875 17.8125V22.5H6.5625C6.36402 21.3289 5.80618 20.2486 4.96629 19.4087C4.12641 18.5688 3.04607 18.011 1.875 17.8125ZM1.875 12.1875C3.04607 11.989 4.12641 11.4312 4.96629 10.5913C5.80618 9.75141 6.36402 8.67107 6.5625 7.5H1.875V12.1875Z"
+                                    fill="#A66EFE" />
+                                <path
+                                    d="M15 10.3125C14.0729 10.3125 13.1666 10.5874 12.3958 11.1025C11.6249 11.6176 11.0241 12.3496 10.6693 13.2062C10.3145 14.0627 10.2217 15.0052 10.4026 15.9145C10.5834 16.8238 11.0299 17.659 11.6854 18.3146C12.341 18.9701 13.1762 19.4166 14.0855 19.5974C14.9948 19.7783 15.9373 19.6855 16.7938 19.3307C17.6504 18.9759 18.3824 18.3751 18.8975 17.6042C19.4126 16.8334 19.6875 15.9271 19.6875 15C19.6875 13.7568 19.1936 12.5645 18.3146 11.6854C17.4355 10.8064 16.2432 10.3125 15 10.3125ZM15 17.8125C14.4437 17.8125 13.9 17.6476 13.4375 17.3385C12.9749 17.0295 12.6145 16.5902 12.4016 16.0763C12.1887 15.5624 12.133 14.9969 12.2415 14.4513C12.3501 13.9057 12.6179 13.4046 13.0113 13.0113C13.4046 12.6179 13.9057 12.3501 14.4513 12.2415C14.9969 12.133 15.5624 12.1887 16.0763 12.4016C16.5902 12.6145 17.0295 12.9749 17.3385 13.4375C17.6476 13.9 17.8125 14.4437 17.8125 15C17.8125 15.7459 17.5162 16.4613 16.9887 16.9887C16.4613 17.5162 15.7459 17.8125 15 17.8125ZM28.125 6.5625H1.875C1.62636 6.5625 1.3879 6.66127 1.21209 6.83709C1.03627 7.0129 0.9375 7.25136 0.9375 7.5V22.5C0.9375 22.7486 1.03627 22.9871 1.21209 23.1629C1.3879 23.3387 1.62636 23.4375 1.875 23.4375H28.125C28.3736 23.4375 28.6121 23.3387 28.7879 23.1629C28.9637 22.9871 29.0625 22.7486 29.0625 22.5V7.5C29.0625 7.25136 28.9637 7.0129 28.7879 6.83709C28.6121 6.66127 28.3736 6.5625 28.125 6.5625ZM2.8125 8.4375H5.3168C4.83327 9.56199 3.93699 10.4583 2.8125 10.9418V8.4375ZM2.8125 21.5625V19.0582C3.93699 19.5417 4.83327 20.438 5.3168 21.5625H2.8125ZM27.1875 21.5625H24.6832C25.1667 20.438 26.063 19.5417 27.1875 19.0582V21.5625ZM27.1875 17.0684C26.123 17.3831 25.1541 17.9592 24.3692 18.7442C23.5842 19.5291 23.0081 20.498 22.6934 21.5625H7.30664C6.99188 20.498 6.41579 19.5291 5.63084 18.7442C4.84589 17.9592 3.87703 17.3831 2.8125 17.0684V12.9316C3.87703 12.6169 4.84589 12.0408 5.63084 11.2558C6.41579 10.4709 6.99188 9.50203 7.30664 8.4375H22.6934C23.0081 9.50203 23.5842 10.4709 24.3692 11.2558C25.1541 12.0408 26.123 12.6169 27.1875 12.9316V17.0684ZM27.1875 10.9418C26.063 10.4583 25.1667 9.56199 24.6832 8.4375H27.1875V10.9418Z"
+                                    fill="#A66EFE" />
+                            </svg>
+                            <div class="mt-4">
+                                <p class="text-lg font-bold">$ 12M+</p>
+                                <p class="text-gray text-sm mt-1.5">Transactions</p>
+                            </div>
+                        </div>
+                        <div>
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.2"
+                                    d="M19.6875 16.875C19.6875 17.8021 19.4126 18.7084 18.8975 19.4792C18.3824 20.2501 17.6504 20.8509 16.7938 21.2057C15.9373 21.5605 14.9948 21.6533 14.0855 21.4724C13.1762 21.2916 12.341 20.8451 11.6854 20.1896C11.0299 19.534 10.5834 18.6988 10.4026 17.7895C10.2217 16.8802 10.3145 15.9377 10.6693 15.0812C11.0241 14.2246 11.6249 13.4926 12.3958 12.9775C13.1666 12.4624 14.0729 12.1875 15 12.1875C16.2432 12.1875 17.4355 12.6814 18.3146 13.5604C19.1936 14.4395 19.6875 15.6318 19.6875 16.875ZM7.5 6.5625C6.75832 6.5625 6.0333 6.78243 5.41661 7.19449C4.79993 7.60654 4.31928 8.19221 4.03545 8.87744C3.75162 9.56266 3.67736 10.3167 3.82206 11.0441C3.96675 11.7715 4.3239 12.4397 4.84835 12.9642C5.3728 13.4886 6.04098 13.8458 6.76841 13.9904C7.49584 14.1351 8.24984 14.0609 8.93506 13.777C9.62029 13.4932 10.206 13.0126 10.618 12.3959C11.0301 11.7792 11.25 11.0542 11.25 10.3125C11.25 9.31794 10.8549 8.36411 10.1517 7.66085C9.44839 6.95759 8.49456 6.5625 7.5 6.5625ZM22.5 6.5625C21.7583 6.5625 21.0333 6.78243 20.4166 7.19449C19.7999 7.60654 19.3193 8.19221 19.0355 8.87744C18.7516 9.56266 18.6774 10.3167 18.8221 11.0441C18.9668 11.7715 19.3239 12.4397 19.8484 12.9642C20.3728 13.4886 21.041 13.8458 21.7684 13.9904C22.4958 14.1351 23.2498 14.0609 23.9351 13.777C24.6203 13.4932 25.206 13.0126 25.618 12.3959C26.0301 11.7792 26.25 11.0542 26.25 10.3125C26.25 9.31794 25.8549 8.36411 25.1517 7.66085C24.4484 6.95759 23.4946 6.5625 22.5 6.5625Z"
+                                    fill="#FFC011" />
+                                <path
+                                    d="M28.6875 17.625C28.589 17.6988 28.4769 17.7526 28.3577 17.7831C28.2384 17.8137 28.1143 17.8205 27.9924 17.803C27.8705 17.7856 27.7533 17.7444 27.6474 17.6817C27.5414 17.6189 27.4489 17.536 27.375 17.4375C26.8099 16.6779 26.0744 16.0617 25.2277 15.6383C24.381 15.2149 23.4467 14.9963 22.5 15C22.2514 15 22.0129 14.9012 21.8371 14.7254C21.6613 14.5496 21.5625 14.3111 21.5625 14.0625C21.5625 13.8138 21.6613 13.5754 21.8371 13.3996C22.0129 13.2237 22.2514 13.125 22.5 13.125C23.026 13.1249 23.5415 12.9774 23.9879 12.699C24.4342 12.4207 24.7936 12.0228 25.0251 11.5505C25.2567 11.0782 25.3511 10.5504 25.2977 10.0271C25.2444 9.50376 25.0453 9.00591 24.7232 8.59007C24.401 8.17423 23.9687 7.85706 23.4754 7.67459C22.982 7.49213 22.4474 7.45168 21.9322 7.55784C21.417 7.664 20.9419 7.91251 20.5608 8.27515C20.1798 8.63779 19.9081 9.10002 19.7766 9.60934C19.7458 9.72861 19.6918 9.84064 19.6177 9.93905C19.5437 10.0375 19.4509 10.1203 19.3448 10.1829C19.2387 10.2455 19.1214 10.2865 18.9994 10.3037C18.8774 10.3209 18.7533 10.3139 18.634 10.2832C18.5147 10.2524 18.4027 10.1984 18.3043 10.1243C18.2059 10.0503 18.123 9.95753 18.0604 9.85143C17.9979 9.74534 17.9568 9.62795 17.9396 9.50598C17.9224 9.38402 17.9294 9.25986 17.9602 9.14059C18.1427 8.43432 18.4875 7.78039 18.9673 7.23085C19.447 6.6813 20.0483 6.2513 20.7235 5.97506C21.3987 5.69883 22.129 5.58398 22.8563 5.63965C23.5837 5.69532 24.288 5.91999 24.9132 6.29576C25.5385 6.67153 26.0674 7.18805 26.4579 7.80421C26.8484 8.42036 27.0897 9.11915 27.1626 9.84498C27.2355 10.5708 27.138 11.3036 26.8778 11.9851C26.6177 12.6667 26.2021 13.278 25.6641 13.7707C26.9388 14.3226 28.047 15.1985 28.8785 16.3113C28.9524 16.41 29.006 16.5224 29.0364 16.6419C29.0668 16.7614 29.0733 16.8857 29.0556 17.0078C29.0378 17.1298 28.9962 17.2471 28.933 17.353C28.8699 17.4589 28.7864 17.5513 28.6875 17.625ZM22.3734 24.8437C22.4389 24.9504 22.4823 25.0692 22.5011 25.193C22.5199 25.3167 22.5138 25.443 22.483 25.5644C22.4522 25.6857 22.3974 25.7997 22.3219 25.8995C22.2464 25.9993 22.1516 26.083 22.0432 26.1456C21.9348 26.2083 21.8149 26.2485 21.6907 26.2641C21.5665 26.2796 21.4404 26.2701 21.3199 26.2362C21.1994 26.2022 21.0869 26.1444 20.9891 26.0663C20.8913 25.9882 20.8101 25.8912 20.7504 25.7812C20.1598 24.7815 19.3187 23.953 18.3102 23.3775C17.3017 22.8019 16.1606 22.4992 14.9994 22.4992C13.8383 22.4992 12.6971 22.8019 11.6886 23.3775C10.6801 23.953 9.83909 24.7815 9.24844 25.7812C9.18983 25.8933 9.10917 25.9923 9.0113 26.0723C8.91343 26.1524 8.80038 26.2118 8.67895 26.247C8.55751 26.2823 8.43021 26.2926 8.30469 26.2773C8.17917 26.2621 8.05804 26.2216 7.94857 26.1583C7.8391 26.095 7.74357 26.0103 7.66771 25.9091C7.59185 25.808 7.53724 25.6925 7.50716 25.5697C7.47708 25.4469 7.47215 25.3193 7.49267 25.1945C7.51319 25.0697 7.55874 24.9504 7.62657 24.8437C8.53547 23.282 9.92133 22.0531 11.5805 21.3375C10.6469 20.6227 9.96074 19.6333 9.61852 18.5084C9.2763 17.3834 9.2952 16.1796 9.67256 15.0659C10.0499 13.9523 10.7668 12.985 11.7224 12.2998C12.6779 11.6147 13.8242 11.2462 15 11.2462C16.1758 11.2462 17.3221 11.6147 18.2777 12.2998C19.2332 12.985 19.9501 13.9523 20.3274 15.0659C20.7048 16.1796 20.7237 17.3834 20.3815 18.5084C20.0393 19.6333 19.3531 20.6227 18.4195 21.3375C20.0787 22.0531 21.4645 23.282 22.3734 24.8437ZM15 20.625C15.7417 20.625 16.4667 20.405 17.0834 19.993C17.7001 19.5809 18.1807 18.9953 18.4646 18.31C18.7484 17.6248 18.8226 16.8708 18.678 16.1434C18.5333 15.4159 18.1761 14.7478 17.6517 14.2233C17.1272 13.6989 16.459 13.3417 15.7316 13.197C15.0042 13.0523 14.2502 13.1266 13.5649 13.4104C12.8797 13.6942 12.2941 14.1749 11.882 14.7916C11.4699 15.4083 11.25 16.1333 11.25 16.875C11.25 17.8695 11.6451 18.8234 12.3484 19.5266C13.0516 20.2299 14.0054 20.625 15 20.625ZM8.43751 14.0625C8.43751 13.8138 8.33873 13.5754 8.16292 13.3996C7.9871 13.2237 7.74865 13.125 7.5 13.125C6.97398 13.1249 6.45852 12.9774 6.01216 12.699C5.56579 12.4207 5.20643 12.0228 4.97489 11.5505C4.74334 11.0782 4.64889 10.5504 4.70227 10.0271C4.75565 9.50376 4.95471 9.00591 5.27685 8.59007C5.59899 8.17423 6.03129 7.85706 6.52465 7.67459C7.01801 7.49213 7.55266 7.45168 8.06786 7.55784C8.58305 7.664 9.05816 7.91251 9.4392 8.27515C9.82023 8.63779 10.0919 9.10002 10.2234 9.60934C10.2856 9.85021 10.4409 10.0565 10.6552 10.1829C10.8695 10.3093 11.1252 10.3453 11.366 10.2832C11.6069 10.221 11.8132 10.0657 11.9396 9.85143C12.0659 9.63716 12.102 9.38146 12.0398 9.14059C11.8573 8.43432 11.5125 7.78039 11.0328 7.23085C10.553 6.6813 9.95166 6.2513 9.27651 5.97506C8.60136 5.69883 7.87106 5.58398 7.14371 5.63965C6.41636 5.69532 5.71204 5.91999 5.08679 6.29576C4.46155 6.67153 3.93264 7.18805 3.54214 7.80421C3.15164 8.42036 2.91034 9.11915 2.83743 9.84498C2.76452 10.5708 2.86202 11.3036 3.12217 11.9851C3.38231 12.6667 3.79793 13.278 4.33594 13.7707C3.06245 14.3231 1.95553 15.199 1.125 16.3113C0.975665 16.5102 0.911459 16.7603 0.946513 17.0065C0.981566 17.2528 1.11301 17.475 1.31192 17.6244C1.51083 17.7737 1.76092 17.8379 2.00717 17.8029C2.25342 17.7678 2.47566 17.6364 2.625 17.4375C3.19007 16.6779 3.92557 16.0617 4.7723 15.6383C5.61903 15.2149 6.55334 14.9963 7.5 15C7.74865 15 7.9871 14.9012 8.16292 14.7254C8.33873 14.5496 8.43751 14.3111 8.43751 14.0625Z"
+                                    fill="#FFC011" />
+                            </svg>
+                            <div class="mt-4">
+                                <p class="text-lg font-bold">100K+ Active User</p>
+                                <p class="text-gray text-sm mt-1.5">Active User</p>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="mt-12">
+                        <div class="flex flex-wrap items-center gap-5">
+                            <a href="javascript:;" class="flex py-2.5 rounded-lg px-7 items-center gap-2.5 btn-outline">
+                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.2"
+                                        d="M15.75 14.5L4.62876 25.6562C4.54789 25.5773 4.48375 25.4828 4.44016 25.3785C4.39656 25.2743 4.37441 25.1623 4.37501 25.0492V3.95078C4.37441 3.83775 4.39656 3.72575 4.44016 3.62146C4.48375 3.51717 4.54789 3.42273 4.62876 3.34375L15.75 14.5Z"
+                                        fill="#A66EFE" />
+                                    <path
+                                        d="M24.4803 12.9885L6.12501 2.48631C5.85742 2.33027 5.55321 2.24805 5.24345 2.24805C4.93368 2.24805 4.62947 2.33027 4.36189 2.48631C4.09825 2.63748 3.87951 2.85599 3.72807 3.11947C3.57663 3.38295 3.49793 3.68195 3.50001 3.98584V25.0143C3.49914 25.3179 3.57888 25.6162 3.73107 25.8789C3.88326 26.1416 4.10246 26.3592 4.36626 26.5094C4.63385 26.6655 4.93806 26.7477 5.24782 26.7477C5.55759 26.7477 5.8618 26.6655 6.12939 26.5094L24.4803 16.0094C24.7513 15.8609 24.9774 15.6422 25.1349 15.3763C25.2924 15.1103 25.3755 14.8069 25.3755 14.4979C25.3755 14.1888 25.2924 13.8854 25.1349 13.6195C24.9774 13.3536 24.7513 13.1349 24.4803 12.9863V12.9885ZM5.25001 23.7608V5.23928L14.513 14.5001L5.25001 23.7608ZM15.75 15.7371L17.8194 17.8065L8.1397 23.3474L15.75 15.7371ZM8.13751 5.65162L17.8205 11.1937L15.75 13.263L8.13751 5.65162ZM19.3933 16.9063L16.987 14.5001L19.3933 12.0938L23.5966 14.5001L19.3933 16.9063Z"
+                                        fill="#A66EFE" />
+                                </svg>
+                                <div>
+                                    <span class="block text-sm font-bold text-gray">Get It On</span>
+                                    <span class="block text-lg font-bold">Google Play</span>
+                                </div>
+                            </a>
+                            <a href="javascript:;" class="flex py-2.5 rounded-lg px-7 items-center gap-2.5 btn-outline">
+                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_275_87)">
+                                        <path opacity="0.2"
+                                            d="M23.625 19.3977C21.7886 18.1366 21 16.0213 21 13.6249C21 11.6234 22.2775 9.81758 23.625 8.54117C22.3705 7.35336 20.2344 6.62492 18.375 6.62492C16.7847 6.62123 15.2409 7.16155 14 8.15617C12.7849 7.18195 11.2785 6.64285 9.72124 6.62492C5.68749 6.57024 2.52218 9.93899 2.62499 13.9738C2.66891 15.7035 3.05548 17.4074 3.76234 18.9866C4.46919 20.5659 5.48228 21.9893 6.74296 23.1745C7.39284 23.7857 8.25159 24.1257 9.14374 24.1249H18.7359C19.2123 24.1269 19.684 24.0308 20.1217 23.8426C20.5594 23.6544 20.9536 23.3782 21.28 23.0312C23.0136 21.1718 23.625 19.3999 23.625 19.3999V19.3977Z"
+                                            fill="#A66EFE" />
+                                        <path
+                                            d="M24.4234 19.0489C24.3578 18.899 24.2518 18.7702 24.1172 18.677C22.2611 17.4017 21.875 15.2263 21.875 13.625C21.875 11.6923 23.3483 10.0091 24.2266 9.17672C24.3129 9.09495 24.3818 8.99643 24.4288 8.88717C24.4758 8.77791 24.5001 8.6602 24.5001 8.54125C24.5001 8.4223 24.4758 8.3046 24.4288 8.19534C24.3818 8.08608 24.3129 7.98756 24.2266 7.90578C22.8397 6.59657 20.5428 5.75 18.375 5.75C16.8178 5.75139 15.2957 6.21296 14 7.07672C12.4886 6.06321 10.6712 5.60804 8.86049 5.78949C7.04977 5.97094 5.35886 6.77767 4.07859 8.07094C3.31323 8.8523 2.7127 9.77952 2.31268 10.7975C1.91267 11.8155 1.72132 12.9035 1.75 13.9969C1.79294 15.8424 2.20331 17.6609 2.95713 19.346C3.71095 21.0311 4.79309 22.549 6.14031 23.8111C6.95165 24.5777 8.02646 25.0033 9.14266 25H18.7327C19.3294 25.0011 19.92 24.8797 20.4679 24.6432C21.0157 24.4067 21.5092 24.0602 21.9177 23.6252C22.6743 22.8109 23.3288 21.9073 23.8667 20.9345C24.6345 19.5313 24.5361 19.3125 24.4234 19.0489ZM20.6358 22.433C20.3915 22.6923 20.0965 22.8987 19.7691 23.0393C19.4417 23.1798 19.0889 23.2516 18.7327 23.25H9.14266C8.47412 23.2522 7.83035 22.9972 7.34453 22.538C6.16555 21.4342 5.21834 20.1065 4.55824 18.6325C3.89814 17.1585 3.53839 15.5677 3.5 13.9531C3.47607 13.0953 3.62497 12.2413 3.93782 11.4422C4.25068 10.6431 4.7211 9.91502 5.32109 9.30141C5.88166 8.72872 6.55136 8.27423 7.29061 7.96482C8.02985 7.65541 8.82362 7.49736 9.625 7.5H9.71031C11.0734 7.51436 12.3919 7.98751 13.4531 8.84313C13.6083 8.96738 13.8012 9.03508 14 9.03508C14.1988 9.03508 14.3917 8.96738 14.5469 8.84313C15.6306 7.96878 16.9825 7.49446 18.375 7.5C19.7655 7.51614 21.1258 7.90724 22.3125 8.63203C20.8906 10.2202 20.125 11.9647 20.125 13.625C20.125 16.2248 20.9606 18.2986 22.5509 19.6734C22.0505 20.6818 21.4053 21.6114 20.6358 22.433ZM14.0252 3.78125C14.2678 2.8414 14.8162 2.00894 15.5838 1.41492C16.3515 0.820887 17.295 0.499028 18.2656 0.500002H18.375C18.6071 0.500002 18.8296 0.592189 18.9937 0.756284C19.1578 0.920378 19.25 1.14294 19.25 1.375C19.25 1.60707 19.1578 1.82963 18.9937 1.99372C18.8296 2.15782 18.6071 2.25 18.375 2.25H18.2656C17.6836 2.24995 17.1181 2.44331 16.658 2.79969C16.1979 3.15606 15.8692 3.65524 15.7237 4.21875C15.6657 4.44357 15.5208 4.63612 15.3208 4.75407C15.1208 4.87201 14.8822 4.90567 14.6573 4.84766C14.4325 4.78964 14.24 4.6447 14.122 4.44471C14.0041 4.24472 13.9704 4.00607 14.0284 3.78125H14.0252Z"
+                                            fill="#A66EFE" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_275_87">
+                                            <rect width="28" height="28" fill="white"
+                                                transform="translate(0 0.5)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                                <div>
+                                    <span class="block text-sm font-bold text-gray">Download on the</span>
+                                    <span class="block text-lg font-bold">App Store</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </main> --}}
-
-            {{-- <footer class="py-16 text-sm text-center text-black dark:text-white/70">
-                    Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                </footer> --}}
+                </div>
+                <div>
+                    <img src="{{ asset('static/Simulator Screen Shot - iPhone 14 Pro Max - 2024-08-24 at 20.03.00.png') }}"
+                        style="height: 600px" alt="">
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
+    </section>
+
 </body>
 
 </html>

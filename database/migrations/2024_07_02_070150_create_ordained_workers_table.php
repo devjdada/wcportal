@@ -49,6 +49,7 @@ return new class extends Migration
             $table->boolean('available')->default(false);
             $table->foreignId('user_id')->nullable();
             $table->foreignIdFor(User::class, 'serviced_id')->nullable();
+            $table->foreignIdFor(User::class, 'backup_id')->nullable();
             $table->foreignIdFor(OrdainedWorker::class, 'ordained_id')->nullable();
             $table->timestamps();
         });

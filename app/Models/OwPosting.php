@@ -20,6 +20,7 @@ class OwPosting extends Model
         'for',
         'available',
         'user_id',
+        'backup_id',
         'serviced_id',
         'ordained_id',
     ];

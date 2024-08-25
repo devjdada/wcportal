@@ -15,6 +15,7 @@ class AssignedToCollection extends JsonResource
     public function toArray(Request $request): array
     {
         $request['contact'] = $this->contact;
+        $request['reports'] = $this->reports;
         return parent::toArray($request);
     }
 }

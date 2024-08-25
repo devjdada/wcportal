@@ -17,8 +17,8 @@ class FirsttimerFactory extends Factory
             'firstname' => $this->faker->firstName,
             'surname' => $this->faker->lastName,
             'location' => $this->faker->city,
-            'invitted_by' => $this->faker->numberBetween(1, 200),
-            'post_by' => $this->faker->numberBetween(1, 100),
+            'invitted_by' => $this->faker->numberBetween(1, 40),
+            'post_by' => $this->faker->numberBetween(1, 30),
             'phone' => $this->faker->phoneNumber,
             'marital' => $this->faker->randomElement(['single', 'married']),
             'type' => $this->faker->randomElement(['soul', 'ft', 'nc']),
@@ -32,7 +32,7 @@ class FirsttimerFactory extends Factory
             'prayer_point' => $this->faker->sentence(12),
             'email' => $this->faker->unique()->safeEmail,
             'born_again_on' => now(),
-            'station_id'  => $this->faker->numberBetween(1, 20),
+            'station_id'  => 1,
         ];
     }
 }

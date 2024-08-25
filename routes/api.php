@@ -47,3 +47,5 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
 Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);
+
+Route::get('my_db_posting/{user}', [App\Http\Controllers\OwPostingController::class, 'my_posting']);

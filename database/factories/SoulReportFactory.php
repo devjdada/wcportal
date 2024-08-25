@@ -15,8 +15,8 @@ class SoulReportFactory extends Factory
     {
         return [
             'station_id'  => 1,
-            'user_id' => $this->faker->numberBetween(1, 200),
-            'soul_id' => $this->faker->numberBetween(1, 1200),
+            'user_id' => $this->faker->numberBetween(1, 50),
+            'soul_id' => $this->faker->numberBetween(1, 200),
             'report' => $this->faker->paragraph,
             'prayer' => $this->faker->paragraph,
             'homecell' => $this->faker->boolean,

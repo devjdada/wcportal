@@ -56,6 +56,21 @@ class Dashboard extends Component
         ]);
         $this->station_id = Auth::user()->station_id;
         $this->user->update($this->all()); // Update only user data
+
+        if (in_array($this->userStatus, ['deacon', 'deaconess'])) {
+            $ordainedWorkerData = [
+                'name' => Auth::user()->name,
+                'phone' => Auth::user()->phone,
+                'user_id' => Auth::user()->id,
+                'station_id' => $this->station_id,
+                'type' => 'ow',
+                'wing' => $this->wing,
+                'status' => true,
+                'register' => 'accept',
+                // Add other ordained worker specific fields (wing, caller_squapphp artisan
+            ];
+            OrdainedWorker::create($ordainedWorkerData);
+        }
         $this->updateDialog = false;
     }
 
