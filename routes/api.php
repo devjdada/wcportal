@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\Route;
 Route::post('register', [App\Http\Controllers\AuthController::class, 'register']);
 
 Route::post('login', [App\Http\Controllers\AuthController::class, 'login']);
-Route::post('get-sms', [App\Http\Controllers\TextMessage::class, 'get_sms']);
+Route::post('get-sms', [App\Http\Controllers\TextMe ssage::class, 'get_sms']);
 Route::get('get-sms', [App\Http\Controllers\TextMessage::class, 'get_sms']);
+Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
+Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);
+
+
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('logout', [App\Http\Controllers\AuthController::class, 'logout']);
@@ -46,6 +50,3 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('ow', App\Http\Controllers\OrdainedWorkerController::class);
     Route::get('my_db_posting/{user}', [App\Http\Controllers\OwPostingController::class, 'my_posting']);
 });
-
-Route::get('homecell-basic', [App\Http\Controllers\HomecellController::class, 'basic']);
-Route::get('station-basic', [App\Http\Controllers\StationController::class, 'basic']);

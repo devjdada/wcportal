@@ -41,7 +41,7 @@ class SoulController
                 $assign = new Assigned();
                 $assign->contact_id = $soul->id;
                 $assign->assigned_to = $caller->id;
-                $assign->station_id = auth()->user()->station_id;
+                $assign->station_id = Auth::user()->station_id;
                 $assign->type = 'soul';
                 if (!Assigned::where('contact_id', $soul->id)->where('assigned_to', $caller->id)->exists()) {
                     if ($soul->soul_winner != $caller->id) {

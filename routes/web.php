@@ -108,3 +108,8 @@ Route::get('/artisan-migrate', function () {
     $return =  Artisan::call('migrate');
     return $return;
 });
+
+Route::get('/artisan-seed', function () {
+    $return =  Artisan::call('db:seed');
+    return $return;
+});
